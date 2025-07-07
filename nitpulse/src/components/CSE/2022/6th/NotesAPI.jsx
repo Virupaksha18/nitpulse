@@ -5,7 +5,7 @@ const NotesAPI = () => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/notes")
+    axios.get(`${process.env.REACT_APP_BASE_URL}/api/notes`)
       .then((res) => {
         setNotes(res.data);
       })
