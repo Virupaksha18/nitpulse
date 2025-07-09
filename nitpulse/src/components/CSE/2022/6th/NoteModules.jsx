@@ -21,8 +21,8 @@ const NoteModules = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {modules.map((mod, idx) => {
           const moduleNumber = idx + 1;
-          const pdfUrl =` ${process.env.REACT_APP_BASE_URL}/files/notes/${subjectSlug}.pdf`;
-          const textbookUrl =` http://localhost:5000/files/notes/${subjectSlug}/textbook.pdf`; // Optional
+          const pdfUrl =` ${process.env.REACT_APP_BASE_URL}/files/notes/${subjectSlug}/module${moduleNumber}.pdf`;
+          const textbookUrl =`${process.env.REACT_APP_BASE_URL}/files/notes/${subjectSlug}/textbook.pdf`;
 
           return (
             <div
