@@ -21,7 +21,7 @@ const PassingPackageDetails = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {modules.map((mod, idx) => {
           const moduleNumber = idx + 1;
-          const pdfUrl = `${process.env.REACT_APP_BASE_URL}/files/passingpackage/CSE/2022/6th/${subjectSlug}/module${moduleNumber}.pdf`;
+          const pdfUrl = `${process.env.REACT_APP_BASE_URL}/files/passing-package/CSE/2022/6th/${subjectSlug}/module${moduleNumber}.pdf`;
 
           return (
             <div
