@@ -1,52 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 const MQPDetails = () => {
   const { subjectSlug } = useParams();
-  const [data, setData] = useState(null);
-  const [error, setError] = useState("");
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_BASE_URL}/files/mqp/CSE/2022/6th/${subjectSlug}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("MQPs not found");
-        return res.json();
-      })
-      .then((resData) => setData(resData))
-      .catch((err) => setError(err.message));
-  }, [subjectSlug]);
-
-  if (error) {
-    return (
-      <div className="text-center mt-20 text-red-600 text-xl">
-        {error}
-      </div>
-    );
-  }
-
-  if (!data) {
-    return (
-      <div className="text-center mt-20 text-gray-500 text-xl">
-        Loading MQPs...
-      </div>
-    );
-  }
+  const basePath =` ${process.env.REACT_APP_BASE_URL}/files/mqp/CSE/2022/6th/${subjectSlug}`;
 
   const mqps = [
     {
       title: "MQP 1",
       description: "Model Question Paper on core concepts.",
-      mqpLink: data.mqp1,
+      mqpLink:` ${basePath}/mqp1.pdf`,
       solution: "Solution to MQP 1 with detailed answers.",
-      solutionLink: data.solution1,
+      solutionLink: `${basePath}/solution1.pdf`,
     },
     {
       title: "MQP 2",
       description: "Advanced level model question paper.",
-      mqpLink: data.mqp2,
+      mqpLink:` ${basePath}/mqp2.pdf`,
       solution: "Solution to MQP 2 with step-by-step explanation.",
-      solutionLink: data.solution2,
-    }
+      solutionLink:` ${basePath}/solution2.pdf`,
+    },
   ];
 
   return (
