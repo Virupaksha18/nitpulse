@@ -58,7 +58,7 @@ const AssignmentDetails = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {subject.assignments.map((item, index) => {
-          const fileUrl = ` ${process.env.REACT_APP_BASE_URL}/files/notes/CSE/2022/6th/${subjectSlug}/assignment${index + 1}.pdf`;
+          const pdfUrl = ` ${process.env.REACT_APP_BASE_URL}/files/assignments/CSE/2022/6th/${subjectSlug}/assignment${index + 1}.pdf`;
 
           return (
             <div
@@ -68,7 +68,7 @@ const AssignmentDetails = () => {
               <h3 className="text-lg font-semibold mb-2">Assignment {index + 1}</h3>
               <p className="text-sm text-gray-300 mb-4">{item}</p>
               <a
-                href={fileUrl}
+                href={pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
