@@ -7,7 +7,7 @@ const MQPDetails = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/mqp/${subjectSlug}`)
+    fetch(`${process.env.REACT_APP_BASE_URL}/files/mqp/CSE/2022/6th/${subjectSlug}`)
       .then((res) => {
         if (!res.ok) throw new Error("MQPs not found");
         return res.json();

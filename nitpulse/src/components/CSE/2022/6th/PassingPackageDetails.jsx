@@ -15,7 +15,7 @@ const PassingPackageDetails = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/passing-package/${subjectSlug}`)
+    fetch(`${process.env.REACT_APP_BASE_URL}/files/notes/CSE/2022/6th/${subjectSlug}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch passing package.");
         return res.json();

@@ -56,7 +56,7 @@ const LabProgramDetails = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/labs/${subjectSlug}`)
+    fetch(`${process.env.REACT_APP_BASE_URL}/files/labs/CSE/2022/6th/${subjectSlug}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load PDFs");
         return res.json();
