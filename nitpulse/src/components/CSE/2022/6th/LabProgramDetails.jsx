@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 const labProgramsData = {
@@ -52,16 +52,18 @@ const labProgramsData = {
 const LabProgramDetails = () => {
   const { subjectSlug } = useParams();
   const subject = labProgramsData[subjectSlug];
-  const pdfLinks = subject.programs.map((_, index) => {
-  return` ${process.env.REACT_APP_BASE_URL}/files/labs/CSE/2022/6th/${subjectSlug}/program${index + 1}.pdf`;
-});
+
+  // Generate PDF links based on subjectSlug and index
+  const pdfLinks = subject?.programs.map((_, index) => {
+    return `${process.env.REACT_APP_BASE_URL}/files/labs/CSE/2022/6th/${subjectSlug}/program${index + 1}.pdf`;
+  });
 
   if (!subject) {
-    return <div className="text-center mt-10 text-red-500 text-xl">Programs not found for this subject.</div>;
-  }
-
-  if (error) {
-    return <div className="text-center mt-10 text-red-500 text-xl">{error}</div>;
+    return (
+      <div className="text-center mt-10 text-red-500 text-xl">
+        Programs not found for this subject.
+      </div>
+    );
   }
 
   return (
@@ -78,18 +80,14 @@ const LabProgramDetails = () => {
               <h3 className="text-lg font-semibold mb-2">Program {index + 1}</h3>
               <p className="text-sm text-gray-300 mb-4">{program}</p>
             </div>
-            {pdfLinks[index] ? (
-              <a
-                href={pdfLinks[index]}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm mt-auto"
-              >
-                Download PDF 📥
-              </a>
-            ) : (
-              <span className="text-sm text-red-400 mt-auto">PDF not available</span>
-            )}
+            <a
+              href={pdfLinks[index]}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm mt-auto"
+            >
+              Download PDF 📥
+            </a>
           </div>
         ))}
       </div>
