@@ -21,8 +21,7 @@ const NoteModules = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {modules.map((mod, idx) => {
           const moduleNumber = idx + 1;
-          const pdfUrl =` ${process.env.REACT_APP_BASE_URL}/files/notes/${subjectSlug}/module${moduleNumber}.pdf`;
-          const textbookUrl =`${process.env.REACT_APP_BASE_URL}/files/notes/${subjectSlug}/textbook.pdf`;
+          const pdfUrl =` ${process.env.REACT_APP_BASE_URL}/files/notes/CSE/2022/6th/${subjectSlug}/module${moduleNumber}.pdf`;
 
           return (
             <div
@@ -39,14 +38,7 @@ const NoteModules = () => {
                 >
                   Download PDF 📥
                 </a>
-                <a
-                  href={textbookUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded text-sm"
-                >
-                  Download Textbook 📘
-                </a>
+                
               </div>
             </div>
           );
