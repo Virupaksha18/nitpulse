@@ -43,7 +43,7 @@ const HomePage = () => {
     Object.entries(formData).forEach(([key, value]) => uploadData.append(key, value));
 
     try {
-      await axios.post('http://localhost:5000/api/resources', uploadData, {
+      await axios.post(`${process.env.REACT_APP_BASE_URL}`, uploadData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       alert('Resource uploaded successfully!');
@@ -120,10 +120,7 @@ const HomePage = () => {
             <Paperclip className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
             Latest Updates
           </Link>
-          <Link to="/passing-package" className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-orange-500">
-            <FileText className="mx-auto mb-3 w-10 h-10 text-orange-600" />
-            Passing Package
-          </Link>
+         
         </div>
       </div>
 
