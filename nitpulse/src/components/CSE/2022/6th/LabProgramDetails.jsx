@@ -52,18 +52,9 @@ const labProgramsData = {
 const LabProgramDetails = () => {
   const { subjectSlug } = useParams();
   const subject = labProgramsData[subjectSlug];
-  const [pdfLinks, setPdfLinks] = useState([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_BASE_URL}/files/labs/CSE/2022/6th/${subjectSlug}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load PDFs");
-        return res.json();
-      })
-      .then((data) => setPdfLinks(data))
-      .catch((err) => setError(err.message));
-  }, [subjectSlug]);
+  const pdfLinks = subject.programs.map((_, index) => {
+  return` ${process.env.REACT_APP_BASE_URL}/files/labs/CSE/2022/6th/${subjectSlug}/program${index + 1}.pdf`;
+});
 
   if (!subject) {
     return <div className="text-center mt-10 text-red-500 text-xl">Programs not found for this subject.</div>;
@@ -89,7 +80,7 @@ const LabProgramDetails = () => {
             </div>
             {pdfLinks[index] ? (
               <a
-                href={pdfLinks[index].url}
+                href={pdfLinks[index]}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm mt-auto"
