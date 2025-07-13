@@ -58,7 +58,7 @@ const AssignmentDetails = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {subject.assignments.map((item, index) => {
-          const fileUrl = `http://localhost:5000/files/assignments/${subjectSlug}/assignment${index + 1}.pdf`;
+          const fileUrl = ` ${process.env.REACT_APP_BASE_URL}/files/notes/CSE/2022/6th/${subjectSlug}/assignment${index + 1}.pdf`;
 
           return (
             <div
