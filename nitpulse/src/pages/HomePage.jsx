@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {
-    FileText,
   BarChart, Calendar, Link2, Paperclip, Plus, Clock,
   GitBranchPlusIcon
 } from 'lucide-react';
