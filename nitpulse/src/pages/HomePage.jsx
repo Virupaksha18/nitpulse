@@ -61,9 +61,9 @@ const HomePage = () => {
         <blockquote>“ಕರ್ಮಂ ನಿರಂತರಂ, ಪಾಪಂ ಪುಣ್ಯಂ ದೈವ ನಿರ್ಣಯಂ”</blockquote>
       </div>
 
-      <div className="bg-blue-700 text-white text-center py-12 px-4 rounded-3xl shadow-2xl max-w-5xl mx-auto mb-12">
-        <h1 className="text-5xl font-extrabold mb-3">Welcome to NIT Pulse</h1>
-        <p className="text-xl font-medium">All-in-one NIT student portal with Notes, Labs, MQPs, Assignments & more!</p>
+      <div className="bg-blue-700 text-white text-center py-5 px-4 rounded-3xl shadow-2xl max-w-5xl mx-auto mb-12">
+        <h1 className="text-2xl font-extrabold mb-3">Welcome to NIT Pulse</h1>
+        <p className="text-1xl font-medium">All-in-one NIT student portal with Notes, Labs, MQPs, Assignments & more!</p>
         <input
           type="text"
           placeholder="Search Notes, Assignments, Labs, MQPs..."
