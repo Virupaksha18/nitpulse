@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo and Title */}
         <NavLink to="/" className="flex items-center space-x-3">
-          <img src="/logo.jpg" alt="NITPulse Logo" className="h-10 w-auto" />
+          <img src="/logo.jpg" alt="NITPulse Logo" className="h-15 w-auto" />
           <span className="text-2xl font-bold">NIT Pulse</span>
         </NavLink>
 
