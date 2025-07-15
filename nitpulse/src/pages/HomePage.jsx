@@ -197,7 +197,7 @@ const HomePage = () => {
           {comments.length === 0 && <p className="text-center text-gray-500">No comments yet. Be the first!</p>}
           {comments.map((comment) => (
             <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
-              <p className="font-semibold text-blue-700">{comment.name} <span className="text-sm text-gray-500">({comment.email})</span></p>
+              <p className="font-semibold text-blue-700">{comment.name}</p>
               <p className="text-gray-800 mt-1">{comment.text}</p>
               <p className="text-xs text-gray-500 text-right mt-2">{new Date(comment.createdAt).toLocaleString()}</p>
             </div>
