@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {
@@ -16,6 +16,44 @@ const HomePage = () => {
     subject: '',
     file: null,
   });
+
+  const [userName, setUserName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [newComment, setNewComment] = useState('');
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
+
+  const fetchComments = async () => {
+    try {
+      const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/comments`);
+      setComments(res.data);
+    } catch (err) {
+      console.error('Failed to fetch comments:', err);
+    }
+  };
+
+  const handleCommentSubmit = async (e) => {
+    e.preventDefault();
+    if (!newComment.trim() || !userName.trim() || !userEmail.trim()) return;
+
+    try {
+      await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments`, {
+        text: newComment,
+        name: userName,
+        email: userEmail
+      });
+
+      setNewComment('');
+      setUserName('');
+      setUserEmail('');
+      fetchComments();
+    } catch (err) {
+      console.error('Failed to submit comment:', err);
+    }
+  };
 
   const resources = [
     { name: 'Branches', path: '/branch', icon: GitBranchPlusIcon, color: 'text-white-600' }
@@ -52,24 +90,6 @@ const HomePage = () => {
     }
   };
 
-  // Feature data with like state
-  const features = [
-    { name: "SGPA Calculator", to: "/sgpa", icon: BarChart, color: "text-blue-600" },
-    { name: "CGPA Calculator", to: "/cgpa", icon: BarChart, color: "text-green-600" },
-    { name: "VTU Results", to: "/vtu-results", icon: Calendar, color: "text-purple-600" },
-    { name: "VTU Links", to: "/vtu-links", icon: Link2, color: "text-red-600" },
-    { name: "Latest Updates", to: "/updates", icon: Paperclip, color: "text-yellow-600" },
-    { name: "College Time Table", to: "/timetable", icon: Clock, color: "text-indigo-600" }
-  ];
-
-  const [likes, setLikes] = useState(Array(features.length).fill(false));
-
-  const toggleLike = (index) => {
-    const newLikes = [...likes];
-    newLikes[index] = !newLikes[index];
-    setLikes(newLikes);
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-white pt-24 px-4">
       <div className="text-center mb-6">
@@ -88,62 +108,104 @@ const HomePage = () => {
         />
       </div>
 
-      <h1 className="text-3xl font-extrabold text-center">Select your Branch</h1>
+      <h1 className="text-3xl font-extrabold text-center">Select your Branch </h1>
       <div className="max-w-xl mx-auto my-5">
         {filteredResources.map((res) => (
           <Link
-            to="/branches"
-            key={res.name}
+            to={res.path}
             className="relative block rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 duration-300"
-            style={{
-              backgroundImage: "radial-gradient(circle, #1a1a1a 0%, #000000 100%)",
-            }}
+            style={{ backgroundImage: "radial-gradient(circle, #1a1a1a 0%, #000000 100%)" }}
+            key={res.name}
           >
             <div className="p-16 text-center">
               <h2 className="text-4xl font-extrabold text-white drop-shadow-md">
-                Branches
+                {res.name}
               </h2>
             </div>
             <div className="absolute bottom-2 right-3 text-white text-sm opacity-70">
-              NIT Pulse.com
+              NITS Pulse.com
             </div>
           </Link>
         ))}
       </div>
 
-      {/* More Features with Like Icon */}
+      {/* More Features */}
       <div className="max-w-6xl mx-auto mb-20">
         <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">More Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.name}
-                className="relative bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-blue-400"
-              >
-                <Link to={feature.to}>
-                  <Icon className={`mx-auto mb-3 w-10 h-10 ${feature.color}`} />
-                  <div className="text-lg font-semibold">{feature.name}</div>
-                </Link>
-
-                {/* Heart Icon Toggle */}
-                <button
-                  onClick={() => toggleLike(index)}
-                  className={`absolute bottom-3 right-4 text-xl transition ${
-                    likes[index] ? 'text-red-600 scale-110' : 'text-gray-400'
-                  }`}
-                  title="Like"
-                >
-                  ❤
-                </button>
-              </div>
-            );
-          })}
+          <Link to="/sgpa" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-blue-400 hover:shadow-xl">
+            <BarChart className="mx-auto mb-3 w-10 h-10 text-blue-600" />
+            SGPA Calculator
+          </Link>
+          <Link to="/cgpa" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-green-500 hover:shadow-xl">
+            <BarChart className="mx-auto mb-3 w-10 h-10 text-green-600" />
+            CGPA Calculator
+          </Link>
+          <Link to="/vtu-results" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-purple-500 hover:shadow-xl">
+            <Calendar className="mx-auto mb-3 w-10 h-10 text-purple-600" />
+            VTU Results
+          </Link>
+          <Link to="/vtu-links" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-red-500 hover:shadow-xl">
+            <Link2 className="mx-auto mb-3 w-10 h-10 text-red-600" />
+            VTU Links
+          </Link>
+          <Link to="/updates" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-yellow-500 hover:shadow-xl">
+            <Paperclip className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
+            Latest Updates
+          </Link>
+          <Link to="/timetable" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-indigo-500 hover:shadow-xl">
+            <Clock className="mx-auto mb-3 w-10 h-10 text-indigo-600" />
+            College Time Table
+          </Link>
         </div>
       </div>
 
-      {/* Add Resource Toggle */}
+      {/* Feedback Section */}
+      <div className="max-w-4xl mx-auto mb-20">
+        <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">Feedback from Users</h2>
+        <form onSubmit={handleCommentSubmit} className="mb-6 space-y-4">
+          <input
+            type="text"
+            placeholder="Your Name"
+            className="w-full p-3 border border-gray-300 rounded-xl"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            required
+          />
+          <input
+            type="email"
+            placeholder="Your Email"
+            className="w-full p-3 border border-gray-300 rounded-xl"
+            value={userEmail}
+            onChange={(e) => setUserEmail(e.target.value)}
+            required
+          />
+          <textarea
+            className="w-full p-3 border border-gray-300 rounded-xl"
+            rows="3"
+            placeholder="Share your thoughts or suggestions..."
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+            required
+          ></textarea>
+          <button type="submit" className="mt-3 bg-blue-600 text-white py-2 px-6 rounded-xl hover:bg-blue-700">
+            Submit Feedback
+          </button>
+        </form>
+
+        <div className="space-y-3">
+          {comments.length === 0 && <p className="text-center text-gray-500">No comments yet. Be the first!</p>}
+          {comments.map((comment) => (
+            <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
+              <p className="font-semibold text-blue-700">{comment.name} <span className="text-sm text-gray-500">({comment.email})</span></p>
+              <p className="text-gray-800 mt-1">{comment.text}</p>
+              <p className="text-xs text-gray-500 text-right mt-2">{new Date(comment.createdAt).toLocaleString()}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Add Resource Button */}
       <div className="text-center mb-6">
         <button
           onClick={() => setShowForm(!showForm)}

@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 require('dotenv').config();
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -13,6 +14,9 @@ app.use(cors());
 app.use(express.json());
 
 // Serve static files (like PDFs)
+const commentRoutes =require('./routes/commentRoutes');
+app.use('/api/comments',commentRoutes);
+app.use(bodyParser.json());
 app.use('/files', express.static(path.join(__dirname, 'files')));
 app.use('/pdfs',express.static(path.join(__dirname,'public/pdfs')));
 
