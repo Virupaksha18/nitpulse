@@ -11,11 +11,11 @@ const timeTableData = {
       'LH-01':`${baseUrl}/pdfs/CSE/3rd/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/CSE/3rd/LH-02.pdf`,
     },
-    '5th semester':{
+    '5th Semester':{
       'LH-01':`${baseUrl}/pdfs/CSE/5th/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/CSE/5th/LH-02.pdf`,
     },
-    '7th semester':{
+    '7th Semester':{
       'LH-01':`${baseUrl}/pdfs/CSE/7th/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/CSE/7th/LH-02.pdf`,
     },
@@ -29,11 +29,11 @@ const timeTableData = {
       'LH-01':`${baseUrl}/pdfs/ECE/3rd/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/ECE/3rd/LH-02.pdf`,
     },
-    '5th semester':{
+    '5th Semester':{
       'LH-01':`${baseUrl}/pdfs/ECE/5th/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/ECE/5th/LH-02.pdf`,
     },
-    '7th semester':{
+    '7th Semester':{
       'LH-01':`${baseUrl}/pdfs/ECE/7th/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/ECE/7th/LH-02.pdf`,
     },
@@ -47,11 +47,11 @@ const timeTableData = {
       'LH-01':`${baseUrl}/pdfs/EEE/3rd/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/EEE/3rd/LH-02.pdf`,
     },
-    '5th semester':{
+    '5th Semester':{
       'LH-01':`${baseUrl}/pdfs/EEE/5th/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/EEE/5th/LH-02.pdf`,
     },
-    '7th semester':{
+    '7th Semester':{
       'LH-01':`${baseUrl}/pdfs/EEE/7th/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/EEE/7th/LH-02.pdf`,
     },
@@ -65,11 +65,11 @@ const timeTableData = {
       'LH-01':`${baseUrl}/pdfs/CIVIL/3rd/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/CIVIL/3rd/LH-02.pdf`,
     },
-    '5th semester':{
+    '5th Semester':{
       'LH-01':`${baseUrl}/pdfs/CIVIL/5th/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/CIVIL/5th/LH-02.pdf`,
     },
-    '7th semester':{
+    '7th Semester':{
       'LH-01':`${baseUrl}/pdfs/CIVIL/7th/LH-01.pdf`,
       'LH-02':`${baseUrl}/pdfs/CIVIL/7th/LH-02.pdf`,
     },
