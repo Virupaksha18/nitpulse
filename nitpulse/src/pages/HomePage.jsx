@@ -52,6 +52,24 @@ const HomePage = () => {
     }
   };
 
+  // Feature data with like state
+  const features = [
+    { name: "SGPA Calculator", to: "/sgpa", icon: BarChart, color: "text-blue-600" },
+    { name: "CGPA Calculator", to: "/cgpa", icon: BarChart, color: "text-green-600" },
+    { name: "VTU Results", to: "/vtu-results", icon: Calendar, color: "text-purple-600" },
+    { name: "VTU Links", to: "/vtu-links", icon: Link2, color: "text-red-600" },
+    { name: "Latest Updates", to: "/updates", icon: Paperclip, color: "text-yellow-600" },
+    { name: "College Time Table", to: "/timetable", icon: Clock, color: "text-indigo-600" }
+  ];
+
+  const [likes, setLikes] = useState(Array(features.length).fill(false));
+
+  const toggleLike = (index) => {
+    const newLikes = [...likes];
+    newLikes[index] = !newLikes[index];
+    setLikes(newLikes);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-white pt-24 px-4">
       <div className="text-center mb-6">
@@ -69,61 +87,61 @@ const HomePage = () => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <h1 className="text-3xl font-extrabold text-center">Select your Branch </h1>
-<div className="max-w-xl mx-auto my-5">
-  {filteredResources.map((res) => (
-  <Link
-    to="/branches"
-    className="relative block rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 duration-300"
-    style={{
-      backgroundImage: "radial-gradient(circle, #1a1a1a 0%, #000000 100%)",
-    }}
-  >
-    <div className="p-16 text-center">
-      <h2 className="text-4xl font-extrabold text-white drop-shadow-md">
-        Branches
-      </h2>
-    </div>
-    <div className="absolute bottom-2 right-3 text-white text-sm opacity-70">
-      NITS Pulse.com
-    </div>
-  </Link>
-  ))}
-  
-  </div>
-  
 
-      {/* More Features */}
+      <h1 className="text-3xl font-extrabold text-center">Select your Branch</h1>
+      <div className="max-w-xl mx-auto my-5">
+        {filteredResources.map((res) => (
+          <Link
+            to="/branches"
+            key={res.name}
+            className="relative block rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 duration-300"
+            style={{
+              backgroundImage: "radial-gradient(circle, #1a1a1a 0%, #000000 100%)",
+            }}
+          >
+            <div className="p-16 text-center">
+              <h2 className="text-4xl font-extrabold text-white drop-shadow-md">
+                Branches
+              </h2>
+            </div>
+            <div className="absolute bottom-2 right-3 text-white text-sm opacity-70">
+              NIT Pulse.com
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {/* More Features with Like Icon */}
       <div className="max-w-6xl mx-auto mb-20">
         <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">More Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <Link to="/sgpa" className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-blue-400">
-            <BarChart className="mx-auto mb-3 w-10 h-10 text-blue-600" />
-            SGPA Calculator
-          </Link>
-          <Link to="/cgpa" className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-green-500">
-            <BarChart className="mx-auto mb-3 w-10 h-10 text-green-600" />
-            CGPA Calculator
-          </Link>
-          <Link to="/vtu-results" className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-purple-500">
-            <Calendar className="mx-auto mb-3 w-10 h-10 text-purple-600" />
-            VTU Results
-          </Link>
-          <Link to="/vtu-links" className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-red-500">
-            <Link2 className="mx-auto mb-3 w-10 h-10 text-red-600" />
-            VTU Links
-          </Link>
-          <Link to="/updates" className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-yellow-500">
-            <Paperclip className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
-            Latest Updates
-          </Link>
-          <Link to ="/timetable" className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-indigo-500">
-          <Clock className="mx-auto mb-3 w-10 h-10 text-indigo-600"/>College Time Table</Link>
-         
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={feature.name}
+                className="relative bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-blue-400"
+              >
+                <Link to={feature.to}>
+                  <Icon className={`mx-auto mb-3 w-10 h-10 ${feature.color}`} />
+                  <div className="text-lg font-semibold">{feature.name}</div>
+                </Link>
+
+                {/* Heart Icon Toggle */}
+                <button
+                  onClick={() => toggleLike(index)}
+                  className={`absolute bottom-3 right-4 text-xl transition ${
+                    likes[index] ? 'text-red-600 scale-110' : 'text-gray-400'
+                  }`}
+                  title="Like"
+                >
+                  ❤
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
-
-     
 
       {/* Add Resource Toggle */}
       <div className="text-center mb-6">

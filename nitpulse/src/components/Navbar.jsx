@@ -57,7 +57,7 @@ const Navbar = () => {
               <NavLink to="/mqps" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setResourceDropdown(false)}>
                 MQPs
               </NavLink>
-              <NavLink to="/passing-package" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
+              <NavLink to="/passing-package" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setResourceDropdown(false)}>
                 Passing Package
                 </NavLink>
             </div>
@@ -92,7 +92,7 @@ const Navbar = () => {
               <NavLink to="/vtu-links" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
                 VTU Links
               </NavLink>
-              <NavLink to="/college-timetable" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
+              <NavLink to="/timetable" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
                 College Time Table
               </NavLink>
               <NavLink to="/updates" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
@@ -125,7 +125,7 @@ const Navbar = () => {
               <NavLink to="/cgpa" className="block" onClick={() => setMenuOpen(false)}>CGPA Calculator</NavLink>
               <NavLink to="/vtu-results" className="block" onClick={() => setMenuOpen(false)}>VTU Results</NavLink>
               <NavLink to="/vtu-links" className="block" onClick={() => setMenuOpen(false)}>VTU Links</NavLink>
-              <NavLink to="/college-timetable" className="block" onClick={() => setMenuOpen(false)}>College Time Table</NavLink>
+              <NavLink to="/timetable" className="block" onClick={() => setMenuOpen(false)}>College Time Table</NavLink>
               <NavLink to="/updates" className="block" onClick={() => setMenuOpen(false)}>Latest Updates</NavLink>
             </nav>
           </div>
