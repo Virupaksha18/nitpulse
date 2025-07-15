@@ -19,9 +19,10 @@ const Navbar = () => {
           <span className="text-2xl font-bold">NIT Pulse</span>
         </NavLink>
 
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          <button onClick={() => setMenuOpen(true)}>
+            <Menu size={24} />
           </button>
         </div>
 
@@ -46,16 +47,16 @@ const Navbar = () => {
             >
               <NavLink to="/notes" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setResourceDropdown(false)}>
                 Notes
-              </NavLink><br />
+              </NavLink>
               <NavLink to="/assignments" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setResourceDropdown(false)}>
                 Assignments
-              </NavLink><br />
+              </NavLink>
               <NavLink to="/labs" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setResourceDropdown(false)}>
                 Lab Programs
-              </NavLink><br />
+              </NavLink>
               <NavLink to="/mqps" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setResourceDropdown(false)}>
                 MQPs
-              </NavLink><br />
+              </NavLink>
             </div>
           </div>
 
@@ -99,19 +100,30 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Slide Drawer Menu */}
       {menuOpen && (
-        <div className="md:hidden px-4 pb-4 space-y-2 text-sm">
-          <NavLink to="/notes" className={linkClasses} onClick={() => setMenuOpen(false)}>Notes</NavLink><br />
-          <NavLink to="/assignments" className={linkClasses} onClick={() => setMenuOpen(false)}>Assignments</NavLink><br />
-          <NavLink to="/labs" className={linkClasses} onClick={() => setMenuOpen(false)}>Lab Programs</NavLink><br />
-          <NavLink to="/mqps" className={linkClasses} onClick={() => setMenuOpen(false)}>MQPs</NavLink><br />
-          <NavLink to="/sgpa" className={linkClasses} onClick={() => setMenuOpen(false)}>SGPA Calculator</NavLink><br />
-          <NavLink to="/cgpa" className={linkClasses} onClick={() => setMenuOpen(false)}>CGPA Calculator</NavLink><br />
-          <NavLink to="/vtu-results" className={linkClasses} onClick={() => setMenuOpen(false)}>VTU Results</NavLink><br />
-          <NavLink to="/vtu-links" className={linkClasses} onClick={() => setMenuOpen(false)}>VTU Links</NavLink><br />
-          <NavLink to="/passing-package" className={linkClasses} onClick={() => setMenuOpen(false)}>Passing Package</NavLink><br />
-          <NavLink to="/updates" className={linkClasses} onClick={() => setMenuOpen(false)}>Latest Updates</NavLink><br />
+        <div className="fixed inset-0 z-40 bg-black/50 transition-all duration-300 md:hidden">
+          <div className="absolute right-0 top-0 w-64 h-full bg-white text-blue-600 shadow-lg p-4 transition-all duration-300">
+            <div className="flex justify-end">
+              <button onClick={() => setMenuOpen(false)}>
+                <X size={24} />
+              </button>
+            </div>
+
+            <nav className="mt-6 space-y-3 font-medium">
+              <NavLink to="/notes" className="block" onClick={() => setMenuOpen(false)}>Notes</NavLink>
+              <NavLink to="/assignments" className="block" onClick={() => setMenuOpen(false)}>Assignments</NavLink>
+              <NavLink to="/labs" className="block" onClick={() => setMenuOpen(false)}>Lab Programs</NavLink>
+              <NavLink to="/mqps" className="block" onClick={() => setMenuOpen(false)}>MQPs</NavLink>
+              <hr className="my-2" />
+              <NavLink to="/sgpa" className="block" onClick={() => setMenuOpen(false)}>SGPA Calculator</NavLink>
+              <NavLink to="/cgpa" className="block" onClick={() => setMenuOpen(false)}>CGPA Calculator</NavLink>
+              <NavLink to="/vtu-results" className="block" onClick={() => setMenuOpen(false)}>VTU Results</NavLink>
+              <NavLink to="/vtu-links" className="block" onClick={() => setMenuOpen(false)}>VTU Links</NavLink>
+              <NavLink to="/passing-package" className="block" onClick={() => setMenuOpen(false)}>Passing Package</NavLink>
+              <NavLink to="/updates" className="block" onClick={() => setMenuOpen(false)}>Latest Updates</NavLink>
+            </nav>
+          </div>
         </div>
       )}
     </nav>
