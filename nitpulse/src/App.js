@@ -247,6 +247,8 @@ import AssignmentsResources from './components/CSE/2025/1st/AssignmentsResources
 import MQPQsResources from './components/CSE/2025/1st/MQPsResources';
 import PassingPackagesResources from './components/CSE/2025/1st/PassingPackagesResources';
 
+import TimeTable from './pages/TimeTable';
+
 
 
 
@@ -260,6 +262,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         {/* Other Pages */}
+        <Route path="/timetable"element={<TimeTable/>}/>
         <Route path="/sgpa" element={<SGPAPage />} />
         <Route path="/cgpa" element={<CGPAPage />} />
         <Route path="/vtu-results" element={<VTUResultsPage />} />

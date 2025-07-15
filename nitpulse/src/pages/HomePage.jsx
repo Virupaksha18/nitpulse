@@ -119,57 +119,13 @@ const HomePage = () => {
             <Paperclip className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
             Latest Updates
           </Link>
+          <Link to ="/timetable" className="bg-whitw p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-indigo-500">
+          <Clock className="mx-auto mb-3 w-10 h-10 text-indigo-600"/>College Time Table</Link>
          
         </div>
       </div>
 
-      {/* Time Table Section */}
-      <div className="text-center mb-12">
-        <button
-          onClick={() => setShowTimeTable(true)}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition"
-        >
-          <Clock className="w-5 h-5" /> College Time Table
-        </button>
-
-        {showTimeTable && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-white rounded-2xl p-6 w-full max-w-2xl relative shadow-2xl">
-              <button
-                onClick={() => {
-                  setShowTimeTable(false);
-                  setSelectedTT(null);
-                }}
-                className="absolute top-3 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold"
-              >
-                &times;
-              </button>
-              <h2 className="text-2xl font-bold mb-4 text-center text-purple-700">Choose Lecture Hall</h2>
-              <div className="flex justify-center gap-4 mb-4">
-                <button
-                  onClick={() => setSelectedTT('LH01')}
-                  className={`px-4 py-2 rounded-xl border ${selectedTT === 'LH01' ? 'bg-blue-600 text-white' : 'bg-white text-blue-600'} hover:bg-blue-100`}
-                >
-                  LH-01
-                </button>
-                <button
-                  onClick={() => setSelectedTT('LH02')}
-                  className={`px-4 py-2 rounded-xl border ${selectedTT === 'LH02' ? 'bg-green-600 text-white' : 'bg-white text-green-600'} hover:bg-green-100`}
-                >
-                  LH-02
-                </button>
-              </div>
-              {selectedTT && (
-                <img
-                  src={selectedTT === 'LH01' ? '/lh01-timetable.jpg' : '/lh02-timetable.jpg'}
-                  alt={`${selectedTT} Time Table`}
-                  className="rounded-xl mx-auto shadow max-w-full h-auto"
-                />
-              )}
-            </div>
-          </div>
-        )}
-      </div>
+     
 
       {/* Add Resource Toggle */}
       <div className="text-center mb-6">
