@@ -162,7 +162,7 @@ const HomePage = () => {
 
       {/* Feedback Section */}
       <div className="max-w-4xl mx-auto mb-20">
-        <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">Feedback from Users</h2>
+        <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">comments</h2>
         <form onSubmit={handleCommentSubmit} className="mb-6 space-y-4">
           <input
             type="text"
