@@ -5,24 +5,83 @@ const timeTableData = {
   CSE: {
     '1st Semester': {
       'LH-01': `${baseUrl}/pdfs/CSE/1st/LH-01.pdf`,
-      'LH-02': '/pdfs/CSE/1st/LH-02.pdf',
+      'LH-02': `${baseUrl}/pdfs/CSE/1st/LH-02.pdf`,
     },
-    '2nd Semester': {
-      'LH-01': '/pdfs/CSE/2nd/LH-01.pdf',
-      'LH-02': '/pdfs/CSE/2nd/LH-02.pdf',
+    '3rd Semester': {
+      'LH-01':`${baseUrl}/pdfs/CSE/3rd/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/CSE/3rd/LH-02.pdf`,
+    },
+    '5th semester':{
+      'LH-01':`${baseUrl}/pdfs/CSE/5th/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/CSE/5th/LH-02.pdf`,
+    },
+    '7th semester':{
+      'LH-01':`${baseUrl}/pdfs/CSE/7th/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/CSE/7th/LH-02.pdf`,
     },
   },
   ECE: {
     '1st Semester': {
-      'LH-01': '/pdfs/ECE/1st/LH-01.pdf',
-      'LH-02': '/pdfs/ECE/1st/LH-02.pdf',
+      'LH-01': `${baseUrl}/pdfs/ECE/1st/LH-01.pdf`,
+      'LH-02': `${baseUrl}/pdfs/ECE/1st/LH-02.pdf`,
     },
-    '2nd Semester': {
-      'LH-01': '/pdfs/ECE/2nd/LH-01.pdf',
-      'LH-02': '/pdfs/ECE/2nd/LH-02.pdf',
+    '3rd Semester': {
+      'LH-01':`${baseUrl}/pdfs/ECE/3rd/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/ECE/3rd/LH-02.pdf`,
+    },
+    '5th semester':{
+      'LH-01':`${baseUrl}/pdfs/ECE/5th/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/ECE/5th/LH-02.pdf`,
+    },
+    '7th semester':{
+      'LH-01':`${baseUrl}/pdfs/ECE/7th/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/ECE/7th/LH-02.pdf`,
     },
   },
-  // Add other branches: EEE, CIVIL, AIML
+  EEE:{
+    '1st Semester': {
+      'LH-01': `${baseUrl}/pdfs/EEE/1st/LH-01.pdf`,
+      'LH-02': `${baseUrl}/pdfs/EEE/1st/LH-02.pdf`,
+    },
+    '3rd Semester': {
+      'LH-01':`${baseUrl}/pdfs/EEE/3rd/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/EEE/3rd/LH-02.pdf`,
+    },
+    '5th semester':{
+      'LH-01':`${baseUrl}/pdfs/EEE/5th/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/EEE/5th/LH-02.pdf`,
+    },
+    '7th semester':{
+      'LH-01':`${baseUrl}/pdfs/EEE/7th/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/EEE/7th/LH-02.pdf`,
+    },
+  },
+  CIVIL:{
+    '1st Semester': {
+      'LH-01': `${baseUrl}/pdfs/CIVIL/1st/LH-01.pdf`,
+      'LH-02': `${baseUrl}/pdfs/CIVIL/1st/LH-02.pdf`,
+    },
+    '3rd Semester': {
+      'LH-01':`${baseUrl}/pdfs/CIVIL/3rd/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/CIVIL/3rd/LH-02.pdf`,
+    },
+    '5th semester':{
+      'LH-01':`${baseUrl}/pdfs/CIVIL/5th/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/CIVIL/5th/LH-02.pdf`,
+    },
+    '7th semester':{
+      'LH-01':`${baseUrl}/pdfs/CIVIL/7th/LH-01.pdf`,
+      'LH-02':`${baseUrl}/pdfs/CIVIL/7th/LH-02.pdf`,
+    },
+  },
+  AIML:{
+    '1st Semester': {
+      'LH-01': `${baseUrl}/pdfs/AIML/1st/LH-01.pdf`,
+      'LH-02': `${baseUrl}/pdfs/AIML/1st/LH-02.pdf`,
+    },
+
+  },
+ 
 };
 
 const TimeTable = () => {
