@@ -9,8 +9,6 @@ import {
 const HomePage = () => {
   const [search, setSearch] = useState('');
   const [showForm, setShowForm] = useState(false);
-  const [showTimeTable, setShowTimeTable] = useState(false);
-  const [selectedTT, setSelectedTT] = useState(null);
   const [formData, setFormData] = useState({
     title: '',
     type: 'Notes',
@@ -119,7 +117,7 @@ const HomePage = () => {
             <Paperclip className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
             Latest Updates
           </Link>
-          <Link to ="/timetable" className="bg-whitw p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-indigo-500">
+          <Link to ="/timetable" className="bg-white p-5 rounded-2xl shadow-md hover:shadow-xl text-center border hover:border-indigo-500">
           <Clock className="mx-auto mb-3 w-10 h-10 text-indigo-600"/>College Time Table</Link>
          
         </div>

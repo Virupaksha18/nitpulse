@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+const baseUrl = process.env.REACT_APP_BASE_URL;
 
 const timeTableData = {
   CSE: {
     '1st Semester': {
-      'LH-01': '/pdfs/CSE/1st/LH-01.pdf',
+      'LH-01': `${baseUrl}/pdfs/CSE/1st/LH-01.pdf`,
       'LH-02': '/pdfs/CSE/1st/LH-02.pdf',
     },
     '2nd Semester': {

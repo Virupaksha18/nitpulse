@@ -14,6 +14,7 @@ app.use(express.json());
 
 // Serve static files (like PDFs)
 app.use('/files', express.static(path.join(__dirname, 'files')));
+app.use('/pdfs',express.static(path.join(__dirname,'public/pdfs')));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
