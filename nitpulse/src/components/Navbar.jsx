@@ -57,6 +57,9 @@ const Navbar = () => {
               <NavLink to="/mqps" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setResourceDropdown(false)}>
                 MQPs
               </NavLink>
+              <NavLink to="/passing-package" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
+                Passing Package
+                </NavLink>
             </div>
           </div>
 
@@ -89,8 +92,8 @@ const Navbar = () => {
               <NavLink to="/vtu-links" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
                 VTU Links
               </NavLink>
-              <NavLink to="/passing-package" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
-                Passing Package
+              <NavLink to="/college-timetable" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
+                College Time Table
               </NavLink>
               <NavLink to="/updates" className="block px-4 py-2 hover:bg-gray-100" onClick={() => setExtrasDropdown(false)}>
                 Latest Updates
@@ -115,12 +118,14 @@ const Navbar = () => {
               <NavLink to="/assignments" className="block" onClick={() => setMenuOpen(false)}>Assignments</NavLink>
               <NavLink to="/labs" className="block" onClick={() => setMenuOpen(false)}>Lab Programs</NavLink>
               <NavLink to="/mqps" className="block" onClick={() => setMenuOpen(false)}>MQPs</NavLink>
+              <NavLink to="/passing-package" className="block" onClick={() => setMenuOpen(false)}>Passing Package</NavLink>
+
               <hr className="my-2" />
               <NavLink to="/sgpa" className="block" onClick={() => setMenuOpen(false)}>SGPA Calculator</NavLink>
               <NavLink to="/cgpa" className="block" onClick={() => setMenuOpen(false)}>CGPA Calculator</NavLink>
               <NavLink to="/vtu-results" className="block" onClick={() => setMenuOpen(false)}>VTU Results</NavLink>
               <NavLink to="/vtu-links" className="block" onClick={() => setMenuOpen(false)}>VTU Links</NavLink>
-              <NavLink to="/passing-package" className="block" onClick={() => setMenuOpen(false)}>Passing Package</NavLink>
+              <NavLink to="/college-timetable" className="block" onClick={() => setMenuOpen(false)}>College Time Table</NavLink>
               <NavLink to="/updates" className="block" onClick={() => setMenuOpen(false)}>Latest Updates</NavLink>
             </nav>
           </div>
