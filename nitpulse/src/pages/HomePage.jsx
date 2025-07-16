@@ -56,7 +56,7 @@ const HomePage = () => {
   };
 
   const resources = [
-    { name: 'Branches', path: '/branch', icon: GitBranchPlusIcon, color: 'text-white-600' }
+    { name: 'Branches', path: '/branches', icon: GitBranchPlusIcon, color: 'text-white-600' }
   ];
 
   const filteredResources = resources.filter(res =>
