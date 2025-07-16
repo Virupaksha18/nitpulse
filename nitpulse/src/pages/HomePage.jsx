@@ -21,6 +21,7 @@ const HomePage = () => {
   const [userEmail, setUserEmail] = useState('');
   const [newComment, setNewComment] = useState('');
   const [comments, setComments] = useState([]);
+  const [replyText,setReplyText] = useState({});
 
   useEffect(() => {
     fetchComments();
@@ -29,7 +30,7 @@ const HomePage = () => {
   const fetchComments = async () => {
     try {
       const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/comments`);
-      setComments(res.data);
+      setComments(res.data.slice(0,2));
     } catch (err) {
       console.error('Failed to fetch comments:', err);
     }
@@ -54,7 +55,91 @@ const HomePage = () => {
       console.error('Failed to submit comment:', err);
     }
   };
+const handleDeleteComment = async (id, email) => {
+  const currentUserEmail = prompt('Please enter your email to confirm deletion:');
+  if (!currentUserEmail || (currentUserEmail !== email && currentUserEmail !== 'admin@example.com')) {
+    alert("Unauthorized to delete this comment.");
+    return;
+  }
 
+  try {
+    await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/comments/${id}?email=${currentUserEmail}`);
+    fetchComments();
+  } catch (err) {
+    console.error('Failed to delete comment:', err);
+  }
+};
+const handleReplySubmit = async (commentId) => {
+  if (!replyText[commentId]) return;
+  if (!userName || !userEmail) {
+    alert("Please enter your name and email above before replying.");
+    return;
+  }
+
+  try {
+    await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments/${commentId}/reply`, {
+      name: userName,
+      email: userEmail,
+      text: replyText[commentId]
+    });
+    setReplyText((prev) => ({ ...prev, [commentId]: '' }));
+    fetchComments();
+  } catch (err) {
+    console.error('Failed to reply:', err);
+  }
+};
+<div className="space-y-4">
+  {comments.length === 0 && <p className="text-center text-gray-500">No comments yet. Be the first!</p>}
+  {comments.map((comment) => (
+    <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
+      <div className="flex justify-between items-center">
+        <p className="font-semibold text-blue-700">{comment.name}</p>
+        {(userEmail === comment.email || userEmail === 'admin@example.com') && (
+          <button
+            onClick={() => handleDeleteComment(comment._id, comment.email)}
+            className="text-red-500 text-sm"
+          >
+            Delete
+          </button>
+        )}
+      </div>
+      <p className="text-gray-800 mt-1">{comment.text}</p>
+      <p className="text-xs text-gray-500 text-right mt-2">
+        {new Date(comment.createdAt).toLocaleString()}
+      </p>
+
+      {/* Replies */}
+      {comment.replies?.length > 0 && (
+        <div className="mt-4 ml-4 space-y-2">
+          {comment.replies.map((reply, index) => (
+            <div key={index} className="border-l-4 border-blue-200 pl-3 text-sm text-gray-700">
+              <p className="font-medium text-blue-600">{reply.name}</p>
+              <p>{reply.text}</p>
+              <p className="text-xs text-gray-400">{new Date(reply.createdAt).toLocaleString()}</p>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Reply Box */}
+      <div className="mt-4">
+        <textarea
+          rows="2"
+          placeholder="Reply to this comment..."
+          className="w-full p-2 border rounded-md"
+          value={replyText[comment._id] || ''}
+          onChange={(e) => setReplyText({ ...replyText, [comment._id]: e.target.value })}
+        ></textarea>
+        <button
+          onClick={() => handleReplySubmit(comment._id)}
+          className="mt-2 px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
+        >
+          Reply
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
   const resources = [
     { name: 'Branches', path: '/branches', icon: GitBranchPlusIcon, color: 'text-white-600' }
   ];

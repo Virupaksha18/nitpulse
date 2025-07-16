@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Comment = require('../models/comment');
 
-// GET all comments
+// GET all comments (sorted latest first)
 router.get('/', async (req, res) => {
   try {
     const comments = await Comment.find().sort({ createdAt: -1 });
@@ -14,13 +14,13 @@ router.get('/', async (req, res) => {
 
 // POST a new comment
 router.post('/', async (req, res) => {
-  const { name,email,text } = req.body;
-  if (!name ||!email ||!text) {
-    return res.status(400).json({ message:'All fields are required' });
+  const { name, email, text } = req.body;
+  if (!name || !email || !text) {
+    return res.status(400).json({ message: 'All fields are required' });
   }
 
   try {
-    const newComment = new Comment({name,email,text });
+    const newComment = new Comment({ name, email, text });
     await newComment.save();
     res.status(201).json(newComment);
   } catch (err) {
@@ -28,4 +28,41 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router;
+// DELETE a comment
+router.delete('/:id', async (req, res) => {
+  const { email } = req.query;
+
+  try {
+    const comment = await Comment.findById(req.params.id);
+    if (!comment) return res.status(404).json({ message: 'Comment not found' });
+
+    // Allow only owner or admin
+    if (email !== comment.email && email !== 'admin@example.com') {
+      return res.status(403).json({ message: 'Unauthorized to delete this comment' });
+    }
+
+    await comment.deleteOne();
+    res.json({ message: 'Comment deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: 'Server error while deleting comment' });
+  }
+});
+
+// POST a reply to a comment
+router.post('/:id/reply', async (req, res) => {
+  const { name, email, text } = req.body;
+  if (!name || !email || !text) {
+    return res.status(400).json({ message: 'All fields are required for reply' });
+  }
+
+  try {
+    const comment = await Comment.findById(req.params.id);
+    if (!comment) return res.status(404).json({ message: 'Parent comment not found' });
+
+    comment.replies.push({ name, email, text });
+    await comment.save();
+    res.status(201).json(comment);
+  } catch (err) {
+    res.status(500).json({ error: 'Server error while replying' });
+  }
+});
