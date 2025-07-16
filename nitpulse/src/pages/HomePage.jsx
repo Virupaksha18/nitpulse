@@ -88,58 +88,7 @@ const handleReplySubmit = async (commentId) => {
     console.error('Failed to reply:', err);
   }
 };
-<div className="space-y-4">
-  {comments.length === 0 && <p className="text-center text-gray-500">No comments yet. Be the first!</p>}
-  {comments.map((comment) => (
-    <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
-      <div className="flex justify-between items-center">
-        <p className="font-semibold text-blue-700">{comment.name}</p>
-        {(userEmail === comment.email || userEmail === 'admin@example.com') && (
-          <button
-            onClick={() => handleDeleteComment(comment._id, comment.email)}
-            className="text-red-500 text-sm"
-          >
-            Delete
-          </button>
-        )}
-      </div>
-      <p className="text-gray-800 mt-1">{comment.text}</p>
-      <p className="text-xs text-gray-500 text-right mt-2">
-        {new Date(comment.createdAt).toLocaleString()}
-      </p>
 
-      {/* Replies */}
-      {comment.replies?.length > 0 && (
-        <div className="mt-4 ml-4 space-y-2">
-          {comment.replies.map((reply, index) => (
-            <div key={index} className="border-l-4 border-blue-200 pl-3 text-sm text-gray-700">
-              <p className="font-medium text-blue-600">{reply.name}</p>
-              <p>{reply.text}</p>
-              <p className="text-xs text-gray-400">{new Date(reply.createdAt).toLocaleString()}</p>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Reply Box */}
-      <div className="mt-4">
-        <textarea
-          rows="2"
-          placeholder="Reply to this comment..."
-          className="w-full p-2 border rounded-md"
-          value={replyText[comment._id] || ''}
-          onChange={(e) => setReplyText({ ...replyText, [comment._id]: e.target.value })}
-        ></textarea>
-        <button
-          onClick={() => handleReplySubmit(comment._id)}
-          className="mt-2 px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700"
-        >
-          Reply
-        </button>
-      </div>
-    </div>
-  ))}
-</div>
   const resources = [
     { name: 'Branches', path: '/branches', icon: GitBranchPlusIcon, color: 'text-white-600' }
   ];
@@ -245,50 +194,48 @@ const handleReplySubmit = async (commentId) => {
         </div>
       </div>
 
-      {/* Feedback Section */}
       <div className="max-w-4xl mx-auto mb-20">
-        <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">comments</h2>
+        <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">Comments</h2>
         <form onSubmit={handleCommentSubmit} className="mb-6 space-y-4">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full p-3 border border-gray-300 rounded-xl"
-            value={userName}
-            onChange={(e) => setUserName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full p-3 border border-gray-300 rounded-xl"
-            value={userEmail}
-            onChange={(e) => setUserEmail(e.target.value)}
-            required
-          />
-          <textarea
-            className="w-full p-3 border border-gray-300 rounded-xl"
-            rows="3"
-            placeholder="Share your thoughts or suggestions..."
-            value={newComment}
-            onChange={(e) => setNewComment(e.target.value)}
-            required
-          ></textarea>
-          <button type="submit" className="mt-3 bg-blue-600 text-white py-2 px-6 rounded-xl hover:bg-blue-700">
-            Submit Feedback
-          </button>
+          <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-xl" value={userName} onChange={(e) => setUserName(e.target.value)} required />
+          <input type="email" placeholder="Your Email" className="w-full p-3 border border-gray-300 rounded-xl" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} required />
+          <textarea className="w-full p-3 border border-gray-300 rounded-xl" rows="3" placeholder="Share your thoughts or suggestions..." value={newComment} onChange={(e) => setNewComment(e.target.value)} required></textarea>
+          <button type="submit" className="mt-3 bg-blue-600 text-white py-2 px-6 rounded-xl hover:bg-blue-700">Submit Feedback</button>
         </form>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           {comments.length === 0 && <p className="text-center text-gray-500">No comments yet. Be the first!</p>}
           {comments.map((comment) => (
             <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
-              <p className="font-semibold text-blue-700">{comment.name}</p>
+              <div className="flex justify-between items-center">
+                <p className="font-semibold text-blue-700">{comment.name}</p>
+                {(userEmail === comment.email || userEmail === 'admin@example.com') && (
+                  <button onClick={() => handleDeleteComment(comment._id, comment.email)} className="text-red-500 text-sm">Delete</button>
+                )}
+              </div>
               <p className="text-gray-800 mt-1">{comment.text}</p>
               <p className="text-xs text-gray-500 text-right mt-2">{new Date(comment.createdAt).toLocaleString()}</p>
+
+              {comment.replies?.length > 0 && (
+                <div className="mt-4 ml-4 space-y-2">
+                  {comment.replies.map((reply, index) => (
+                    <div key={index} className="border-l-4 border-blue-200 pl-3 text-sm text-gray-700">
+                      <p className="font-medium text-blue-600">{reply.name}</p>
+                      <p>{reply.text}</p>
+                      <p className="text-xs text-gray-400">{new Date(reply.createdAt).toLocaleString()}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="mt-4">
+                <textarea rows="2" placeholder="Reply to this comment..." className="w-full p-2 border rounded-md" value={replyText[comment._id] || ''} onChange={(e) => setReplyText({ ...replyText, [comment._id]: e.target.value })}></textarea>
+                <button onClick={() => handleReplySubmit(comment._id)} className="mt-2 px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Reply</button>
+              </div>
             </div>
           ))}
         </div>
-      </div>
+      </div>
 
       {/* Add Resource Button */}
       <div className="text-center mb-6">
