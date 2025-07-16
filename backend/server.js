@@ -10,7 +10,12 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin:['http://localhost:3000','https://nitpulse.vercel.app'],
+  methods:['GET','POST','DELETE'],
+  credentials:true
+}));
+
 app.use(express.json());
 
 // Serve static files (like PDFs)
