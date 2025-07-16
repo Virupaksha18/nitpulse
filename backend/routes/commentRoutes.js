@@ -28,27 +28,29 @@ router.post('/', async (req, res) => {
   }
 });
 
-// DELETE a comment
-router.delete('/:id', async (req, res) => {
+// ✅ FIXED: DELETE a comment
+router.delete('/comments/:commentId', async (req, res) => {
   const { email } = req.query;
+  const { commentId } = req.params;
 
   try {
-    const comment = await Comment.findById(req.params.id);
+    const comment = await Comment.findById(commentId);
     if (!comment) return res.status(404).json({ message: 'Comment not found' });
 
     // Allow only owner or admin
-    if (email !== comment.email && email !== 'admin@example.com') {
+    if (comment.email === email || email === 'admin@example.com') {
+      await Comment.findByIdAndDelete(commentId);
+      return res.status(200).json({ message: 'Comment deleted successfully' });
+    } else {
       return res.status(403).json({ message: 'Unauthorized to delete this comment' });
     }
-
-    await comment.deleteOne();
-    res.json({ message: 'Comment deleted successfully' });
   } catch (err) {
-    res.status(500).json({ error: 'Server error while deleting comment' });
+    console.error('Error deleting comment:', err);
+    return res.status(500).json({ message: 'Server error while deleting comment' });
   }
 });
 
-// POST a reply to a comment
+// ✅ POST a reply to a comment
 router.post('/:id/reply', async (req, res) => {
   const { name, email, text } = req.body;
   if (!name || !email || !text) {
@@ -63,6 +65,8 @@ router.post('/:id/reply', async (req, res) => {
     await comment.save();
     res.status(201).json(comment);
   } catch (err) {
-    res.status(500).json({ error: 'Server error while replying' });
-  }
+    res.status(500).json({ error: 'Server error while replying' });
+  }
 });
+
+module.exports = router;

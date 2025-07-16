@@ -64,7 +64,7 @@ const handleDeleteComment = async (commentId, commentEmail) => {
   }
 
   try {
-    await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/comments/${id}?email=${currentUserEmail}`);
+    await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/comments/${commentId}?email=${currentUserEmail}`);
     fetchComments();
   } catch (err) {
     console.error('Failed to delete comment:', err);
