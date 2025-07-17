@@ -30,24 +30,20 @@ router.post('/', async (req, res) => {
 
 // ✅ FIXED: DELETE a comment
 router.delete('/:commentId', async (req, res) => {
-  const { usn} = req.query;
-  const { commentId } = req.params;
+  const { usn } = req.query;
 
-  try {
-    const comment = await Comment.findById(commentId);
-    if (!comment) return res.status(404).json({ message: 'Comment not found' });
+  const comment = await Comment.findById(req.params.commentId);
+  if (!comment) return res.status(404).json({ message: 'Comment not found' });
 
-    // Allow only owner or admin
-    if (comment.usn === usn) {
-      await Comment.findByIdAndDelete(commentId);
-      return res.status(200).json({ message: 'Comment deleted successfully' });
-    } else {
-      return res.status(403).json({ message: 'Unauthorized to delete this comment' });
-    }
-  } catch (err) {
-    console.error('Error deleting comment:', err);
-    return res.status(500).json({ message: 'Server error while deleting comment' });
+  const isAdmin = usn === 'admin123'; // Replace with your admin's USN
+  const isCommentOwner = comment.usn === usn;
+
+  if (!isAdmin && !isCommentOwner) {
+    return res.status(403).json({ message: 'Not authorized to delete' });
   }
+
+  await Comment.findByIdAndDelete(req.params.commentId);
+  res.status(200).json({ message: 'Comment deleted' });
 });
 
 // ✅ POST a reply to a comment

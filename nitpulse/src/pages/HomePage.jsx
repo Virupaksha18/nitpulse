@@ -56,15 +56,15 @@ const HomePage = () => {
     }
   };
 const handleDeleteComment = async (commentId, commentUsn) => {
-  const currentUserUsn = userUsn || prompt('Enter your usn to confirm deletion:');
-  
-  if (!currentUserUsn || (currentUserUsn !== commentUsn )) {
+  const currentUserUsn = userUsn || prompt('Enter your USN to confirm deletion:');
+
+  if (!currentUserUsn || (currentUserUsn !== commentUsn && currentUserUsn !== 'admin123')) {
     alert('You are not authorized to delete this comment.');
     return;
   }
 
   try {
-    await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/comments/${commentId}?email=${currentUserUsn}`);
+    await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/comments/${commentId}?usn=${currentUserUsn}`);
     fetchComments();
   } catch (err) {
     console.error('Failed to delete comment:', err);
