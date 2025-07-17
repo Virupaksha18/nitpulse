@@ -35,7 +35,7 @@ router.delete('/:commentId', async (req, res) => {
   const comment = await Comment.findById(req.params.commentId);
   if (!comment) return res.status(404).json({ message: 'Comment not found' });
 
-  const isAdmin = usn === '3NA22CS092'; // Replace with your admin's USN
+  const isAdmin = usn === 'admin123'; // Replace with your admin's USN
   const isCommentOwner = comment.usn === usn;
 
   if (!isAdmin && !isCommentOwner) {

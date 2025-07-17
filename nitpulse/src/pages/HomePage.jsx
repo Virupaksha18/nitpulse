@@ -58,7 +58,7 @@ const HomePage = () => {
 const handleDeleteComment = async (commentId, commentUsn) => {
   const currentUserUsn = userUsn || prompt('Enter your USN to confirm deletion:');
 
-  if (!currentUserUsn || (currentUserUsn !== commentUsn && currentUserUsn !== '3NA22CS092')) {
+  if (!currentUserUsn || (currentUserUsn !== commentUsn && currentUserUsn !== 'admin123')) {
     alert('You are not authorized to delete this comment.');
     return;
   }
