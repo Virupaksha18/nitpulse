@@ -18,7 +18,7 @@ const HomePage = () => {
   });
 
   const [userName, setUserName] = useState('');
-  const [userEmail, setUserEmail] = useState('');
+  const [userUsn, setUserUsn] = useState('');
   const [newComment, setNewComment] = useState('');
   const [comments, setComments] = useState([]);
   const [replyText,setReplyText] = useState({});
@@ -38,33 +38,33 @@ const HomePage = () => {
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
-    if (!newComment.trim() || !userName.trim() || !userEmail.trim()) return;
+    if (!newComment.trim() || !userName.trim() || !userUsn.trim()) return;
 
     try {
       await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments`, {
         text: newComment,
         name: userName,
-        email: userEmail
+        email: userUsn
       });
 
       setNewComment('');
       setUserName('');
-      setUserEmail('');
+      setUserUsn('');
       fetchComments();
     } catch (err) {
       console.error('Failed to submit comment:', err);
     }
   };
-const handleDeleteComment = async (commentId, commentEmail) => {
-  const currentUserEmail = userEmail || prompt('Enter your email to confirm deletion:');
+const handleDeleteComment = async (commentId, commentUsn) => {
+  const currentUserUsn = userUsn || prompt('Enter your usn to confirm deletion:');
   
-  if (!currentUserEmail || (currentUserEmail !== commentEmail && currentUserEmail !== 'admin@example.com')) {
+  if (!currentUserUsn || (currentUserUsn !== commentUsn )) {
     alert('You are not authorized to delete this comment.');
     return;
   }
 
   try {
-    await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/comments/${commentId}?email=${currentUserEmail}`);
+    await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/comments/${commentId}?email=${currentUserUsn}`);
     fetchComments();
   } catch (err) {
     console.error('Failed to delete comment:', err);
@@ -73,15 +73,15 @@ const handleDeleteComment = async (commentId, commentEmail) => {
 };
 const handleReplySubmit = async (commentId) => {
   if (!replyText[commentId]) return;
-  if (!userName || !userEmail) {
-    alert("Please enter your name and email above before replying.");
+  if (!userName || !userUsn) {
+    alert("Please enter your name and usn above before replying.");
     return;
   }
 
   try {
     await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments/${commentId}/reply`, {
       name: userName,
-      email: userEmail,
+      email: userUsn,
       text: replyText[commentId]
     });
     setReplyText((prev) => ({ ...prev, [commentId]: '' }));
@@ -197,10 +197,10 @@ const handleReplySubmit = async (commentId) => {
       </div>
 
       <div className="max-w-4xl mx-auto mb-20">
-        <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">Comments</h2>
+        <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">Feedback</h2>
         <form onSubmit={handleCommentSubmit} className="mb-6 space-y-4">
           <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-xl" value={userName} onChange={(e) => setUserName(e.target.value)} required />
-          <input type="email" placeholder="Your Email" className="w-full p-3 border border-gray-300 rounded-xl" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} required />
+          <input type="text" placeholder="Your Usn" className="w-full p-3 border border-gray-300 rounded-xl" value={userUsn} onChange={(e) => setUserUsn(e.target.value)} required />
           <textarea className="w-full p-3 border border-gray-300 rounded-xl" rows="3" placeholder="Share your thoughts or suggestions..." value={newComment} onChange={(e) => setNewComment(e.target.value)} required></textarea>
           <button type="submit" className="mt-3 bg-blue-600 text-white py-2 px-6 rounded-xl hover:bg-blue-700">Submit Feedback</button>
         </form>
@@ -211,8 +211,8 @@ const handleReplySubmit = async (commentId) => {
             <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
               <div className="flex justify-between items-center">
                 <p className="font-semibold text-blue-700">{comment.name}</p>
-                {(userEmail === comment.email || userEmail === 'admin@example.com') && (
-                  <button onClick={() => handleDeleteComment(comment._id, comment.email)} className="text-red-500 text-sm">Delete</button>
+                {(userUsn === comment.usn ) && (
+                  <button onClick={() => handleDeleteComment(comment._id, comment.usn)} className="text-red-500 text-sm">Delete</button>
                 )}
               </div>
               <p className="text-gray-800 mt-1">{comment.text}</p>

@@ -14,13 +14,13 @@ router.get('/comments', async (req, res) => {
 
 // POST a new comment
 router.post('/', async (req, res) => {
-  const { name, email, text } = req.body;
-  if (!name || !email || !text) {
+  const { name, usn, text } = req.body;
+  if (!name || !usn || !text) {
     return res.status(400).json({ message: 'All fields are required' });
   }
 
   try {
-    const newComment = new Comment({ name, email, text });
+    const newComment = new Comment({ name, usn, text });
     await newComment.save();
     res.status(201).json(newComment);
   } catch (err) {
@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 
 // ✅ FIXED: DELETE a comment
 router.delete('/:commentId', async (req, res) => {
-  const { email } = req.query;
+  const { usn} = req.query;
   const { commentId } = req.params;
 
   try {
@@ -38,7 +38,7 @@ router.delete('/:commentId', async (req, res) => {
     if (!comment) return res.status(404).json({ message: 'Comment not found' });
 
     // Allow only owner or admin
-    if (comment.email === email || email === 'admin@example.com') {
+    if (comment.usn === usn) {
       await Comment.findByIdAndDelete(commentId);
       return res.status(200).json({ message: 'Comment deleted successfully' });
     } else {
@@ -52,8 +52,8 @@ router.delete('/:commentId', async (req, res) => {
 
 // ✅ POST a reply to a comment
 router.post('/:id/reply', async (req, res) => {
-  const { name, email, text } = req.body;
-  if (!name || !email || !text) {
+  const { name, usn, text } = req.body;
+  if (!name || !usn || !text) {
     return res.status(400).json({ message: 'All fields are required for reply' });
   }
 
@@ -61,7 +61,7 @@ router.post('/:id/reply', async (req, res) => {
     const comment = await Comment.findById(req.params.id);
     if (!comment) return res.status(404).json({ message: 'Parent comment not found' });
 
-    comment.replies.push({ name, email, text });
+    comment.replies.push({ name, usn, text });
     await comment.save();
     res.status(201).json(comment);
   } catch (err) {
