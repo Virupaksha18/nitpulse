@@ -3,9 +3,9 @@ const router = express.Router();
 const Comment = require('../models/comment');
 
 // GET all comments (sorted latest first)
-router.get('/', async (req, res) => {
+router.get('/comments', async (req, res) => {
   try {
-    const comments = await Comment.find().sort({ createdAt: -1 });
+    const comments = await Comment.find().sort({ createdAt: -1 }).limit(20);
     res.json(comments);
   } catch (err) {
     res.status(500).json({ error: 'Server error while fetching comments' });
@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
 });
 
 // ✅ FIXED: DELETE a comment
-router.delete('/comments/:commentId', async (req, res) => {
+router.delete('/:commentId', async (req, res) => {
   const { email } = req.query;
   const { commentId } = req.params;
 
