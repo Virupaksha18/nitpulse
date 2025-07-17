@@ -14,20 +14,27 @@ router.get('/', async (req, res) => {
 
 // POST a new comment
 router.post('/', async (req, res) => {
-  const { name, usn, text } = req.body;
-  if (!name || !usn || !text) {
-    return res.status(400).json({ message: 'All fields are required' });
-  }
-
   try {
-    const newComment = new Comment({ name, usn, text });
-    await newComment.save();
-    res.status(201).json(newComment);
+    const comment = new Comment(req.body);
+    await comment.save();
+    res.status(201).json(comment);
   } catch (err) {
-    res.status(500).json({ error: 'Server error while saving comment' });
+    res.status(400).json({ error: err.message });
   }
 });
 
+router.post('/:commentId/reply', async (req, res) => {
+  try {
+    const comment = await Comment.findById(req.params.commentId);
+    if (!comment) return res.status(404).json({ error: 'Comment not found' });
+
+    comment.replies.push(req.body);
+    await comment.save();
+    res.status(201).json(comment);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
 // ✅ FIXED: DELETE a comment
 router.delete('/:commentId', async (req, res) => {
   const { usn } = req.query;

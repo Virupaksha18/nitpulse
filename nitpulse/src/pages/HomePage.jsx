@@ -36,25 +36,28 @@ const HomePage = () => {
     }
   };
 
-  const handleCommentSubmit = async (e) => {
-    e.preventDefault();
-    if (!newComment.trim() || !userName.trim() || !userUsn.trim()) return;
+ const handleCommentSubmit = async (e) => {
+  e.preventDefault();
 
-    try {
-      await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments`, {
-        text: newComment,
-        name: userName,
-        usn: userUsn
-      });
+  if (!newComment.trim() || !userName.trim() || !userUsn.trim()) return;
 
-      setNewComment('');
-      setUserName('');
-      setUserUsn('');
-      fetchComments();
-    } catch (err) {
-      console.error('Failed to submit comment:', err);
-    }
-  };
+  const formattedUSN = userUsn.trim().toUpperCase(); // Capitalize USN
+
+  try {
+    await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments`, {
+      text: newComment.trim(),
+      name: userName.trim(),
+      usn: formattedUSN
+    });
+
+    setNewComment('');
+    setUserName('');
+    setUserUsn('');
+    fetchComments();
+  } catch (err) {
+    console.error('Failed to submit comment:', err);
+  }
+};
 const handleDeleteComment = async (commentId, commentUsn) => {
   const currentUserUsn = userUsn || prompt('Enter your USN to confirm deletion:');
 
