@@ -11,7 +11,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin:['http://localhost:3000','https://nitpulse.vercel.app'],
+  origin:['https://nitpulse.vercel.app'],
   methods:['GET','POST','DELETE'],
   credentials:true
 }));
