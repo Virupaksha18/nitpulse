@@ -31,7 +31,7 @@ const HomePage = () => {
   const fetchComments = async () => {
     try {
       const res = await axios.get(`${process.env.REACT_APP_BASE_URL}/api/comments`);
-      setComments(res.data.slice(0,2));
+      setComments(res.data.slice(0,10));
     } catch (err) {
       console.error('Failed to fetch comments:', err);
     }
@@ -63,19 +63,25 @@ const HomePage = () => {
   }
 };
 const handleDeleteComment = async (commentId, commentUsn) => {
-  const currentUserUsn = userUsn || prompt('Enter your USN to confirm deletion:');
-
-  if (!currentUserUsn || (currentUserUsn !== commentUsn && currentUserUsn !== 'admin123')) {
-    alert('You are not authorized to delete this comment.');
-    return;
-  }
+  const confirmDelete = window.confirm("Are you sure you want to delete this comment?");
+  if (!confirmDelete) return;
 
   try {
-    await axios.delete(`${process.env.REACT_APP_BASE_URL}/api/comments/${commentId}?usn=${currentUserUsn}`);
-    fetchComments();
-  } catch (err) {
-    console.error('Failed to delete comment:', err);
-    alert('Error deleting comment. Try again.');
+    const response = await fetch(`http://localhost:5000/api/comments/${commentId}?usn=${commentUsn}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      alert("Comment deleted successfully!");
+      // Remove comment from local state (if needed)
+      setComments((prevComments) => prevComments.filter(comment => comment._id !== commentId));
+    } else {
+      const data = await response.json();
+      alert(`Error: ${data.message}`);
+    }
+  } catch (error) {
+    console.error("Error deleting comment:", error);
+    alert("An error occurred while deleting the comment.");
   }
 };
 const handleReplySubmit = async (commentId) => {
@@ -223,7 +229,7 @@ const handleReplySubmit = async (commentId) => {
             <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
               <div className="flex justify-between items-center">
                 <p className="font-semibold text-blue-700">{comment.name}</p>
-                {(userUsn === comment.usn ) && (
+                {(userUsn === comment.usn || userUsn === '3NA22CS092') && (
                   <button onClick={() => handleDeleteComment(comment._id, comment.usn)} className="text-red-500 text-sm">Delete</button>
                 )}
               </div>
