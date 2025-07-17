@@ -20,7 +20,7 @@ app.use(express.json());
 
 // Serve static files (like PDFs)
 const commentRoutes =require('./routes/commentRoutes');
-app.use('/api/comments',commentRoutes);
+app.use('/api/comment',commentRoutes);
 app.use(bodyParser.json());
 app.use('/files', express.static(path.join(__dirname, 'files')));
 app.use('/pdfs',express.static(path.join(__dirname,'public/pdfs')));
