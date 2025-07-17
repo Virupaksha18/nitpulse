@@ -3,9 +3,9 @@ const router = express.Router();
 const Comment = require('../models/comment');
 
 // GET all comments (sorted latest first)
-router.get('/comments', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const comments = await Comment.find().sort({ createdAt: -1 }).limit(20);
+    const comments = await Comment.find().sort({ createdAt: -1 }).limit(5);
     res.json(comments);
   } catch (err) {
     res.status(500).json({ error: 'Server error while fetching comments' });
