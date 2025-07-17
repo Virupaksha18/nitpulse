@@ -216,7 +216,7 @@ const handleReplySubmit = async (commentId) => {
         <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">Feedback</h2>
         <form onSubmit={handleCommentSubmit} className="mb-6 space-y-4">
           <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-xl" value={userName} onChange={(e) => setUserName(e.target.value)} required />
-          <input type="text" placeholder="Your Usn" className="w-full p-3 border border-gray-300 rounded-xl" value={userUsn} onChange={(e) => setUserUsn(e.target.value)} required />
+          <input type="text" placeholder="Your Usn" className="w-full p-3 border border-gray-300 rounded-xl" value={userUsn} onChange={(e) => setUserUsn(e.target.value.toUpperCase())} required />
           <textarea className="w-full p-3 border border-gray-300 rounded-xl" rows="3" placeholder="Share your thoughts or suggestions..." value={newComment} onChange={(e) => setNewComment(e.target.value)} required></textarea>
           <button type="submit" className="mt-3 bg-blue-600 text-white py-2 px-6 rounded-xl hover:bg-blue-700">Submit Feedback</button>
           {errorMessage && (
@@ -232,7 +232,7 @@ const handleReplySubmit = async (commentId) => {
             <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
               <div className="flex justify-between items-center">
                 <p className="font-semibold text-blue-700">{comment.name}</p>
-                {(userUsn === comment.usn || userUsn === '3NA22CS092') && (
+                {(userUsn.toUpperCase() === comment.usn?.toUpperCase || userUsn.toUpperCase === '3NA22CS092') && (
                   <button onClick={() => handleDeleteComment(comment._id, comment.usn)} className="text-red-500 text-sm">Delete</button>
                 )}
               </div>
