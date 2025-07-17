@@ -22,6 +22,7 @@ const HomePage = () => {
   const [newComment, setNewComment] = useState('');
   const [comments, setComments] = useState([]);
   const [replyText,setReplyText] = useState({});
+  const [errorMessage,setErrorMessage] = useState('');
 
   useEffect(() => {
     fetchComments();
@@ -38,24 +39,27 @@ const HomePage = () => {
 
  const handleCommentSubmit = async (e) => {
   e.preventDefault();
-
-  if (!newComment.trim() || !userName.trim() || !userUsn.trim()) return;
-
-  const formattedUSN = userUsn.trim().toUpperCase(); // Capitalize USN
+  if (!newComment.trim() || !userName.trim() || !userUsn.trim()) {
+    setErrorMessage('All fields are required');
+    return;
+  }
 
   try {
     await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments`, {
-      text: newComment.trim(),
-      name: userName.trim(),
-      usn: formattedUSN
+      text: newComment,
+      name: userName,
+      usn: userUsn,
     });
 
+    // Clear form and errors
     setNewComment('');
     setUserName('');
     setUserUsn('');
+    setErrorMessage('');
     fetchComments();
   } catch (err) {
-    console.error('Failed to submit comment:', err);
+    const errorMsg = err.response?.data?.error || 'Failed to submit comment';
+    setErrorMessage(errorMsg);
   }
 };
 const handleDeleteComment = async (commentId, commentUsn) => {
@@ -206,6 +210,11 @@ const handleReplySubmit = async (commentId) => {
           <input type="text" placeholder="Your Usn" className="w-full p-3 border border-gray-300 rounded-xl" value={userUsn} onChange={(e) => setUserUsn(e.target.value)} required />
           <textarea className="w-full p-3 border border-gray-300 rounded-xl" rows="3" placeholder="Share your thoughts or suggestions..." value={newComment} onChange={(e) => setNewComment(e.target.value)} required></textarea>
           <button type="submit" className="mt-3 bg-blue-600 text-white py-2 px-6 rounded-xl hover:bg-blue-700">Submit Feedback</button>
+          {errorMessage && (
+  <div style={{ color: 'red', marginTop: '10px' }}>
+    {errorMessage}
+  </div>
+)}
         </form>
 
         <div className="space-y-4">
