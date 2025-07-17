@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const usnValidator =[
   {
-    validation: function (v){
+    validator: function (v){
       return /^[0-9][A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}$/.test(v);
 
     },
