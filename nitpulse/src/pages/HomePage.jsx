@@ -44,7 +44,7 @@ const HomePage = () => {
       await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments`, {
         text: newComment,
         name: userName,
-        email: userUsn
+        usn: userUsn
       });
 
       setNewComment('');
@@ -81,7 +81,7 @@ const handleReplySubmit = async (commentId) => {
   try {
     await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments/${commentId}/reply`, {
       name: userName,
-      email: userUsn,
+      usn: userUsn,
       text: replyText[commentId]
     });
     setReplyText((prev) => ({ ...prev, [commentId]: '' }));
