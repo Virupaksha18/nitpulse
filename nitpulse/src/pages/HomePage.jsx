@@ -23,6 +23,10 @@ const HomePage = () => {
   const [comments, setComments] = useState([]);
   const [replyText,setReplyText] = useState({});
   const [errorMessage,setErrorMessage] = useState('');
+  useEffect(() => {
+    const savedUsn =localStorage.getItem('userUsn');
+    if(savedUsn)setUserUsn(savedUsn);
+  },[]);
 
   useEffect(() => {
     fetchComments();
@@ -48,13 +52,12 @@ const HomePage = () => {
     await axios.post(`${process.env.REACT_APP_BASE_URL}/api/comments`, {
       text: newComment,
       name: userName,
-      usn: userUsn,
+      usn: userUsn.toUpperCase(),
     });
-
+   localStorage.setItem('userUsn',userUsn.toUpperCase());
     // Clear form and errors
     setNewComment('');
     setUserName('');
-    setUserUsn('');
     setErrorMessage('');
     fetchComments();
   } catch (err) {
