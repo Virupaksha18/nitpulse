@@ -6,7 +6,7 @@ const branches = ['CSE', 'ECE', 'EEE', 'Civil', 'AIML'];
 const BranchesPage = () => {
   return (
     <div className="min-h-screen bg-black text-white pt-24 px-4">
-      <h1 className="text-2xl font-extrabold text-center mb-10">Choose Your Branch</h1>
+      <h1 className="text-3xl font-extrabold text-center mb-10">Choose Your Branch</h1>
 
       <div className="max-w-2xl mx-auto flex flex-col gap-8">
         {branches.map((branch) => (
