@@ -1,33 +1,42 @@
 const express = require('express');
 const router = express.Router();
-const Resource = require('../models/resourceModel');
+const multer = require('multer');
+const Resource = require('../models/Resource');
 
-// GET resource by type, subjectId, and moduleId
-router.get('/:type/:subjectId/:moduleId', async (req, res) => {
-  const { type, subjectId, moduleId } = req.params;
+// Multer config
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, 'uploads/'),
+  filename: (req, file, cb) =>
+    cb(null, Date.now() + '-' + file.originalname)
+});
 
-  const title =` Module ${moduleId.split('-')[1]} ${type.charAt(0).toUpperCase() + type.slice(1)}`;
+const upload = multer({ storage });
 
+// POST /api/resources
+router.post('/', upload.single('file'), async (req, res) => {
   try {
-    const resource = await Resource.findOne({
-      type: type,
-      subjectId: subjectId,
-      moduleId: moduleId,
-      title: title
+    const {
+      title, type, branch, semester, subject, studentName, usn, showCredit
+    } = req.body;
+
+    const fileUrl = req.file ? `/uploads/${req.file.filename}` : null;
+
+    const newResource = new Resource({
+      title,
+      type,
+      branch,
+      semester,
+      subject,
+      fileUrl,
+      studentName,
+      usn,
+      showCredit: showCredit === 'true'
     });
 
-    if (!resource) {
-      return res.status(404).json({ message: 'Resource not found' });
-    }
-
-    res.json({
-      title: resource.title,
-      file:`http://localhost:5000/${resource.filePath}`, // Corrected
-      branch: resource.branch,
-      subject: resource.subject,
-    });
+    await newResource.save();
+    res.status(201).json({ message: "Resource added successfully!" });
   } catch (error) {
-    res.status(500).json({ message: 'Server error', error: error.message });
+    res.status(500).json({ error: "Something went wrong!" });
   }
 });
 

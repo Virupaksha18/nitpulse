@@ -10,11 +10,15 @@ const HomePage = () => {
   const [search, setSearch] = useState('');
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
+    name:'',
+    usn:'',
     title: '',
     type: 'Notes',
     branch: '',
+    semester:'',
     subject: '',
     file: null,
+     showCredit: 'yes',
   });
 
   const [userName, setUserName] = useState('');
@@ -121,26 +125,40 @@ const handleReplySubmit = async (commentId) => {
   };
 
   const handleFileChange = (e) => {
-    setFormData(prev => ({ ...prev, file: e.target.files[0] }));
+    setFormData((prev) => ({ ...prev, file: e.target.files[0] }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const uploadData = new FormData();
-    Object.entries(formData).forEach(([key, value]) => uploadData.append(key, value));
+
+    const data = new FormData();
+    for (const key in formData) {
+      data.append(key, formData[key]);
+    }
 
     try {
-      await axios.post(`${process.env.REACT_APP_BASE_URL}`, uploadData, {
-        headers: { 'Content-Type': 'multipart/form-data' }
-      });
-      alert('Resource uploaded successfully!');
-      setFormData({ title: '', type: 'Notes', branch: '', subject: '', file: null });
-      setShowForm(false);
+      const response = await axios.post("https://nitpulse-backend.onrender.com/api/resources", data);
+      if (response.status === 200) {
+        alert("🎉 Congratulations! Your resource has been added successfully! 🥳");
+        setFormData({
+          title: '',
+          type: 'Notes',
+          branch: '',
+          subject: '',
+          semester: '',
+          studentName: '',
+          usn: '',
+          showCredit: 'yes',
+          file: null,
+        });
+        setShowForm(false);
+      }
     } catch (err) {
-      console.error(err);
-      alert('Failed to upload resource.');
+      console.error("Upload failed:", err);
+      alert("Something went wrong. Please try again.");
     }
   };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-white pt-24 px-4">
@@ -275,10 +293,49 @@ const handleReplySubmit = async (commentId) => {
         <div className="max-w-3xl mx-auto mb-20 bg-white p-8 rounded-3xl shadow-xl border">
           <h2 className="text-3xl font-bold text-center mb-6 text-blue-700">Add a Resource</h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Student Name</label>
+              <input type="text" name="studentName" value={formData.studentName} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Ramesh Kumar" />
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">USN</label>
+              <input type="text" name="usn" value={formData.usn} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: 1RV21CS001" />
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Semester</label>
+              <select name="semester" value={formData.semester} onChange={handleChange} className="w-full p-3 border rounded-xl">
+                <option value="">Select Semester</option>
+                <option>1st</option>
+                <option>2nd</option>
+                <option>3rd</option>
+                <option>4th</option>
+                <option>5th</option>
+                <option>6th</option>
+                <option>7th</option>
+                <option>8th</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Branch</label>
+              <select name="branch" value={formData.branch} onChange={handleChange} className="w-full p-3 border rounded-xl">
+                <option value="">Select Branch</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>CIVIL</option>
+                <option>AIML</option>
+              </select>
+            </div>
+
             <div>
               <label className="block font-semibold text-gray-700">Title</label>
               <input type="text" name="title" value={formData.title} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Module 1 Notes" />
             </div>
+
             <div>
               <label className="block font-semibold text-gray-700">Type</label>
               <select name="type" value={formData.type} onChange={handleChange} className="w-full p-3 border rounded-xl">
@@ -289,24 +346,38 @@ const handleReplySubmit = async (commentId) => {
                 <option>Passing Package</option>
               </select>
             </div>
-            <div>
-              <label className="block font-semibold text-gray-700">Branch</label>
-              <input type="text" name="branch" value={formData.branch} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: CSE" />
-            </div>
+
             <div>
               <label className="block font-semibold text-gray-700">Subject</label>
               <input type="text" name="subject" value={formData.subject} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Machine Learning" />
             </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700 mb-1">Do you want to show your Name with USN as credit?</label>
+              <div className="flex gap-6">
+                <label className="flex items-center gap-2">
+                  <input type="radio" name="creditConsent" value="yes" checked={formData.creditConsent === "yes"} onChange={handleChange} />
+                  Yes
+                </label>
+                <label className="flex items-center gap-2">
+                  <input type="radio" name="creditConsent" value="no" checked={formData.creditConsent === "no"} onChange={handleChange} />
+                  No
+                </label>
+              </div>
+            </div>
+
             <div>
               <label className="block font-semibold text-gray-700">Upload File</label>
               <input type="file" name="file" onChange={handleFileChange} className="w-full p-2 border rounded-xl" />
             </div>
+
             <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 font-bold">
               Submit Resource
             </button>
           </form>
         </div>
       )}
+
 
       {/* Footer */}
       <footer className="bg-white border-t py-12">
