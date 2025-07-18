@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { useRef } from 'react';
 import {
   BarChart, Calendar, Link2, Paperclip, Plus, Clock,
   GitBranchPlusIcon
@@ -20,6 +21,7 @@ const HomePage = () => {
     file: null,
      showCredit: 'yes',
   });
+  const fileInputRef =useRef(null);
 
   const [userName, setUserName] = useState('');
   const [userUsn, setUserUsn] = useState('');
@@ -129,36 +131,42 @@ const handleReplySubmit = async (commentId) => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const data = new FormData();
-    for (const key in formData) {
-      data.append(key, formData[key]);
-    }
+  const data = new FormData();
+  for (const key in formData) {
+    data.append(key, formData[key]);
+  }
 
-    try {
-      const response = await axios.post("https://nitpulse-backend.onrender.com/api/resources", data);
-      if (response.status === 200) {
-        alert("🎉 Congratulations! Your resource has been added successfully! 🥳");
-        setFormData({
-          title: '',
-          type: 'Notes',
-          branch: '',
-          subject: '',
-          semester: '',
-          studentName: '',
-          usn: '',
-          showCredit: 'yes',
-          file: null,
-        });
-        setShowForm(false);
+  try {
+    const response = await axios.post("https://nitpulse-backend.onrender.com/api/resources", data);
+
+    if (response.status === 200 || response.status === 201) {
+      alert("🎉 Congratulations! Your resource has been added successfully! 🥳");
+
+      setFormData({
+        title: '',
+        type: 'Notes',
+        branch: '',
+        subject: '',
+        semester: '',
+        studentName: '',
+        usn: '',
+        showCredit: 'yes',
+        file: null,
+      });
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = null;
       }
-    } catch (err) {
-      console.error("Upload failed:", err);
-      alert("Something went wrong. Please try again.");
-    }
-  };
 
+      setShowForm(false);
+    }
+  } catch (err) {
+    console.error("Upload failed:", err);
+    alert("Something went wrong. Please try again.");
+  }
+};
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-white pt-24 px-4">
@@ -368,7 +376,7 @@ const handleReplySubmit = async (commentId) => {
 
             <div>
               <label className="block font-semibold text-gray-700">Upload File</label>
-              <input type="file" name="file" onChange={handleFileChange} className="w-full p-2 border rounded-xl" />
+              <input type="file" name="file" ref={fileInputRef} onChange={handleFileChange} className="w-full p-2 border rounded-xl" />
             </div>
 
             <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 font-bold">
