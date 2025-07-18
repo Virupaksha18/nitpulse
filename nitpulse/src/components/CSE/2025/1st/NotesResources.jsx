@@ -1,7 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import NotesResource from "../../2024/3rd/NotesResource";
-
 const modules = [
   "MODULE 1",
   "MODULE 2",

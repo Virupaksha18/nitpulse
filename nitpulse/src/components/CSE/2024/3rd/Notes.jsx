@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subjects = [
-  { name: "Mathematics for Computer Science", code: "BCS301" },
-    { name: "Digital Design and Computer Organisation", code: "BCS302" },
-    { name: "Operating System", code: "BCS303" },
-    { name: "Data Structure and Applications", code: "BCS304" },
-    { name: "Object Oriented Programming with Java", code: "BCS306A" },
+  { name: "Mathematics for Computer Science",slug:"m3", code: "BCS301" },
+    { name: "Digital Design and Computer Organisation",slug:"ddco", code: "BCS302" },
+    { name: "Operating System",slug:"os", code: "BCS303" },
+    { name: "Data Structure and Applications",slug:"dsa", code: "BCS304" },
+    { name: "Object Oriented Programming with Java",slug:"java", code: "BCS306A" },
 ];
 
 const Notes = () => {
@@ -18,7 +18,7 @@ const Notes = () => {
         {subjects.map((subject, index) => (
           <Link
             key={index}
-            to={`/notes/${subject.slug}`}
+            to={`/CSE/2024/3rd/notes/${subject.slug}`}
             className="bg-black text-white rounded-xl shadow-md p-6 text-center hover:bg-gray-900 transition duration-300"
           >
             <h3 className="text-xl font-bold mb-2">{subject.name}</h3>

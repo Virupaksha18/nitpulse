@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subjects = [
- { name: "Mathematics-1 for CSE Stream", code: "BMATS101" },
-    { name: "Physics for CSE Stream", code: "BPHYS102" },
-    { name: "Principal of Programming using c", code: "BPOP103" },
-    { name: "Introduction to Electronics and Communication", code: "BESK104C" },
-    { name: "Communicative English", code: "BENG106" },
-    { name: "Indian Constitution", code: "BICOK107" },
-    { name: "Innovation and Design Thinking", code: "BIDK108" },
+ { name: "Mathematics-1 for CSE Stream",slug:"m1",code: "BMATS101" },
+    { name: "Physics for CSE Stream",slug:"physics", code: "BPHYS102" },
+    { name: "Principal of Programming using c",slug:"c programming", code: "BPOP103" },
+    { name: "Introduction to Electronics and Communication",slug:"iec", code: "BESK104C" },
+    { name: "Communicative English",slug:"english", code: "BENG106" },
+    { name: "Indian Constitution", slug:"ic",code: "BICOK107" },
+    { name: "Innovation and Design Thinking",slug:"idt" ,code: "BIDK108" },
 ];
 
 const Notes = () => {
@@ -20,7 +20,7 @@ const Notes = () => {
         {subjects.map((subject, index) => (
           <Link
             key={index}
-            to={`/notes/${subject.slug}`}
+            to={`/CSE/2025/1st/notes/${subject.slug}`}
             className="bg-black text-white rounded-xl shadow-md p-6 text-center hover:bg-gray-900 transition duration-300"
           >
             <h3 className="text-xl font-bold mb-2">{subject.name}</h3>
