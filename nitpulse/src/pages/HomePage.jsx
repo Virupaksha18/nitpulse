@@ -397,7 +397,7 @@ const handleReplySubmit = async (commentId) => {
           />
           <h3 className="text-xl font-bold text-gray-800">Virupaksha</h3>
           <p className="text-gray-600 mt-2">
-           Hi, I’m Virupaksha, a final-year CSE student at Navodaya Institute of Technology (NIT). Like many students, I’ve struggled to find reliable academic resources — 
+           Hi, I'm Virupaksha, a final-year CSE student at Navodaya Institute of Technology (NIT). Like many students, I've struggled to find reliable academic resources — 
            from notes and assignments to lab programs and MQPs with proper solutions.
            That’s why I created this platform — to make academics easier, clearer, and more accessible for all NIT students.
            </p>
@@ -408,7 +408,7 @@ const handleReplySubmit = async (commentId) => {
 
 and Simple SGPA/CGPA calculators </p>
 
-<p className="text-gray-600 mt-2">  Let’s make learning at NIT smarter — together.</p>
+<p className="text-gray-600 mt-2">  Let’s make learning at NIT smarter—together.</p>
           <p className="text-gray-1000 mt-1">"Built by a student,for students"</p>
           <p className="text-sm text-gray-700 mt-3">Designed and Developed by Virupaksha</p>
           <p className="mt-3 text-gray-400 text-xs">© 2025 NIT Pulse. All rights reserved.</p>

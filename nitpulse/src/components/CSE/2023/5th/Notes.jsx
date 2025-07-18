@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subjects = [
-  { name: "Software Engineering and Project Management", code: "BCS501" },
-    { name: "Computer Networks", code: "BCS502" },
-    { name: "Theory of Computation", code: "BSC503" },
-    { name: "Unix System Programming", code: "BCS515C" },
-    { name: "Research Methodology and IPR", code: "BRMK557" },
-    { name: "Environmental Studies", code: "BCS508" },
+  { name: "Software Engineering and Project Management",slug:"sepm", code: "BCS501" },
+    { name: "Computer Networks",slug:"cn", code: "BCS502" },
+    { name: "Theory of Computation",slug:"tc", code: "BSC503" },
+    { name: "Unix System Programming",slug:"usp", code: "BCS515C" },
+    { name: "Research Methodology and IPR", slug:"rm",code: "BRMK557" },
+    { name: "Environmental Studies", slug:"evs",code: "BCS508" },
 ];
 
 const Notes = () => {
