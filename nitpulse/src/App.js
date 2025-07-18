@@ -7,7 +7,6 @@ import CGPAPage from './pages/CGPAPage';
 import VTUResultsPage from './pages/VTUResultsPage';
 import VTULinksPage from './pages/VTULinksPage';
 import LatestUpdatesPage from './pages/LatestUpdatesPage';
-import AddResourcePage from './pages/AddResourcePage';
 import BranchesPage from './pages/BranchesPage';
 import SchemePage from './pages/SchemePage';
 import SemesterPage from './pages/SemesterPage';
@@ -268,7 +267,6 @@ function App() {
         <Route path="/vtu-results" element={<VTUResultsPage />} />
         <Route path="/vtu-links" element={<VTULinksPage />} />
         <Route path="/updates" element={<LatestUpdatesPage />} />
-        <Route path="/add-resource" element={<AddResourcePage />} />
         <Route path="/branches"element={<BranchesPage/>}/>
         <Route path="/:branch"element={<SchemePage/>}/>
         <Route path="/:branch/:scheme"element={<SemesterPage/>}/>
