@@ -24,8 +24,8 @@ const HomePage = () => {
   const [replyText,setReplyText] = useState({});
   const [errorMessage,setErrorMessage] = useState('');
   useEffect(() => {
-    const savedUsn =localStorage.getItem('userUsn');
-    if(savedUsn)setUserUsn(savedUsn);
+    const savedUsn =localStorage.getItem('userUsn') || '';
+    setUserUsn(savedUsn);
   },[]);
 
   useEffect(() => {
@@ -232,7 +232,7 @@ const handleReplySubmit = async (commentId) => {
             <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
               <div className="flex justify-between items-center">
                 <p className="font-semibold text-blue-700">{comment.name}</p>
-                {(userUsn.toUpperCase() === comment.usn?.toUpperCase || userUsn.toUpperCase === '3NA22CS092') && (
+                {userUsn && (userUsn.toUpperCase() === comment.usn?.toUpperCase() || userUsn.toUpperCase() === '3NA22CS092') && (
                   <button onClick={() => handleDeleteComment(comment._id, comment.usn)} className="text-red-500 text-sm">Delete</button>
                 )}
               </div>
