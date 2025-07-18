@@ -70,7 +70,7 @@ const handleDeleteComment = async (commentId, commentUsn) => {
   if (!confirmDelete) return;
 
   try {
-    const response = await fetch(`${process.env.REACT_APP_BASE_URL}api/comments/${commentId}?usn=${commentUsn}`, {
+    const response = await fetch(`https://nitpulse-backend.onrender.com/api/comments/${commentId}?usn=${commentUsn}`, {
       method: 'DELETE',
     });
 
