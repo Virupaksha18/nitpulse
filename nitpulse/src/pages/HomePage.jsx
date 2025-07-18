@@ -175,7 +175,7 @@ const handleReplySubmit = async (commentId) => {
               </h2>
             </div>
             <div className="absolute bottom-2 right-3 text-white text-sm opacity-70">
-              NITS Pulse.com
+              NIT Pulse.com
             </div>
           </Link>
         ))}
