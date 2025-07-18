@@ -304,12 +304,12 @@ const handleReplySubmit = async (commentId) => {
 
             <div>
               <label className="block font-semibold text-gray-700">Student Name</label>
-              <input type="text" name="studentName" value={formData.studentName} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Ramesh Kumar" />
+              <input type="text" name="studentName" value={formData.studentName} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: viru" />
             </div>
 
             <div>
               <label className="block font-semibold text-gray-700">USN</label>
-              <input type="text" name="usn" value={formData.usn} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: 1RV21CS001" />
+              <input type="text" name="usn" value={formData.usn} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: 3NA22CS092" />
             </div>
 
             <div>
