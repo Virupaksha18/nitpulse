@@ -23,9 +23,10 @@ const HomePage = () => {
   const [comments, setComments] = useState([]);
   const [replyText,setReplyText] = useState({});
   const [errorMessage,setErrorMessage] = useState('');
-  
-    const [usn,setUsn] = useState('');
-  }
+  useEffect(() => {
+    const savedUsn =localStorage.getItem('userUsn') || '';
+    setUserUsn(savedUsn);
+  },[]);
 
   useEffect(() => {
     fetchComments();
