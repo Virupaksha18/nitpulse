@@ -44,7 +44,7 @@ const assignmentData = {
   }
 };
 
-const AssignmentDetailsAI1 = () => {
+const AssignmentDetailsCIVIL5 = () => {
   const { subjectSlug } = useParams();
   const subject = assignmentData[subjectSlug];
 
@@ -58,7 +58,7 @@ const AssignmentDetailsAI1 = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {subject.assignments.map((item, index) => {
-          const pdfUrl = ` ${process.env.REACT_APP_BASE_URL}/files/assignments/AIML/2025/1st/${subjectSlug}/assignment${index + 1}.pdf`;
+          const pdfUrl = ` ${process.env.REACT_APP_BASE_URL}/files/assignments/CIVIL5/2023/5th/${subjectSlug}/assignment${index + 1}.pdf`;
 
           return (
             <div
@@ -83,4 +83,4 @@ const AssignmentDetailsAI1 = () => {
   );
 };
 
-export default AssignmentDetailsAI1;
+export default AssignmentDetailsCIVIL5;

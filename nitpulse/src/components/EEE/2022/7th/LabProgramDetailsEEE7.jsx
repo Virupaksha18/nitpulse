@@ -55,7 +55,7 @@ const LabProgramDetailsEEE7 = () => {
 
   // Generate PDF links based on subjectSlug and index
   const pdfLinks = subject?.programs.map((_, index) => {
-    return `${process.env.REACT_APP_BASE_URL}/files/labs/EEE/2022/5th/${subjectSlug}/program${index + 1}.pdf`;
+    return `${process.env.REACT_APP_BASE_URL}/files/labs/EEE/2022/7th/${subjectSlug}/program${index + 1}.pdf`;
   });
 
   if (!subject) {

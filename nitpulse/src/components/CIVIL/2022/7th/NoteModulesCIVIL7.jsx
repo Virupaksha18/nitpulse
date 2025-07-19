@@ -9,7 +9,7 @@ const modules = [
   "MODULE 5",
 ];
 
-const NoteModulesAI1 = () => {
+const NoteModulesCIVIL7 = () => {
   const { subjectSlug } = useParams();
 
   return (
@@ -21,7 +21,7 @@ const NoteModulesAI1 = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {modules.map((mod, idx) => {
           const moduleNumber = idx + 1;
-          const pdfUrl =` ${process.env.REACT_APP_BASE_URL}/files/notes/AIML/2025/1st/${subjectSlug}/module${moduleNumber}.pdf`;
+          const pdfUrl =` ${process.env.REACT_APP_BASE_URL}/files/notes/CIVIL/2022/7th/${subjectSlug}/module${moduleNumber}.pdf`;
 
           return (
             <div
@@ -48,4 +48,4 @@ const NoteModulesAI1 = () => {
   );
 };
 
-export default NoteModulesAI1;
+export default NoteModulesCIVIL7;

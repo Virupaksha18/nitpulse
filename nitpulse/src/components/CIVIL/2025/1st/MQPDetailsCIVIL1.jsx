@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-const MQPDetailsAI1 = () => {
+const MQPDetailsCIVIL1 = () => {
   const { subjectSlug } = useParams();
 
-  const basePath =` ${process.env.REACT_APP_BASE_URL}/files/mqp/AIML/2025/1st/${subjectSlug}`;
+  const basePath =` ${process.env.REACT_APP_BASE_URL}/files/mqp/CIVIL/2025/1st/${subjectSlug}`;
 
   const mqps = [
     {
@@ -66,4 +66,4 @@ const MQPDetailsAI1 = () => {
   );
 };
 
-export default MQPDetailsAI1;
+export default MQPDetailsCIVIL1;

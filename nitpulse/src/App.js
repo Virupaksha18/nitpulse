@@ -309,6 +309,31 @@ import LabProgramDetailsEEE7 from './components/EEE/2022/7th/LabProgramDetailsEE
 import AssignmentDetailsEEE7 from './components/EEE/2022/7th/AssignmentDetailsEEE7';
 import MQPDetailsEEE7 from './components/EEE/2022/7th/MQPDetailsEEE7';
 import PassingPackageDetailsEEE7 from './components/EEE/2022/7th/PassingPackageDetailsEEE7';
+
+//civil 7th sem notes
+import NoteModulesCIVIL7 from './components/CIVIL/2022/7th/NoteModulesCIVIL7';
+import LabProgramDetailsCIVIL7 from './components/CIVIL/2022/7th/LabProgramDetailsCIVIL7';
+import AssignmentDetailsCIVIL7 from './components/CIVIL/2022/7th/AssignmentDetailsCIVIL7';
+import MQPDetailsCIVIL7 from './components/CIVIL/2022/7th/MQPDetailsCIVIL7';
+import PassingPackageDetailsCIVIL7 from './components/CIVIL/2022/7th/PassingPackageDetailsCIVIL7';
+//civil 5th sem notes
+import NoteModulesCIVIL5 from './components/CIVIL/2023/5th/NoteModulesCIVIL5';
+import LabProgramDetailsCIVIL5 from './components/CIVIL/2023/5th/LabProgramDetailsCIVIL5';
+import AssignmentDetailsCIVIL5 from './components/CIVIL/2023/5th/AssignmentDetailsCIVIL5';
+import MQPDetailsCIVIL5 from './components/CIVIL/2023/5th/MQPDetailsCIVIL5';
+import PassingPackageDetailsCIVIL5 from './components/CIVIL/2023/5th/PassingPackageDetailsCIVIL5';
+//civil 3rd sem notes
+import NoteModulesCIVIL3 from './components/CIVIL/2024/3rd/NoteModulesCIVIL3';
+import LabProgramDetailsCIVIL3 from './components/CIVIL/2024/3rd/LabProgramDetailsCIVIL3';
+import AssignmentDetailsCIVIL3 from './components/CIVIL/2024/3rd/AssignmentDetailsCIVIL3';
+import MQPDetailsCIVIL3 from './components/CIVIL/2024/3rd/MQPDetailsCIVIL3';
+import PassingPackageDetailsCIVIL3 from './components/CIVIL/2024/3rd/PassingPackageDetailsCIVIL3';
+//civil 1st sem notes
+import NoteModulesCIVIL1 from './components/CIVIL/2025/1st/NoteModulesCIVIL1';
+import LabProgramDetailsCIVIL1 from './components/CIVIL/2025/1st/LabProgramDetailsCIVIL1';
+import AssignmentDetailsCIVIL1 from './components/CIVIL/2025/1st/AssignmentDetailsCIVIL1';
+import MQPDetailsCIVIL1 from './components/CIVIL/2025/1st/MQPDetailsCIVIL1';
+import PassingPackageDetailsCIVIL1 from './components/CIVIL/2025/1st/PassingPackageDetailsCIVIL1';
 import TimeTable from './pages/TimeTable';
 
 
@@ -629,7 +654,32 @@ function App() {
       <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEEE7/>}/>
       <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEEE7/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEEE7/>}/>
-      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE7/>}/>        
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE7/>}/>
+
+      {/*civil 7th sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesCIVIL7/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsCIVIL7/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsCIVIL7/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsCIVIL7/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsCIVIL7/>}/>
+      {/*civil 5th sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesCIVIL5/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsCIVIL5/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsCIVIL5/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsCIVIL5/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsCIVIL5/>}/>
+      {/*civil 3rd sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesCIVIL3/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsCIVIL3/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsCIVIL3/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsCIVIL3/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsCIVIL3/>}/>
+      {/*civil 1st sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesCIVIL1/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsCIVIL1/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsCIVIL1/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsCIVIL1/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsCIVIL1/>}/>        
              </Routes>
     </Router>
   );

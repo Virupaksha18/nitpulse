@@ -49,13 +49,13 @@ const labProgramsData = {
   }
 };
 
-const LabProgramDetailsAI1 = () => {
+const LabProgramDetailsCIVIL5 = () => {
   const { subjectSlug } = useParams();
   const subject = labProgramsData[subjectSlug];
 
   // Generate PDF links based on subjectSlug and index
   const pdfLinks = subject?.programs.map((_, index) => {
-    return `${process.env.REACT_APP_BASE_URL}/files/labs/AIML/2025/1st/${subjectSlug}/program${index + 1}.pdf`;
+    return `${process.env.REACT_APP_BASE_URL}/files/labs/CIVIL/2023/5th/${subjectSlug}/program${index + 1}.pdf`;
   });
 
   if (!subject) {
@@ -95,4 +95,4 @@ const LabProgramDetailsAI1 = () => {
   );
 };
 
-export default LabProgramDetailsAI1;
+export default LabProgramDetailsCIVIL5;

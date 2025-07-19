@@ -9,7 +9,7 @@ const modules = [
   "MODULE 5",
 ];
 
-const PassingPackageDetailsAI1 = () => {
+const PassingPackageDetailsCIVIL1 = () => {
   const { subjectSlug } = useParams();
 
   return (
@@ -21,7 +21,7 @@ const PassingPackageDetailsAI1 = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {modules.map((mod, idx) => {
           const moduleNumber = idx + 1;
-          const pdfUrl = `${process.env.REACT_APP_BASE_URL}/files/passing-package/AIML/2025/1st/${subjectSlug}/module${moduleNumber}.pdf`;
+          const pdfUrl = `${process.env.REACT_APP_BASE_URL}/files/passing-package/CIVIL/2025/1st/${subjectSlug}/module${moduleNumber}.pdf`;
 
           return (
             <div
@@ -45,4 +45,4 @@ const PassingPackageDetailsAI1 = () => {
   );
 };
 
-export default PassingPackageDetailsAI1;
+export default PassingPackageDetailsCIVIL1;
