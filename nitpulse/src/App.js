@@ -284,6 +284,31 @@ import LabProgramDetailsAI1 from './components/AIML/2025/1st/LabProgramDetailsAI
 import AssignmentDetailsAI1 from './components/AIML/2025/1st/AssignmentDetailsAI1';
 import MQPDetailsAI1 from './components/AIML/2025/1st/MQPDetailsAI1';
 import PassingPackageDetailsAI1 from './components/AIML/2025/1st/PassingPackageDetailsAI1';
+
+//eee 1st sem notes
+import NoteModulesEEE1 from './components/EEE/2025/1st/NoteModulesEEE1';
+import LabProgramDetailsEEE1 from './components/EEE/2025/1st/LabProgramDetailsEEE1';
+import AssignmentDetailsEEE1 from './components/EEE/2025/1st/AssignmentDetailsEEE1';
+import MQPDetailsEEE1 from './components/EEE/2025/1st/MQPDetailsEEE1';
+import PassingPackageDetailsEEE1 from './components/EEE/2025/1st/PassingPackageDetailsEEE1';
+//eee 3rd sem notes
+import NoteModulesEEE3 from './components/EEE/2024/3rd/NoteModulesEEE3';
+import LabProgramDetailsEEE3 from './components/EEE/2024/3rd/LabProgramDetailsEEE3';
+import AssignmentDetailsEEE3 from './components/EEE/2024/3rd/AssignmentDetailsEEE3';
+import MQPDetailsEEE3 from './components/EEE/2024/3rd/MQPDetailsEEE3';
+import PassingPackageDetailsEEE3 from './components/EEE/2024/3rd/PassingPackageDetailsEEE3';
+//eee 5th sem notes
+import NoteModulesEEE5 from './components/EEE/2023/5th/NoteModulesEEE5';
+import LabProgramDetailsEEE5 from './components/EEE/2023/5th/LabProgramDetailsEEE5';
+import AssignmentDetailsEEE5 from './components/EEE/2023/5th/AssignmentDetailsEEE5';
+import MQPDetailsEEE5 from './components/EEE/2023/5th/MQPDetailsEEE5';
+import PassingPackageDetailsEEE5 from './components/EEE/2023/5th/PassingPackageDetailsEEE5';
+//eee 7th sem notes
+import NoteModulesEEE7 from './components/EEE/2022/7th/NoteModulesEEE7';
+import LabProgramDetailsEEE7 from './components/EEE/2022/7th/LabProgramDetailsEEE7';
+import AssignmentDetailsEEE7 from './components/EEE/2022/7th/AssignmentDetailsEEE7';
+import MQPDetailsEEE7 from './components/EEE/2022/7th/MQPDetailsEEE7';
+import PassingPackageDetailsEEE7 from './components/EEE/2022/7th/PassingPackageDetailsEEE7';
 import TimeTable from './pages/TimeTable';
 
 
@@ -579,7 +604,32 @@ function App() {
       <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsAI1/>}/>
       <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsAI1/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsAI1/>}/>
-      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsAI1/>}/>        
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsAI1/>}/> 
+
+      {/*eee 1st sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesEEE1/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEEE1/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEEE1/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEEE1/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE1/>}/> 
+      {/*eee 3rd sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesEEE3/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEEE3/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEEE3/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEEE3/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE3/>}/> 
+      {/*eee 5th sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesEEE5/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEEE5/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEEE5/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEEE5/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE5/>}/> 
+      {/*eee 7th sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesEEE7/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEEE7/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEEE7/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEEE7/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE7/>}/>        
              </Routes>
     </Router>
   );
