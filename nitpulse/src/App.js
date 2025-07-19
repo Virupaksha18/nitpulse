@@ -501,7 +501,7 @@ function App() {
       <Route path="/mqp/:subjectSlug" element={<MQPQResource/>}/>
       <Route path="/passing-package/:subjectSlug" element={<PassingPackageResource/>}/>
       {/*cse 1st sem notes */}
-      <Route path="/CSE/2025/2nd/notes/:subjectSlug" element={<NotesResources/>}/>
+      <Route path="/CSE/2025/1st/notes/:subjectSlug" element={<NotesResources/>}/>
       <Route path="/lab-programs/:subjectSlug" element={<LabProgramsResources/>}/>
       <Route path="/assignments/:subjectSlug" element={<AssignmentsResources/>}/>
       <Route path="/mqp/:subjectSlug" element={<MQPQsResources/>}/>

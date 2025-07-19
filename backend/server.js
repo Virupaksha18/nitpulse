@@ -7,6 +7,7 @@ const path = require('path');
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const resourceRoutes =require('./routes/resourceRoutes');
+const filesPath = path.join(__dirname,'files');
 
 const app = express();
 

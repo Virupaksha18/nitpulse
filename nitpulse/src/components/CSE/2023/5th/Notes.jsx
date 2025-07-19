@@ -7,7 +7,7 @@ const subjects = [
     { name: "Theory of Computation",slug:"tc", code: "BSC503" },
     { name: "Unix System Programming",slug:"usp", code: "BCS515C" },
     { name: "Research Methodology and IPR", slug:"rm",code: "BRMK557" },
-    { name: "Environmental Studies", slug:"evs",code: "BCS508" },
+    { name: "Environmental Studies", slug:"evs",code:"BCS508"},
 ];
 
 const Notes = () => {
