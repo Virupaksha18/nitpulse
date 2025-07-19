@@ -246,8 +246,45 @@ import AssignmentsResources from './components/CSE/2025/1st/AssignmentsResources
 import MQPQsResources from './components/CSE/2025/1st/MQPsResources';
 import PassingPackagesResources from './components/CSE/2025/1st/PassingPackagesResources';
 
-import TimeTable from './pages/TimeTable';
+//ece 6th sem notes
+import NoteModulesEC6 from './components/ECE/2022/6th/NoteModulesEC6';
+import LabProgramDetailsEC6 from './components/ECE/2022/6th/LabProgramDetailsEC6';
+import AssignmentDetailsEC6 from './components/ECE/2022/6th/AssignmentDetailsEC6';
+import MQPDetailsEC6 from './components/ECE/2022/6th/MQPDetailsEC6';
+import PassingPackageDetailsEC6 from './components/ECE/2022/6th/PassingPackageDetailsEC6';
+//ece 7th sem notes
+import NoteModulesEC7 from './components/ECE/2022/7th/NoteModulesEC7';
+import LabProgramDetailsEC7 from './components/ECE/2022/7th/LabProgramDetailsEC7';
+import AssignmentDetailsEC7 from './components/ECE/2022/7th/AssignmentDetailsEC7';
+import MQPDetailsEC7 from './components/ECE/2022/7th/MQPDetailsEC7';
+import PassingPackageDetailsEC7 from './components/ECE/2022/7th/PassingPackageDetailsEC7';
 
+//ece 5t/h sem notes
+import NoteModulesEC5 from './components/ECE/2023/5th/NoteModulesEC5';
+import LabProgramDetailsEC5 from './components/ECE/2023/5th/LabProgramDetailsEC5';
+import AssignmentDetailsEC5 from './components/ECE/2023/5th/AssignmentDetailsEC5';
+import MQPDetailsEC5 from './components/ECE/2023/5th/MQPDetailsEC5';
+import PassingPackageDetailsEC5 from './components/ECE/2023/5th/PassingPackageDetailsEC5';
+//ece 3rd sem notes
+import NoteModulesEC3 from './components/ECE/2024/3rd/NoteModulesEC3';
+import LabProgramDetailsEC3 from './components/ECE/2024/3rd/LabProgramDetailsEC3';
+import AssignmentDetailsEC3 from './components/ECE/2024/3rd/AssignmentDetailsEC3';
+import MQPDetailsEC3 from './components/ECE/2024/3rd/MQPDetailsEC3';
+import PassingPackageDetailsEC3 from './components/ECE/2024/3rd/PassingPackageDetailsEC3';
+
+//ece 1st sem notes
+import NoteModulesEC1 from './components/ECE/2025/1st/NoteModulesEC1';
+import LabProgramDetailsEC1 from './components/ECE/2025/1st/LabProgramDetailsEC1';
+import AssignmentDetailsEC1 from './components/ECE/2025/1st/AssignmentDetailsEC1';
+import MQPDetailsEC1 from './components/ECE/2025/1st/MQPDetailsEC1';
+import PassingPackageDetailsEC1 from './components/ECE/2025/1st/PassingPackageDetailsEC1';
+//aiml 1st sem notes
+import NoteModulesAI1 from './components/AIML/2025/1st/NoteModulesAI1';
+import LabProgramDetailsAI1 from './components/AIML/2025/1st/LabProgramDetailsAI1';
+import AssignmentDetailsAI1 from './components/AIML/2025/1st/AssignmentDetailsAI1';
+import MQPDetailsAI1 from './components/AIML/2025/1st/MQPDetailsAI1';
+import PassingPackageDetailsAI1 from './components/AIML/2025/1st/PassingPackageDetailsAI1';
+import TimeTable from './pages/TimeTable';
 
 
 
@@ -321,9 +358,9 @@ function App() {
 
         <Route path="/ECE/2022/6th/notes" element={<NotesECE20226th />} />
         <Route path="/ECE/2022/6th/assignments" element={<AssignmentsECE20226th />} />
-        <Route path="/ECE/2022/6th/mqp" element={<MQPECE20226th />} />
-        <Route path="/ECE/2022/6th/passing-package" element={<PassingPackageECE20226th />} />
-        <Route path="/ECE/2022/6th/lab-programs" element={<LabProgramsECE20226th />} />
+        <Route path="/ece/2022/6th/mqp" element={<MQPECE20226th />} />
+        <Route path="/ece/2022/6th/passing-package" element={<PassingPackageECE20226th />} />
+        <Route path="/ece/2022/6th/lab-programs" element={<LabProgramsECE20226th />} />
         {/* ECE 2022 - 7th Semester */}
 
         <Route path="/ECE/2022/7th/notes" element={<NotesECE20227th />} />
@@ -507,8 +544,42 @@ function App() {
       <Route path="/mqp/:subjectSlug" element={<MQPQsResources/>}/>
       <Route path="/passing-package/:subjectSlug" element={<PassingPackagesResources/>}/>
       
-
-        
+      {/*ece 6th sem notes*/}
+      <Route path="/notes/:subjectSlug"element={<NoteModulesEC6/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC6/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC6/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC6/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC6/>}/>
+       {/*ece 7th sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesEC7/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC7/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC7/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC7/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC7/>}/>
+          {/*ece 5th sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesEC5/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC5/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC5/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC5/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC5/>}/> 
+      {/*ece 3rd sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesEC3/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC3/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC3/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC3/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC3/>}/>  
+       {/*ece 1st sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesEC1/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC1/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC1/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC1/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC1/>}/>  
+      {/*aiml 1st sem notes */} 
+        <Route path="/notes/:subjectSlug"element={<NoteModulesAI1/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsAI1/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsAI1/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsAI1/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsAI1/>}/>        
              </Routes>
     </Router>
   );
