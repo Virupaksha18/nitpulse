@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-const HUGGINGFACE_API_TOKEN = process.env.HUGGINGFACE_API_TOKEN;
+const HUGGINGFACE_API_KEY = process.env.HUGGINGFACE_API_KEY;
 
 // Example route to use Hugging Face API
 router.post('/generate-text', async (req, res) => {
@@ -17,7 +17,7 @@ router.post('/generate-text', async (req, res) => {
       },
       {
         headers: {
-          Authorization: `Bearer ${HUGGINGFACE_API_TOKEN}`,
+          Authorization: `Bearer ${HUGGINGFACE_API_KEY}`,
         }
       }
     );

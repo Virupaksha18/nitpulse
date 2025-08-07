@@ -19,7 +19,7 @@ const AIChat = () => {
       const res = await fetch('https://nitpulse-backend.onrender.com/api/generate-text', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question }),
+        body: JSON.stringify({ text: question }),
       });
       const data = await res.json();
       setMessages([...newMessages, { sender: "ai", text: data.answer }]);
