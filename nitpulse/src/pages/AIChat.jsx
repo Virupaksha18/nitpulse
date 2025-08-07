@@ -16,7 +16,7 @@ const AIChat = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('https://nitpulse-backend.onrender.com/api/huggingface/generate-text', {
+      const res = await fetch('https://nitpulse-backend.onrender.com/api/generate-text', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question }),
