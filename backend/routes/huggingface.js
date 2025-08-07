@@ -11,7 +11,7 @@ router.post('/generate-text', async (req, res) => {
     const userInput = req.body.text;
 
     const response = await axios.post(
-      'https://api-inference.huggingface.co/models/gpt2', // You can change to another model
+      'https://api-inference.huggingface.co/models/tiiuae/falcon-7b-instruct', // You can change to another model
       {
         inputs: userInput
       },
