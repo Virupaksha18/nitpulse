@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
@@ -6,8 +6,11 @@ import {
   BarChart, Calendar, Link2, Paperclip, Plus, Clock,
   GitBranchPlusIcon
 } from 'lucide-react';
+import { useAuth } from  '../context/AuthContext';
+import { Navigate } from 'react-router-dom';
 
 const HomePage = () => {
+  const { user, logout } = useAuth();
   const [search, setSearch] = useState('');
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -218,8 +221,13 @@ const handleReplyDislike = async (commentId, replyId) => {
     alert("Something went wrong. Please try again.");
   }
 };
+if(!user){
+  return<Navigate to="/auth" />;
+}
 
   return (
+
+    
     <div className="min-h-screen bg-gradient-to-br from-blue-100 to-white pt-24 px-4">
       <div className="text-center mb-6">
         <blockquote>“ಕರ್ಮಂ ನಿರಂತರಂ, ಪಾಪಂ ಪುಣ್ಯಂ ದೈವ ನಿರ್ಣಯಂ”</blockquote>
@@ -236,6 +244,7 @@ const handleReplyDislike = async (commentId, replyId) => {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
+      <button onClick={logout}className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Logout</button>
        <div className="bg-white p-1 rounded-3xl shadow-md text-center max-w-2xl mx-auto my-10 border hover:border-green-500 hover:shadow-xl  hover:scale-105 duration-300">
       <p className="text-1xl mb-1">Get instant answers to your academic questions with our AI assistant.</p>
 
@@ -249,9 +258,7 @@ const handleReplyDislike = async (commentId, replyId) => {
         
       </Link>
     </div>
-
-
-      <h1 className="text-3xl font-extrabold text-center">Select your Branch </h1>
+    <h1 className="text-3xl font-extrabold text-center">Select your Branch </h1>
       <div className="max-w-2xl mx-auto my-5">
         {filteredResources.map((res) => (
           <Link

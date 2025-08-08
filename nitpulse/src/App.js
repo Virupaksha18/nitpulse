@@ -13,6 +13,13 @@ import SemesterPage from './pages/SemesterPage';
 import SemesterDetails from './pages/SemesterDetails';
 import AIChat from './pages/AIChat';
 
+//login pages
+import RegisterStudent from './pages/Auth/RegisterStudent';
+import RegisterTeacher from './pages/Auth/RegisterTeacher';
+import TeacherLogin from './pages/Auth/TeacherLogin';
+import StudentLogin from './pages/Auth/StudentLogin';
+import ProtectedRoute from './components/ProtectedRoute';
+import AuthMainPage from './pages/Auth/AuthMainPage';
 //CSE
 //  2022 scheme 6th semester
 import NotesCSE20226th from "./components/CSE/2022/6th/Notes";
@@ -360,6 +367,13 @@ function App() {
         <Route path="/:branch/:scheme"element={<SemesterPage/>}/>
         <Route path="/:branch/:scheme/:semester"element={<SemesterDetails/>}/>
         <Route path="/ask-ai"element={<AIChat/>}/>
+        {/*login pages */}
+        <Route path="/register-student"element={<RegisterStudent/>}/>
+        <Route path="/student-login"element={<StudentLogin/>}/>
+        <Route path="/register-teacher"element={<RegisterTeacher/>}/>
+        <Route path="/teacher-login"element={<TeacherLogin/>}/>
+        <Route path="/protected-route"element={<ProtectedRoute/>}/>
+        <Route path="/auth"element={<AuthMainPage/>}/>
 
         
         {/* CSE 2022 - 6th Semester */}
