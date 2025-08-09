@@ -57,7 +57,7 @@ const AuthMainPage = () => {
         </div>
 
         {/* Right Panel */}
-        <div className="w-full md:w-1/2 bg-white p-6 md:p-10 flex flex-col justify-center">
+        <div className="w-full md:w-1/2 bg-black p-6 md:p-10 flex flex-col justify-center">
 
           {/* REGISTER SELECTION */}
           {selected === "register" && !role && (
