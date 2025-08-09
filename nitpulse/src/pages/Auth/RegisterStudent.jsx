@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const RegisterStudent = ({ onBack }) => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     usn: "",
@@ -11,25 +14,15 @@ const RegisterStudent = ({ onBack }) => {
 
   const [passwordError, setPasswordError] = useState("");
   const [usnError, setUsnError] = useState("");
-  const [success, setSuccess] = useState(false); // ✅ Track success
 
   const branches = ["CSE", "AIML", "EC", "EEE", "Civil"];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
 
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-
-    if (name === "password") {
-      validatePassword(value);
-    }
-
-    if (name === "usn") {
-      validateUSN(value);
-    }
+    if (name === "password") validatePassword(value);
+    if (name === "usn") validateUSN(value);
   };
 
   const validatePassword = (password) => {
@@ -41,24 +34,13 @@ const RegisterStudent = ({ onBack }) => {
       { regex: /[^A-Za-z0-9]/, message: "At least one special character" },
     ];
 
-    const failedRules = rules
-      .filter((rule) => !rule.regex.test(password))
-      .map((rule) => rule.message);
-
-    if (failedRules.length > 0) {
-      setPasswordError(`Password must have: ${failedRules.join(", ")}`);
-    } else {
-      setPasswordError("");
-    }
+    const failed = rules.filter(r => !r.regex.test(password)).map(r => r.message);
+    setPasswordError(failed.length ? `Password must have: ${failed.join(", ")}`: "");
   };
 
   const validateUSN = (usn) => {
-    const usnPattern = /^(3na|3NA)(22|23|24)(cs|CS|ec|EC|ai|AI|ee|EE|cv|CV)\d{3}$/;
-    if (!usnPattern.test(usn)) {
-      setUsnError("Format: 3na22cs001 or 3NA22CS001 only");
-    } else {
-      setUsnError("");
-    }
+    const pattern = /^(3na|3NA)(22|23|24)(cs|CS|ec|EC|ai|AI|ee|EE|cv|CV)\d{3}$/;
+    setUsnError(!pattern.test(usn) ? "Format: 3na22cs001 or 3NA22CS001 only" : "");
   };
 
   const handleSubmit = async (e) => {
@@ -76,32 +58,24 @@ const RegisterStudent = ({ onBack }) => {
         body: JSON.stringify(formData),
       });
 
-      if (!res.ok) throw new Error("Failed to register student");
+      const data = await res.json();
 
-      setSuccess(true); // ✅ Show success screen
-      setFormData({ name: "", usn: "", branch: "", password: "", semester: "" });
+      if (!res.ok) {
+        alert(data.message || "Error registering student.");
+        if (data.message?.includes("already registered")) {
+          navigate("/login"); // ✅ Redirect if already registered
+        }
+        return;
+      }
+
+      alert("Registration successful! You can now log in.");
+      navigate("/login"); // ✅ Redirect after new registration
 
     } catch (error) {
       console.error(error);
       alert("Error registering student. Please try again.");
     }
   };
-
-  // ✅ Success UI
-  if (success) {
-    return (
-      <div className="p-6 bg-white rounded-lg shadow-md text-center">
-        <h2 className="text-2xl font-bold text-green-600 mb-4">Registration Successful 🎉</h2>
-        <p className="mb-4">You can now log in with your credentials.</p>
-        <button
-          onClick={onBack}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
-        >
-          Go to Login
-        </button>
-      </div>
-    );
-  }
 
   return (
     <form
@@ -119,8 +93,8 @@ const RegisterStudent = ({ onBack }) => {
         placeholder="Full Name"
         value={formData.name}
         onChange={handleChange}
-        className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         required
+        className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
 
       <input
@@ -129,12 +103,10 @@ const RegisterStudent = ({ onBack }) => {
         placeholder="USN (e.g. 3na22cs001)"
         value={formData.usn}
         onChange={handleChange}
-        className={`border p-3 rounded-lg focus:outline-none focus:ring-2 ${
-          usnError
-            ? "border-red-500 focus:ring-red-500"
-            : "border-gray-300 focus:ring-blue-500"
-        }`}
         required
+        className={`border p-3 rounded-lg focus:outline-none focus:ring-2 ${
+          usnError ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"
+        }`}
       />
       {usnError && <p className="text-red-500 text-sm">{usnError}</p>}
 
@@ -144,12 +116,10 @@ const RegisterStudent = ({ onBack }) => {
         placeholder="Password"
         value={formData.password}
         onChange={handleChange}
-        className={`border rounded-md px-3 py-2 focus:outline-none focus:ring-2 ${
-          passwordError
-            ? "border-red-500 focus:ring-red-500"
-            : "border-gray-300 focus:ring-blue-500"
-        }`}
         required
+        className={`border rounded-md px-3 py-2 focus:outline-none focus:ring-2 ${
+          passwordError ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"
+        }`}
       />
       {passwordError && <p className="text-red-500 text-sm">{passwordError}</p>}
 
@@ -161,22 +131,20 @@ const RegisterStudent = ({ onBack }) => {
         onChange={handleChange}
         min="1"
         max="8"
-        className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
         required
+        className="border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
 
       <select
         name="branch"
         value={formData.branch}
         onChange={handleChange}
-        className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
         required
+        className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         <option value="">Select Branch</option>
-        {branches.map((branch, index) => (
-          <option key={index} value={branch}>
-            {branch}
-          </option>
+        {branches.map((b, idx) => (
+          <option key={idx} value={b}>{b}</option>
         ))}
       </select>
 
@@ -188,8 +156,8 @@ const RegisterStudent = ({ onBack }) => {
       </button>
       <button
         type="button"
-        className="text-blue-500 underline hover:text-blue-700 transition"
         onClick={onBack}
+        className="text-blue-500 underline hover:text-blue-700 transition"
       >
         ← Back
       </button>
