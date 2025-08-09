@@ -78,7 +78,9 @@ const StudentLogin = ({ onBack }) => {
         setError(data.message || "Login failed");
         return;
       }
-
+    if (data.token){
+      localStorage.setItem("token",data.token);
+    }
       alert("Login successful!🎉");
 
       // Navigate to homepage
