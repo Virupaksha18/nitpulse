@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
 
 const StudentLogin = ({ onBack }) => {
+  const { login } =useAuth();
   const navigate = useNavigate(); // ✅ Create navigation function
 
   const [formData, setFormData] = useState({
@@ -78,10 +80,11 @@ const StudentLogin = ({ onBack }) => {
         setError(data.message || "Login failed");
         return;
       }
-    if (data.token){
-      localStorage.setItem("token",data.token);
-    }
+    // if (data.token){
+    //   localStorage.setItem("token",data.token);
+    // }
       alert("Login successful!🎉");
+      login(data);
 
       // Navigate to homepage
       navigate("/");
