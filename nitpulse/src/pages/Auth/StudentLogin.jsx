@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
+import HomePage from "../HomePage";
 
 const StudentLogin = ({ onBack }) => {
   const navigate = useNavigate(); // ✅ Create navigation function
@@ -82,9 +83,11 @@ const StudentLogin = ({ onBack }) => {
       alert("Login successful!🎉");
 
       // ✅ Navigate to homepage
+      console.log("Navigating to hame...");
       navigate("/");
 
     } catch (err) {
+      
       setError("Server error. Please try again later.");
     }
   };
