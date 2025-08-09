@@ -84,7 +84,7 @@ const StudentLogin = ({ onBack }) => {
 
       // ✅ Navigate to homepage
       console.log("Navigating to home...");
-      navigate("/home");
+      navigate("/");
 
     } catch (err) {
       

@@ -1,33 +1,33 @@
-import { createContext, useContext, useState, useEffect } from "react";
+// import { createContext, useContext, useState, useEffect } from "react";
 
-const AuthContext = createContext();
+// const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+// export const AuthProvider = ({ children }) => {
+//   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const storedUser = localStorage.getItem("authUser");
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-    }
-  }, []);
+//   useEffect(() => {
+//     const storedUser = localStorage.getItem("authUser");
+//     if (storedUser) {
+//       setUser(JSON.parse(storedUser));
+//     }
+//   }, []);
 
-  const login = (userData) => {
-    setUser(userData);
-    localStorage.setItem("authUser", JSON.stringify(userData));
-  };
+//   const login = (userData) => {
+//     setUser(userData);
+//     localStorage.setItem("authUser", JSON.stringify(userData));
+//   };
 
-  const logout = () => {
-    setUser(null);
-    localStorage.removeItem("authUser");
-  };
+//   const logout = () => {
+//     setUser(null);
+//     localStorage.removeItem("authUser");
+//   };
 
-  return (
-    <AuthContext.Provider value={{ user, login, logout }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
+//   return (
+//     <AuthContext.Provider value={{ user, login, logout }}>
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };
 
-// This is what you must import to use login/logout/user
-export const useAuth = () => useContext(AuthContext);
+// // This is what you must import to use login/logout/user
+// export const useAuth = () => useContext(AuthContext);
