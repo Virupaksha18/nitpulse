@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 
 export const registerStudent = async (req, res) => {
   try {
-    const { name, usn, password, sem, branch } = req.body;
+    const { name, usn, password, semester, branch } = req.body;
 
     const existingStudent = await Student.findOne({ usn: usn.toLowerCase() });
     if (existingStudent) {
@@ -16,7 +16,7 @@ export const registerStudent = async (req, res) => {
       name,
       usn: usn.toLowerCase(),
       password: hashedPassword,
-      sem,
+      semester,
       branch
     });
 
