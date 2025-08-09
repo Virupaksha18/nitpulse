@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ Import navigation hook
-import HomePage from "../HomePage";
 
 const StudentLogin = ({ onBack }) => {
   const navigate = useNavigate(); // ✅ Create navigation function
@@ -82,11 +81,10 @@ const StudentLogin = ({ onBack }) => {
 
       alert("Login successful!🎉");
 
-      // ✅ Navigate to homepage
+      // Navigate to homepage
       navigate("/");
 
     } catch (err) {
-      
       setError("Server error. Please try again later.");
     }
   };
@@ -150,9 +148,18 @@ const StudentLogin = ({ onBack }) => {
       <button
         type="button"
         className="text-blue-500 underline hover:text-blue-700 transition"
-        onClick={onBack}
+        onClick={onBack || (() => navigate(-1))}
       >
         ← Back
+      </button>
+
+      {/* Optional test navigation button */}
+      <button
+        type="button"
+        onClick={() => navigate("/")}
+        className="bg-green-600 text-white py-2 px-4 rounded mt-4"
+      >
+        Go to Home (Test Navigation)
       </button>
     </form>
   );
