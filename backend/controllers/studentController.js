@@ -24,6 +24,7 @@ export const registerStudent = async (req, res) => {
     res.status(201).json({ message: "Registration successful" });
 
   } catch (err) {
+    console.error("Student registration error:",err);
     res.status(500).json({ message: err.message });
   }
 };
@@ -44,6 +45,8 @@ export const loginStudent = async (req, res) => {
 
     res.json({ message: "Login successful", student });
   } catch (err) {
+        console.error("Student login error:",err);
+
     res.status(500).json({ message: err.message });
   }
 };
