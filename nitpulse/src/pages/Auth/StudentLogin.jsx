@@ -83,8 +83,8 @@ const StudentLogin = ({ onBack }) => {
       alert("Login successful!🎉");
 
       // ✅ Navigate to homepage
-      console.log("Navigating to hame...");
-      navigate("/");
+      console.log("Navigating to home...");
+      navigate("/home");
 
     } catch (err) {
       

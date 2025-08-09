@@ -353,7 +353,7 @@ function App() {
       <Navbar />
       <Routes>
         {/* Home */}
-        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<HomePage />} />
 
         {/* Other Pages */}
         <Route path="/timetable"element={<TimeTable/>}/>
