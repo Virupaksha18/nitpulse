@@ -79,10 +79,10 @@ const StudentLogin = ({ onBack }) => {
         return;
       }
 
-      alert("Login successful!");
+      alert("Login successful!🎉");
 
       // ✅ Navigate to homepage
-      navigate("/homepage");
+      navigate("/");
 
     } catch (err) {
       setError("Server error. Please try again later.");
