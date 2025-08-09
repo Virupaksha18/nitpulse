@@ -243,9 +243,9 @@ if(!user){
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-      </div>
+      {/* </div>
       <button onClick={logout}className="mt-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Logout</button>
-       <div className="bg-white p-1 rounded-3xl shadow-md text-center max-w-2xl mx-auto my-10 border hover:border-green-500 hover:shadow-xl  hover:scale-105 duration-300">
+       <div className="bg-white p-1 rounded-3xl shadow-md text-center max-w-2xl mx-auto my-10 border hover:border-green-500 hover:shadow-xl  hover:scale-105 duration-300"> */}
       <p className="text-1xl mb-1">Get instant answers to your academic questions with our AI assistant.</p>
 
       {/* ✅ Navigation Button */}

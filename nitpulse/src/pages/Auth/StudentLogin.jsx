@@ -158,14 +158,7 @@ const StudentLogin = ({ onBack }) => {
         ← Back
       </button>
 
-      {/* Optional test navigation button */}
-      <button
-        type="button"
-        onClick={() => navigate("/")}
-        className="bg-green-600 text-white py-2 px-4 rounded mt-4"
-      >
-        Go to Home (Test Navigation)
-      </button>
+      
     </form>
   );
 };
