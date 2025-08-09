@@ -63,13 +63,13 @@ const RegisterStudent = ({ onBack }) => {
       if (!res.ok) {
         alert(data.message || "Error registering student.");
         if (data.message?.includes("already registered")) {
-          navigate("/login"); // ✅ Redirect if already registered
+          navigate("/student-login"); // ✅ Redirect if already registered
         }
         return;
       }
 
       alert("Registration successful! You can now log in.");
-      navigate("/login"); // ✅ Redirect after new registration
+      navigate("/student-login"); // ✅ Redirect after new registration
 
     } catch (error) {
       console.error(error);
