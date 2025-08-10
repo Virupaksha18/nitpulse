@@ -5,7 +5,8 @@ const ForgotPassword = () => {
   const [formData, setFormData] = useState({
     name: "",
     usn: "",
-    email: ""
+    email: "",
+    newPassword: ""
   });
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ const ForgotPassword = () => {
         return;
       }
 
-      setMessage(`Your recent password is: ${data.password}`);
+      setMessage("✅ Password reset successful. You can now log in.");
     } catch (err) {
       setMessage("Server error. Please try again later.");
     }
@@ -47,7 +48,7 @@ const ForgotPassword = () => {
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-lg shadow-md w-96"
       >
-        <h2 className="text-2xl font-bold mb-4 text-blue-700">Forgot Password</h2>
+        <h2 className="text-2xl font-bold mb-4 text-blue-700">Reset Password</h2>
         {message && <p className="text-red-500 mb-2">{message}</p>}
 
         <input
@@ -77,12 +78,21 @@ const ForgotPassword = () => {
           required
           className="border p-2 rounded w-full mb-3"
         />
+        <input
+          type="password"
+          name="newPassword"
+          placeholder="New Password"
+          value={formData.newPassword}
+          onChange={handleChange}
+          required
+          className="border p-2 rounded w-full mb-3"
+        />
 
         <button
           type="submit"
           className="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700"
         >
-          Submit
+          Reset Password
         </button>
 
         <button
