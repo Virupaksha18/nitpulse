@@ -71,6 +71,8 @@ const StudentLogin = ({ onBack }) => {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
+          usn: formData.usn,
+          password: formData.password,
         }
       );
 
@@ -84,7 +86,7 @@ const StudentLogin = ({ onBack }) => {
     //   localStorage.setItem("token",data.token);
     // }
       alert("Login successful!🎉");
-      login(data);
+      login(data.student);
 
       // Navigate to homepage
       navigate("/");
