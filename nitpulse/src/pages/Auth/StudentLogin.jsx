@@ -142,6 +142,9 @@ const StudentLogin = ({ onBack }) => {
         required
       />
       {passwordError && <p className="text-red-500 text-sm">{passwordError}</p>}
+      <p className="text-blue-500 underline text-sm cursor-pointer hover:text-blue-700" onClick = {() => navigate("/forgot-password")}>
+        Forgot Password?
+      </p>
 
       <button
         type="submit"

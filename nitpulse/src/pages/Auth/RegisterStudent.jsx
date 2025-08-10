@@ -7,6 +7,7 @@ const RegisterStudent = ({ onBack }) => {
   const [formData, setFormData] = useState({
     name: "",
     usn: "",
+    email:"",
     branch: "",
     password: "",
     semester: ""
@@ -14,6 +15,7 @@ const RegisterStudent = ({ onBack }) => {
 
   const [passwordError, setPasswordError] = useState("");
   const [usnError, setUsnError] = useState("");
+  const [emailError, setEmailError] =useState("");
 
   const branches = ["CSE", "AIML", "EC", "EEE", "Civil"];
 
@@ -23,6 +25,7 @@ const RegisterStudent = ({ onBack }) => {
 
     if (name === "password") validatePassword(value);
     if (name === "usn") validateUSN(value);
+    if (name === "email") validateEmail(value);
   };
 
   const validatePassword = (password) => {
@@ -42,11 +45,15 @@ const RegisterStudent = ({ onBack }) => {
     const pattern = /^(3na|3NA)(22|23|24)(cs|CS|ec|EC|ai|AI|ee|EE|cv|CV)\d{3}$/;
     setUsnError(!pattern.test(usn) ? "Format: 3na22cs001 or 3NA22CS001 only" : "");
   };
-
+  const validateEmail = (email) => {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setEmailError(!pattern.test(email) ? "Format: Enter a valid email address (eg. abc@gmail.com)" : "");
+  };
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (passwordError || usnError) {
+    if (passwordError || usnError || emailError) {
       alert("Please fix the errors before submitting.");
       return;
     }
@@ -110,6 +117,20 @@ const RegisterStudent = ({ onBack }) => {
       />
       {usnError && <p className="text-red-500 text-sm">{usnError}</p>}
 
+      <input
+        type="email"
+        name="email"
+        placeholder="Email (e.g. abc@gmail.com)"
+        value={formData.email}
+        onChange={handleChange}
+        required
+        className={`border p-3 rounded-lg focus:outline-none focus:ring-2 ${
+          emailError ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"
+        }`}
+      />
+      {emailError && <p className="text-red-500 text-sm">{emailError}</p>}
+
+      
       <input
         type="password"
         name="password"

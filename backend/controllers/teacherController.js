@@ -15,6 +15,7 @@ export const registerTeacher = async (req, res) => {
     const teacher = new Teacher({
       name,
       teacherId: teacherId.toLowerCase(),
+      email:email.toLowerCase(),
       branch,
       password: hashedPassword
     });
