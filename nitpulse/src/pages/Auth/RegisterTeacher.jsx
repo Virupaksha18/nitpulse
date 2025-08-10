@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useState } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const RegisterTeacher = ({ onBack }) => {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const RegisterTeacher = ({ onBack }) => {
     "AIML",
     "EC",
     "EEE",
-    "Civil",
+    "Civil"
   ];
 
   const handleChange = (e) => {
@@ -116,11 +116,11 @@ const RegisterTeacher = ({ onBack }) => {
         type="text"
         name="teacherId"
         placeholder="Teacher Id (e.g. 3na22cs001)"
-        value={formData.usn}
+        value={formData.teacherId}
         onChange={handleChange}
         required
         className={`border p-3 rounded-lg focus:outline-none focus:ring-2 ${
-          usnError ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"
+          teacherIdError ? "border-red-500 focus:ring-red-500" : "border-gray-300 focus:ring-blue-500"
         }`}
       />
       {teacherIdError && <p className="text-red-500 text-sm">{teacherIdError}</p>}

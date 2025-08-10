@@ -59,7 +59,7 @@ const TeacherLogin = ({ onBack }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if ( teacherId || password) {
+    if ( teacherIdError || passwordError) {
       setError("please fix the errors before logging in.");
       return;
     }
