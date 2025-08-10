@@ -157,37 +157,42 @@ const Navbar = () => {
           </div>
         </div>
       )}
-      {!isForgotPassword && user && menuOpen &&(
-        <div className="fixed inset-0 z-40 bg-black/50 transition-all duration-300 md:hidden">
-          <div className="absolute right-0 top-0 w-64 h-full bg-white text-blue-600 shadow-lg p-4 transition-all duration-300">
-            <div className="flex justify-end">
-              <button onClick={() => setMenuOpen(false)}>
-                <X size={24} />
-              </button>
-            </div>
+     {!isAuthPage && user && menuOpen && (
+  <div className="fixed inset-0 z-40 bg-black/50 transition-all duration-300 md:hidden">
+    <div className="absolute right-0 top-0 w-64 h-full bg-white text-blue-600 shadow-lg p-4 transition-all duration-300">
+      <div className="flex justify-end">
+        <button onClick={() => setMenuOpen(false)}>
+          <X size={24} />
+        </button>
+      </div>
 
-            <nav className="mt-6 space-y-3 font-medium">
-              <NavLink to="/notes" className="block" onClick={() => setMenuOpen(false)}>Notes</NavLink>
-              <NavLink to="/assignments" className="block" onClick={() => setMenuOpen(false)}>Assignments</NavLink>
-              <NavLink to="/labs" className="block" onClick={() => setMenuOpen(false)}>Lab Programs</NavLink>
-              <NavLink to="/mqps" className="block" onClick={() => setMenuOpen(false)}>MQPs</NavLink>
-              <NavLink to="/passing-package" className="block" onClick={() => setMenuOpen(false)}>Passing Package</NavLink>
-              <NavLink to="/ask-ai" className="block" onClick={() => setMenuOpen(false)}>NIT Pulse-AI</NavLink>
+      <nav className="mt-6 space-y-3 font-medium">
+        <NavLink to="/notes" className="block" onClick={() => setMenuOpen(false)}>Notes</NavLink>
+        <NavLink to="/assignments" className="block" onClick={() => setMenuOpen(false)}>Assignments</NavLink>
+        <NavLink to="/labs" className="block" onClick={() => setMenuOpen(false)}>Lab Programs</NavLink>
+        <NavLink to="/mqps" className="block" onClick={() => setMenuOpen(false)}>MQPs</NavLink>
+        <NavLink to="/passing-package" className="block" onClick={() => setMenuOpen(false)}>Passing Package</NavLink>
+        <NavLink to="/ask-ai" className="block" onClick={() => setMenuOpen(false)}>NIT Pulse-AI</NavLink>
 
-              <hr className="my-2" />
-              <NavLink to="/sgpa" className="block" onClick={() => setMenuOpen(false)}>SGPA Calculator</NavLink>
-              <NavLink to="/cgpa" className="block" onClick={() => setMenuOpen(false)}>CGPA Calculator</NavLink>
-              <NavLink to="/vtu-results" className="block" onClick={() => setMenuOpen(false)}>VTU Results</NavLink>
-              <NavLink to="/vtu-links" className="block" onClick={() => setMenuOpen(false)}>VTU Links</NavLink>
-              <NavLink to="/timetable" className="block" onClick={() => setMenuOpen(false)}>College Time Table</NavLink>
-              <NavLink to="/updates" className="block" onClick={() => setMenuOpen(false)}>Latest Updates</NavLink>
+        <hr className="my-2" />
 
-              <button onClick={handleLogout} className="mt-4 text-red-500">Logout</button>
-            </nav>
-          </div>
-        </div>
+        {/* Extras and Logout hidden on forgot password page */}
+        {!isForgotPassword && (
+          <>
+            <NavLink to="/sgpa" className="block" onClick={() => setMenuOpen(false)}>SGPA Calculator</NavLink>
+            <NavLink to="/cgpa" className="block" onClick={() => setMenuOpen(false)}>CGPA Calculator</NavLink>
+            <NavLink to="/vtu-results" className="block" onClick={() => setMenuOpen(false)}>VTU Results</NavLink>
+            <NavLink to="/vtu-links" className="block" onClick={() => setMenuOpen(false)}>VTU Links</NavLink>
+            <NavLink to="/timetable" className="block" onClick={() => setMenuOpen(false)}>College Time Table</NavLink>
+            <NavLink to="/updates" className="block" onClick={() => setMenuOpen(false)}>Latest Updates</NavLink>
 
-      )}
+            <button onClick={handleLogout} className="mt-4 text-red-500">Logout</button>
+          </>
+        )}
+      </nav>
+    </div>
+  </div>
+)}
     </nav>
   );
 };
