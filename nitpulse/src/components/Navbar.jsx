@@ -13,6 +13,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const isForgotPassword = location.pathname.toLowerCase().startsWith('/forgot-password');
+  const isTeacherForgotPassword = location.pathname.toLowerCase().startsWith('/teacher/forgot-password');
   const isAuthPage = location.pathname.startsWith('/auth');
 
   const linkClasses = ({ isActive }) =>
@@ -127,7 +128,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Slide Drawer Menu */}
-      {!isAuthPage && user && menuOpen && !isForgotPassword && (
+      {!isAuthPage && user && menuOpen && !isForgotPassword && !isTeacherForgotPassword && (
         <div className="fixed inset-0 z-40 bg-black/50 transition-all duration-300 md:hidden">
           <div className="absolute right-0 top-0 w-64 h-full bg-white text-blue-600 shadow-lg p-4 transition-all duration-300">
             <div className="flex justify-end">

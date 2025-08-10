@@ -21,6 +21,7 @@ import StudentLogin from './pages/Auth/StudentLogin';
 import ProtectedRoute from './components/ProtectedRoute';
 import AuthMainPage from './pages/Auth/AuthMainPage';
 import ForgotPassword from './pages/Auth/ForgotPassword';
+import TeacherForgotPassword from './pages/Auth/TeacherForgotPassword';
 //CSE
 //  2022 scheme 6th semester
 import NotesCSE20226th from "./components/CSE/2022/6th/Notes";
@@ -376,6 +377,9 @@ function App() {
         <Route path="/protected-route"element={<ProtectedRoute/>}/>
         <Route path="/auth"element={<AuthMainPage/>}/>
         <Route path="/forgot-password"element={<ForgotPassword />}/>
+        <Route path="/teacher/forgot-password"element={<TeacherForgotPassword />}/>
+        
+
 
         
         {/* CSE 2022 - 6th Semester */}

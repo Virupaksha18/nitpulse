@@ -91,7 +91,7 @@ const RegisterStudent = ({ onBack }) => {
     >
       <div>
         <h2 className="text-2xl font-bold text-blue-700">Student Registration</h2>
-        <p className="text-sm text-gray-500">Fill in the details to create your account</p>
+        <p className="text-sm text-gray-500">Fill the details to create your account</p>
       </div>
 
       <input

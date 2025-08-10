@@ -101,7 +101,7 @@ const StudentLogin = ({ onBack }) => {
       onSubmit={handleSubmit}
       className="flex flex-col gap-4 bg-white p-6 rounded-xl shadow-md"
     >
-      <h2 className="text-2xl font-bold text-blue-700">Student Login</h2>
+      <h2 className="text-2xl font-bold text-blue-700">Students Login</h2>
 
       {error && <p className="text-red-500 text-sm">{error}</p>}
 
