@@ -12,7 +12,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const isForgotPassword = location.pathname.toLowerCase().startsWith('/auth/forgot-password');
+  const isForgotPassword = location.pathname.toLowerCase().startsWith('/forgot-password');
   const isAuthPage = location.pathname.startsWith('/auth');
 
   const linkClasses = ({ isActive }) =>
