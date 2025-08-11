@@ -20,23 +20,23 @@ const SchemePage = () => {
       {/* Scheme Buttons */}
       <Link to={`/${branch}/2022`} className="w-full max-w-md">
         <div className="bg-indigo-600 text-white text-lg font-semibold px-6 py-3 rounded-xl text-center shadow hover:bg-indigo-700 transition">
-          2022 SCHEME →
+          2022-2026 Batch →
         </div>
       </Link>
 
       <Link to={`/${branch}/2023`} className="w-full max-w-md">
         <div className="bg-indigo-600 text-white text-lg font-semibold px-6 py-3 rounded-xl text-center shadow hover:bg-indigo-700 transition">
-          2023 SCHEME →
+          2023-2027 Batch →
         </div>
       </Link>
       <Link to={`/${branch}/2024`} className="w-full max-w-md">
         <div className="bg-indigo-600 text-white text-lg font-semibold px-6 py-3 rounded-xl text-center shadow hover:bg-indigo-700 transition">
-          2024 SCHEME →
+          2024-2028 Batch →
         </div>
       </Link>
       <Link to={`/${branch}/2025`} className="w-full max-w-md">
         <div className="bg-indigo-600 text-white text-lg font-semibold px-6 py-3 rounded-xl text-center shadow hover:bg-indigo-700 transition">
-          2025 SCHEME →
+          2025-2029 Batch →
         </div>
       </Link>
 

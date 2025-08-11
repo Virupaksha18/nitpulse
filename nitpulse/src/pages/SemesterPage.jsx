@@ -39,7 +39,7 @@ const SemesterPage = () => {
         to={`/${branch}`}
         className="text-indigo-700 mt-6 text-sm hover:underline"
       >
-        ← BACK TO SCHEMES
+        ← BACK TO Batches
       </Link>
     </div>
   );
