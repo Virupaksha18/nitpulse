@@ -377,12 +377,12 @@ if(!user){
             College Time Table
           </Link>
         </div>
-      </div>
+      
        {/* Add Resource Button */}
       <div className="text-center mb-8">
         <button
           onClick={() => setShowForm(!showForm)}
-          className="bg-white px-16 py-4 rounded-2xl shadow-md text-center border hover:border-green-500 hover:shadow-xl"
+          className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-green-500 hover:shadow-xl"
         ><Calendar className="mx-auto mb-3 w-10 h-10 text-green-600" />
          Add a Resource as Student
         </button>
@@ -482,7 +482,7 @@ if(!user){
       <div className="text-center mb-16">
         <button
           onClick={() => teachersetShowForm(!showForm)}
-          className="bg-white px-16 py-4 rounded-2xl shadow-md text-center border hover:border-red-500 hover:shadow-xl"
+          className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-red-500 hover:shadow-xl"
         ><Calendar className="mx-auto mb-3 w-10 h-10 text-red-600" />
          Add a Resource as Teacher
         </button>
@@ -561,7 +561,9 @@ if(!user){
             </button>
           </form>
         </div>
+        
       )}
+      </div>
 
 
 
