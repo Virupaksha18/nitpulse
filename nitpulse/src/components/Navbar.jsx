@@ -15,6 +15,8 @@ const Navbar = () => {
   const isForgotPassword = location.pathname.toLowerCase().startsWith('/forgot-password');
   const isTeacherForgotPassword = location.pathname.toLowerCase().startsWith('/teacher/forgot-password');
   const isAuthPage = location.pathname.startsWith('/auth');
+  const isStudentLogin = location.pathname.toLowerCase().startsWith('/student-login');
+  const isTeacherLogin = location.pathname.toLowerCase().startsWith('/teacher-login');
 
   const linkClasses = ({ isActive }) =>
     `hover:text-gray-200 transition-all ${isActive ? 'underline font-semibold' : ''}`;
@@ -128,7 +130,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Slide Drawer Menu */}
-      {!isAuthPage && user && menuOpen && !isForgotPassword && !isTeacherForgotPassword && (
+      {!isAuthPage && user && menuOpen && !isForgotPassword && !isTeacherForgotPassword && !isStudentLogin && !isTeacherLogin &&(
         <div className="fixed inset-0 z-40 bg-black/50 transition-all duration-300 md:hidden">
           <div className="absolute right-0 top-0 w-64 h-full bg-white text-blue-600 shadow-lg p-4 transition-all duration-300">
             <div className="flex justify-end">
