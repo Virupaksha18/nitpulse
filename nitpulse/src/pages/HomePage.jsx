@@ -393,7 +393,7 @@ if(!user){
       <div className="text-center mb-6">
         <button
           onClick={() => setShowForm(!showForm)}
-          className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition"
+          className="inline-flex items-center gap-2 px-6 py-6 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition"
         >
           <Plus className="w-5 h-5" /> Add a Resource as Student
         </button>
@@ -402,7 +402,7 @@ if(!user){
       {/* Add Resource Form */}
       {showForm && (
         <div className="max-w-3xl mx-auto mb-20 bg-white p-8 rounded-3xl shadow-xl border">
-          <h2 className="text-3xl font-bold text-center mb-6 text-blue-700">Add a Resource as Student</h2>
+          <h2 className="text-2xl font-bold text-center mb-6 text-blue-700">Add a Resource as Student</h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
 
             <div>
