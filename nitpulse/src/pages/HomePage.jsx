@@ -376,8 +376,8 @@ if(!user){
       <div className="text-center mb-8">
         <button
           onClick={() => setShowForm(!showForm)}
-          className="bg-white px-16 py-5 rounded-2xl shadow-md text-center border hover:border-purple-500 hover:shadow-xl"
-        ><Calendar className="mx-auto mb-3 w-10 h-10 text-purple-600" />
+          className="bg-white px-16 py-4 rounded-2xl shadow-md text-center border hover:border-green-500 hover:shadow-xl"
+        ><Calendar className="mx-auto mb-3 w-10 h-10 text-green-600" />
          Add a Resource as Student
         </button>
       </div> 
@@ -395,7 +395,7 @@ if(!user){
 
             <div>
               <label className="block font-semibold text-gray-700">USN</label>
-              <input type="text" name="usn" value={formData.usn} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: 3NA22CS092" />
+              <input type="text" name="usn" value={formData.usn} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: 3NA22CS092" pattern = "/^(3na|3NA)(22|23|24)(cs|CS|ec|EC|ai|AI|ee|EE|cv|CV)\d{3}$/" />
             </div>
 
             <div>
@@ -473,11 +473,11 @@ if(!user){
       )}
 
  {/* Add Resource Button as teacher */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-16">
         <button
           onClick={() => teachersetShowForm(!showForm)}
-          className="bg-white px-16 py-5 rounded-2xl shadow-md text-center border hover:border-purple-500 hover:shadow-xl"
-        ><Calendar className="mx-auto mb-3 w-10 h-10 text-purple-600" />
+          className="bg-white px-16 py-4 rounded-2xl shadow-md text-center border hover:border-red-500 hover:shadow-xl"
+        ><Calendar className="mx-auto mb-3 w-10 h-10 text-red-600" />
          Add a Resource as Teacher
         </button>
       </div> 
@@ -495,7 +495,7 @@ if(!user){
 
             <div>
               <label className="block font-semibold text-gray-700">Teacher Id</label>
-              <input type="text" name="teacherId" value={teacherformData.teacherId} onChange={teacherhandleChange} className="w-full p-3 border rounded-xl" placeholder="Teachers ID" />
+              <input type="text" name="teacherId" value={teacherformData.teacherId} onChange={teacherhandleChange} className="w-full p-3 border rounded-xl" placeholder="Teachers ID" pattern="/^5\d{5}$/" />
             </div>
 
             <div>

@@ -69,7 +69,8 @@ const TeacherForgotPassword = () => {
           value={formData.teacherId}
           onChange={handleChange}
           required
-          className="border p-2 rounded w-full mb-3"
+          className="border p-2 rounded w-full mb-3 "
+          pattern="/^5\d{5}$/"
         />
 
         <input
@@ -80,6 +81,7 @@ const TeacherForgotPassword = () => {
           onChange={handleChange}
           required
           className="border p-2 rounded w-full mb-3"
+          pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
         />
 
         <input
