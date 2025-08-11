@@ -280,7 +280,7 @@ if(!user){
       </div>
 
       {/* More Features */}
-      <div className="max-w-6xl mx-auto mb-20">
+      <div className="max-w-6xl mx-auto mb-10">
         <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">More Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <Link to="/sgpa" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-blue-400 hover:shadow-xl">
@@ -313,7 +313,7 @@ if(!user){
       <div className="text-center mb-8">
         <button
           onClick={() => setShowForm(!showForm)}
-          className="bg-white px-12 py-6 rounded-2xl shadow-md text-center border hover:border-purple-500 hover:shadow-xl"
+          className="bg-white px-14 py-5 rounded-2xl shadow-md text-center border hover:border-purple-500 hover:shadow-xl"
         ><Calendar className="mx-auto mb-3 w-10 h-10 text-purple-600" />
          Add a Resource as Student
         </button>
