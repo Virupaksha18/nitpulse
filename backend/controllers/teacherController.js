@@ -21,7 +21,7 @@ export const registerTeacher = async (req, res) => {
           });
         }
     // hash password
-    const hashedPassword = await bcrypt.hash(newpassword, 10);
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
 
     //create new teacher
     const teacher = new Teacher({
