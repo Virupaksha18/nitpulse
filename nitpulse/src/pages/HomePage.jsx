@@ -376,7 +376,7 @@ if(!user){
             <Clock className="mx-auto mb-3 w-10 h-10 text-indigo-600" />
             College Time Table
           </Link>
-        </div>
+        
       
        {/* Add Resource Button */}
       <div className="text-center mb-8">
@@ -563,6 +563,7 @@ if(!user){
         </div>
         
       )}
+      </div>
       </div>
 
 
