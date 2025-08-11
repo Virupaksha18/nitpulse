@@ -1,16 +1,16 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import {
-  BarChart, Calendar, Link2, Paperclip, Plus, Clock,
+  BarChart, Calendar, Link2, Paperclip, Clock,
   GitBranchPlusIcon
 } from 'lucide-react';
 import { useAuth } from  '../context/AuthContext';
 import { Navigate } from 'react-router-dom';
 
 const HomePage = () => {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const [search, setSearch] = useState('');
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -397,6 +397,91 @@ if(!user){
               </div>
             </div>
 
+            <div>
+              <label className="block font-semibold text-gray-700">Upload File</label>
+              <input type="file" name="file" ref={fileInputRef} onChange={handleFileChange} className="w-full p-2 border rounded-xl" />
+            </div>
+
+            <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 font-bold">
+              Submit Resource
+            </button>
+          </form>
+        </div>
+      )}
+
+ {/* Add Resource Button as teacher */}
+      <div className="text-center mb-8">
+        <button
+          onClick={() => setShowForm(!showForm)}
+          className="bg-white px-16 py-5 rounded-2xl shadow-md text-center border hover:border-purple-500 hover:shadow-xl"
+        ><Calendar className="mx-auto mb-3 w-10 h-10 text-purple-600" />
+         Add a Resource as Teacher
+        </button>
+      </div> 
+
+      {/* Add Resource Form */}
+      {showForm && (
+        <div className="max-w-3xl mx-auto mb-20 bg-white p-8 rounded-3xl shadow-xl border">
+          <h2 className="text-1xl font-bold text-center mb-6 text-blue-700">Add a Resource as Teacher</h2>
+          <form className="space-y-6" onSubmit={handleSubmit}>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Teacher Name</label>
+              <input type="text" name="teacherName" value={formData.teacherName} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="your Name" />
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Teacher Id</label>
+              <input type="text" name="teacherId" value={formData.teacherId} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Teachers ID" />
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Semester</label>
+              <select name="semester" value={formData.semester} onChange={handleChange} className="w-full p-3 border rounded-xl">
+                <option value="">Select Semester</option>
+                <option>1st</option>
+                <option>2nd</option>
+                <option>3rd</option>
+                <option>4th</option>
+                <option>5th</option>
+                <option>6th</option>
+                <option>7th</option>
+                <option>8th</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Branch</label>
+              <select name="branch" value={formData.branch} onChange={handleChange} className="w-full p-3 border rounded-xl">
+                <option value="">Select Branch</option>
+                <option>CSE</option>
+                <option>ECE</option>
+                <option>EEE</option>
+                <option>CIVIL</option>
+                <option>AIML</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Title</label>
+              <input type="text" name="title" value={formData.title} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Module 1 Notes" />
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Type</label>
+              <select name="type" value={formData.type} onChange={handleChange} className="w-full p-3 border rounded-xl">
+                <option>Notes</option>
+                <option>Assignment</option>
+                <option>MQP</option>
+                <option>Lab Program</option>
+                <option>Passing Package</option>
+              </select>
+            </div>
+
+            <div>
+              <label className="block font-semibold text-gray-700">Subject</label>
+              <input type="text" name="subject" value={formData.subject} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Machine Learning" />
+            </div>
             <div>
               <label className="block font-semibold text-gray-700">Upload File</label>
               <input type="file" name="file" ref={fileInputRef} onChange={handleFileChange} className="w-full p-2 border rounded-xl" />
