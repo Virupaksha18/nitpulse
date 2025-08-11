@@ -17,9 +17,9 @@ const TeacherLogin = ({ onBack }) => {
   const [error, setError] = useState("");
 
    const validateTeacherId = (teacherId) => {
-    const pattern = /^(3NA|3na)(22|23|24)(CS|cs|ai|AI|ec|EC|EE|ee|cv|CV)\d{3}$/i;
+    const pattern = /^5\d{5}$/;
     if (!pattern.test(teacherId)) {
-      setTeacherIdError("Teacher Id must be in format: 3NA22CS001 or 3na22cs001");
+      setTeacherIdError("Teacher Id must be 6 digits");
     } else {
       setTeacherIdError("");
     }

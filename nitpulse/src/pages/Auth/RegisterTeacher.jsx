@@ -54,8 +54,8 @@ const RegisterTeacher = ({ onBack }) => {
   };
 
   const validateTeacherId = (teacherId) => {
-    const pattern = /^(3na|3NA)(22|23|24)(cs|CS|ec|EC|ai|AI|ee|EE|cv|CV)\d{3}$/;
-    setTeacherIdError(!pattern.test(teacherId) ? "Format: 3na22cs001 or 3NA22CS001 only" : "");
+    const pattern = /^5\d{5}$/;
+    setTeacherIdError(!pattern.test(teacherId) ? "Teacher ID must be 6 digits" : "");
   };
  const handleSubmit = async (e) => {
   e.preventDefault();
@@ -115,7 +115,7 @@ const RegisterTeacher = ({ onBack }) => {
       <input
         type="text"
         name="teacherId"
-        placeholder="Teacher Id (e.g. 3na22cs001)"
+        placeholder="Teacher Id"
         value={formData.teacherId}
         onChange={handleChange}
         required

@@ -11,7 +11,7 @@ const filesPath = path.join(__dirname,'files');
 const huggingFaceRoutes = require('./routes/huggingface');
 const studentRoutes = require('./routes/studentRoutes');
 const teacherRoutes = require('./routes/teacherRoutes');
-
+const teacherresourceRoutes =require('./routes/teacherresourceRoutes');
 
 const app = express();
 
@@ -48,6 +48,7 @@ app.use('/api/labs', require('./routes/labs'));
 app.use('/api/mqp', require('./routes/mqp'));
 app.use('/api/passing-package', require('./routes/passingPackage')); // enable when ready
 app.use('/api/resources', resourceRoutes);
+app.use('/api/teacher-resources',teacherresourceRoutes);
 app.use('/api', huggingFaceRoutes);
 app.use('/app/students', studentRoutes);
 app.use('/app/teachers', teacherRoutes);

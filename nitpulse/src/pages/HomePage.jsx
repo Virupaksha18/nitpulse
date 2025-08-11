@@ -25,6 +25,22 @@ const HomePage = () => {
      showCredit: 'yes',
   });
   const fileInputRef =useRef(null);
+  
+  const [teachershowForm, teachersetShowForm] = useState(false);
+  const [teacherformData, teachersetFormData] = useState({
+    teacherName:'',
+    teacherId:'',
+    title: '',
+    type: 'Notes',
+    branch: '',
+    semester:'',
+    subject: '',
+    file: null,
+    
+  });
+  const teacherfileInputRef =useRef(null);
+  
+
 
   const [userName, setUserName] = useState('');
   const [userUsn, setUserUsn] = useState('');
@@ -205,6 +221,8 @@ const handleReplyDislike = async (commentId, replyId) => {
         subject: '',
         semester: '',
         studentName: '',
+        teacherId:'',
+        teacherName:'',
         usn: '',
         showCredit: 'yes',
         file: null,
@@ -215,6 +233,51 @@ const handleReplyDislike = async (commentId, replyId) => {
       }
 
       setShowForm(false);
+    }
+  } catch (err) {
+    console.error("Upload failed:", err);
+    alert("Something went wrong. Please try again.");
+  }
+};
+ const teacherhandleChange = (e) => {
+    const { name, value } = e.target;
+    teachersetFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const teacherhandleFileChange = (e) => {
+    teachersetFormData((prev) => ({ ...prev, file: e.target.files[0] }));
+  };
+
+  const teacherhandleSubmit = async (e) => {
+  e.preventDefault();
+
+  const data = new FormData();
+  for (const key in teacherformData) {
+    data.append(key, teacherformData[key]);
+  }
+
+  try {
+    const response = await axios.post("https://nitpulse-backend.onrender.com/api/teacher-resources", data);
+
+    if (response.status === 200 || response.status === 201) {
+      alert("🎉 Congratulations! Your resource has been added successfully! 🥳");
+
+      teachersetFormData({
+        title: '',
+        type: 'Notes',
+        branch: '',
+        subject: '',
+        semester: '',
+        teacherName: '',
+        teacherId:'',
+        file: null,
+      });
+
+      if (teacherfileInputRef.current) {
+        teacherfileInputRef.current.value = null;
+      }
+
+      teachersetShowForm(false);
     }
   } catch (err) {
     console.error("Upload failed:", err);
@@ -412,7 +475,7 @@ if(!user){
  {/* Add Resource Button as teacher */}
       <div className="text-center mb-8">
         <button
-          onClick={() => setShowForm(!showForm)}
+          onClick={() => teachersetShowForm(!showForm)}
           className="bg-white px-16 py-5 rounded-2xl shadow-md text-center border hover:border-purple-500 hover:shadow-xl"
         ><Calendar className="mx-auto mb-3 w-10 h-10 text-purple-600" />
          Add a Resource as Teacher
@@ -420,24 +483,24 @@ if(!user){
       </div> 
 
       {/* Add Resource Form */}
-      {showForm && (
+      {teachershowForm && (
         <div className="max-w-3xl mx-auto mb-20 bg-white p-8 rounded-3xl shadow-xl border">
           <h2 className="text-1xl font-bold text-center mb-6 text-blue-700">Add a Resource as Teacher</h2>
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <form className="space-y-6" onSubmit={teacherhandleSubmit}>
 
             <div>
               <label className="block font-semibold text-gray-700">Teacher Name</label>
-              <input type="text" name="teacherName" value={formData.teacherName} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="your Name" />
+              <input type="text" name="teacherName" value={teacherformData.teacherName} onChange={teacherhandleChange} className="w-full p-3 border rounded-xl" placeholder="your Name" />
             </div>
 
             <div>
               <label className="block font-semibold text-gray-700">Teacher Id</label>
-              <input type="text" name="teacherId" value={formData.teacherId} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Teachers ID" />
+              <input type="text" name="teacherId" value={teacherformData.teacherId} onChange={teacherhandleChange} className="w-full p-3 border rounded-xl" placeholder="Teachers ID" />
             </div>
 
             <div>
               <label className="block font-semibold text-gray-700">Semester</label>
-              <select name="semester" value={formData.semester} onChange={handleChange} className="w-full p-3 border rounded-xl">
+              <select name="semester" value={teacherformData.semester} onChange={teacherhandleChange} className="w-full p-3 border rounded-xl">
                 <option value="">Select Semester</option>
                 <option>1st</option>
                 <option>2nd</option>
@@ -452,7 +515,7 @@ if(!user){
 
             <div>
               <label className="block font-semibold text-gray-700">Branch</label>
-              <select name="branch" value={formData.branch} onChange={handleChange} className="w-full p-3 border rounded-xl">
+              <select name="branch" value={teacherformData.branch} onChange={teacherhandleChange} className="w-full p-3 border rounded-xl">
                 <option value="">Select Branch</option>
                 <option>CSE</option>
                 <option>ECE</option>
@@ -464,12 +527,12 @@ if(!user){
 
             <div>
               <label className="block font-semibold text-gray-700">Title</label>
-              <input type="text" name="title" value={formData.title} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Module 1 Notes" />
+              <input type="text" name="title" value={teacherformData.title} onChange={teacherhandleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Module 1 Notes" />
             </div>
 
             <div>
               <label className="block font-semibold text-gray-700">Type</label>
-              <select name="type" value={formData.type} onChange={handleChange} className="w-full p-3 border rounded-xl">
+              <select name="type" value={teacherformData.type} onChange={teacherhandleChange} className="w-full p-3 border rounded-xl">
                 <option>Notes</option>
                 <option>Assignment</option>
                 <option>MQP</option>
@@ -480,11 +543,11 @@ if(!user){
 
             <div>
               <label className="block font-semibold text-gray-700">Subject</label>
-              <input type="text" name="subject" value={formData.subject} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Machine Learning" />
+              <input type="text" name="subject" value={teacherformData.subject} onChange={teacherhandleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: Machine Learning" />
             </div>
             <div>
               <label className="block font-semibold text-gray-700">Upload File</label>
-              <input type="file" name="file" ref={fileInputRef} onChange={handleFileChange} className="w-full p-2 border rounded-xl" />
+              <input type="file" name="file" ref={teacherfileInputRef} onChange={teacherhandleFileChange} className="w-full p-2 border rounded-xl" />
             </div>
 
             <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 font-bold">
