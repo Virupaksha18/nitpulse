@@ -12,6 +12,9 @@ import SchemePage from './pages/SchemePage';
 import SemesterPage from './pages/SemesterPage';
 import SemesterDetails from './pages/SemesterDetails';
 import AIChat from './pages/AIChat';
+import QuizSection from './pages/QuizSection';
+import StudentQuizBrowser from './components/StudentQuizBrowser';
+import TeacherUploadForm from './components/TeacherUploadForm';
 
 //login pages
 import RegisterStudent from './pages/Auth/RegisterStudent';
@@ -369,6 +372,9 @@ function App() {
         <Route path="/:branch/:scheme"element={<SemesterPage/>}/>
         <Route path="/:branch/:scheme/:semester"element={<SemesterDetails/>}/>
         <Route path="/ask-ai"element={<AIChat/>}/>
+        <Route path="/quiz-section" element={<QuizSection/>}/>
+        <Route path="/teacher/upload-form" element={<TeacherUploadForm/>}/>
+        <Route path="/student/quiz-browser" element={<StudentQuizBrowser/>}/>
         {/*login pages */}
         <Route path="/register-student"element={<RegisterStudent/>}/>
         <Route path="/student-login"element={<StudentLogin/>}/>
