@@ -280,7 +280,11 @@ if(!user){
       </div>
 
       {/* More Features */}
-       {/* Add Resource Form */}
+       <div className="max-w-6xl mx-auto mb-20">
+        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">More Features</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+          {/* Add Resource Form */}
       {showForm && (
         <div className="max-w-3xl mx-auto mb-20 bg-white p-8 rounded-3xl shadow-xl border">
           <h2 className="text-3xl font-bold text-center mb-6 text-blue-700">Add a Resource as Student</h2>
@@ -369,10 +373,6 @@ if(!user){
           </form>
         </div>
       )}
-
-      <div className="max-w-6xl mx-auto mb-20">
-        <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">More Features</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           <Link to="/sgpa" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-blue-400 hover:shadow-xl">
             <BarChart className="mx-auto mb-3 w-10 h-10 text-blue-600" />
             SGPA Calculator
