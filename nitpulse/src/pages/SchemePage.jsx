@@ -14,7 +14,7 @@ const SchemePage = () => {
 
       {/* Scheme Title */}
       <div className="bg-black text-white text-lg font-semibold px-6 py-3 rounded-xl w-full max-w-md text-center shadow">
-        CHOOSE YOUR SCHEME
+        CHOOSE YOUR BATCH
       </div>
 
       {/* Scheme Buttons */}
