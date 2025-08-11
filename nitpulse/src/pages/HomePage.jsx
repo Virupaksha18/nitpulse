@@ -309,92 +309,12 @@ if(!user){
           </Link>
         </div>
       </div>
-
-      <div className="max-w-4xl mx-auto mb-20">
-        <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">Feedback</h2>
-        <form onSubmit={handleCommentSubmit} className="mb-6 space-y-4">
-          <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-xl" value={userName} onChange={(e) => setUserName(e.target.value)} required />
-          <input type="text" placeholder="Your Usn" className="w-full p-3 border border-gray-300 rounded-xl" value={userUsn} onChange={(e) => setUserUsn(e.target.value.toUpperCase())} required />
-          <textarea className="w-full p-3 border border-gray-300 rounded-xl" rows="3" placeholder="Share your thoughts or suggestions..." value={newComment} onChange={(e) => setNewComment(e.target.value)} required></textarea>
-          <button type="submit" className="mt-3 bg-blue-600 text-white py-2 px-6 rounded-xl hover:bg-blue-700">Submit Feedback</button>
-          {errorMessage && (
-  <div style={{ color: 'red', marginTop: '10px' }}>
-    {errorMessage}
-  </div>
-)}
-        </form>
-
-        <div className="space-y-4">
-          {comments.length === 0 && <p className="text-center text-gray-500">No comments yet. Be the first!</p>}
-          {comments.map((comment) => (
-            <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
-              <div className="flex justify-between items-center">
-                <p className="font-semibold text-blue-700">{comment.name}</p>
-                {userUsn && (userUsn.toUpperCase() === comment.usn?.toUpperCase() || userUsn.toUpperCase() === '3NA22CS092') && (
-                  <button onClick={() => handleDeleteComment(comment._id, comment.usn)} className="text-red-500 text-sm">Delete</button>
-                )}
-              </div>
-              <p className="text-gray-800 mt-1">{comment.text}</p>
-              <p className="text-xs text-gray-500 text-right mt-2">{new Date(comment.createdAt).toLocaleString()}</p>
-                {/* 👍 👎 Buttons */}
-    <div className="flex items-center gap-4 mt-2">
-      <button 
-        onClick={() => handleLike(comment._id)} 
-        className="text-green-600 hover:scale-110 transition"
-      >
-        👍 {comment.likes || 0}
-      </button>
-      <button 
-        onClick={() => handleDislike(comment._id)} 
-        className="text-red-600 hover:scale-110 transition"
-      >
-        👎 {comment.dislikes || 0}
-      </button>
-     </div>
-
-              {comment.replies?.length > 0 && (
-                <div className="mt-4 ml-4 space-y-2">
-                  {comment.replies.map((reply, index) => (
-                    <div key={index} className="border-l-4 border-blue-200 pl-3 text-sm text-gray-700">
-                      <p className="font-medium text-blue-600">{reply.name}</p>
-                      <p>{reply.text}</p>
-                      <p className="text-xs text-gray-400">{new Date(reply.createdAt).toLocaleString()}</p>
-                         {/* 👍 👎 Buttons for Reply */}
-        <div className="flex items-center gap-4 mt-1">
-          <button 
-            onClick={() => handleReplyLike(comment._id, reply._id)} 
-            className="text-green-600 hover:scale-110 transition"
-          >
-            👍 {reply.likes || 0}
-          </button>
-          <button 
-            onClick={() => handleReplyDislike(comment._id, reply._id)} 
-            className="text-red-600 hover:scale-110 transition"
-          >
-            👎 {reply.dislikes || 0}
-          </button>
-        </div>
-
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              <div className="mt-4">
-                <textarea rows="2" placeholder="Reply to this comment..." className="w-full p-2 border rounded-md" value={replyText[comment._id] || ''} onChange={(e) => setReplyText({ ...replyText, [comment._id]: e.target.value })}></textarea>
-                <button onClick={() => handleReplySubmit(comment._id)} className="mt-2 px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Reply</button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Add Resource Button */}
+       {/* Add Resource Button */}
       <div className="text-center mb-6">
         <button
           onClick={() => setShowForm(!showForm)}
-          className="inline-flex items-center gap-2 px-7 py-9 bg-white text-blue rounded-2xl shadow-lg  border hover:border-yellow-500 transition"
-        >
+          className="inline-flex items-center gap-2 px-8 py-11 bg-white text-blue rounded-2xl shadow-lg  border hover:border-purple-600 transition"
+        ><Calendar className="mx-auto mb-3 w-10 h-10 text-purple-600" />
           <Plus className="w-5 h-5" /> Add a Resource as Student
         </button>
       </div>
@@ -490,6 +410,87 @@ if(!user){
       )}
 
 
+
+      <div className="max-w-4xl mx-auto mb-20">
+        <h2 className="text-2xl font-bold text-center text-blue-700 mb-4">Feedback</h2>
+        <form onSubmit={handleCommentSubmit} className="mb-6 space-y-4">
+          <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-xl" value={userName} onChange={(e) => setUserName(e.target.value)} required />
+          <input type="text" placeholder="Your Usn" className="w-full p-3 border border-gray-300 rounded-xl" value={userUsn} onChange={(e) => setUserUsn(e.target.value.toUpperCase())} required />
+          <textarea className="w-full p-3 border border-gray-300 rounded-xl" rows="3" placeholder="Share your thoughts or suggestions..." value={newComment} onChange={(e) => setNewComment(e.target.value)} required></textarea>
+          <button type="submit" className="mt-3 bg-blue-600 text-white py-2 px-6 rounded-xl hover:bg-blue-700">Submit Feedback</button>
+          {errorMessage && (
+  <div style={{ color: 'red', marginTop: '10px' }}>
+    {errorMessage}
+  </div>
+)}
+        </form>
+
+        <div className="space-y-4">
+          {comments.length === 0 && <p className="text-center text-gray-500">No comments yet. Be the first!</p>}
+          {comments.map((comment) => (
+            <div key={comment._id} className="bg-white shadow p-4 rounded-xl border">
+              <div className="flex justify-between items-center">
+                <p className="font-semibold text-blue-700">{comment.name}</p>
+                {userUsn && (userUsn.toUpperCase() === comment.usn?.toUpperCase() || userUsn.toUpperCase() === '3NA22CS092') && (
+                  <button onClick={() => handleDeleteComment(comment._id, comment.usn)} className="text-red-500 text-sm">Delete</button>
+                )}
+              </div>
+              <p className="text-gray-800 mt-1">{comment.text}</p>
+              <p className="text-xs text-gray-500 text-right mt-2">{new Date(comment.createdAt).toLocaleString()}</p>
+                {/* 👍 👎 Buttons */}
+    <div className="flex items-center gap-4 mt-2">
+      <button 
+        onClick={() => handleLike(comment._id)} 
+        className="text-green-600 hover:scale-110 transition"
+      >
+        👍 {comment.likes || 0}
+      </button>
+      <button 
+        onClick={() => handleDislike(comment._id)} 
+        className="text-red-600 hover:scale-110 transition"
+      >
+        👎 {comment.dislikes || 0}
+      </button>
+     </div>
+
+              {comment.replies?.length > 0 && (
+                <div className="mt-4 ml-4 space-y-2">
+                  {comment.replies.map((reply, index) => (
+                    <div key={index} className="border-l-4 border-blue-200 pl-3 text-sm text-gray-700">
+                      <p className="font-medium text-blue-600">{reply.name}</p>
+                      <p>{reply.text}</p>
+                      <p className="text-xs text-gray-400">{new Date(reply.createdAt).toLocaleString()}</p>
+                         {/* 👍 👎 Buttons for Reply */}
+        <div className="flex items-center gap-4 mt-1">
+          <button 
+            onClick={() => handleReplyLike(comment._id, reply._id)} 
+            className="text-green-600 hover:scale-110 transition"
+          >
+            👍 {reply.likes || 0}
+          </button>
+          <button 
+            onClick={() => handleReplyDislike(comment._id, reply._id)} 
+            className="text-red-600 hover:scale-110 transition"
+          >
+            👎 {reply.dislikes || 0}
+          </button>
+        </div>
+
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              <div className="mt-4">
+                <textarea rows="2" placeholder="Reply to this comment..." className="w-full p-2 border rounded-md" value={replyText[comment._id] || ''} onChange={(e) => setReplyText({ ...replyText, [comment._id]: e.target.value })}></textarea>
+                <button onClick={() => handleReplySubmit(comment._id)} className="mt-2 px-4 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">Reply</button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+     
       {/* Footer */}
       <footer className="bg-white border-t py-12">
         <div className="max-w-5xl mx-auto text-center">
