@@ -134,7 +134,7 @@ const RegisterStudent = ({ onBack }) => {
       <input
         type="password"
         name="password"
-        placeholder="Password"
+        placeholder="Create Password"
         value={formData.password}
         onChange={handleChange}
         required

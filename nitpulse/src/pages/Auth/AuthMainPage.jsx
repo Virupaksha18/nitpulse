@@ -10,7 +10,7 @@ const AuthMainPage = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#d6e4f0] pt-24 p-4">
-      <div className="bg-gradient-to-br from-blue-800 to-blue-350 rounded-3xl w-full max-w-6xl h-auto md:h-[800px] flex flex-col md:flex-row shadow-2xl overflow-hidden">
+      <div className="bg-gradient-to-br from-blue-600 to-blue-0 rounded-3xl w-full max-w-6xl h-auto md:h-[800px] flex flex-col md:flex-row shadow-2xl overflow-hidden">
         
         {/* Left Panel */}
         <div className="w-full md:w-1/2 p-6 md:p-10 text-white flex flex-col justify-between">
