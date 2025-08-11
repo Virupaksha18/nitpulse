@@ -313,11 +313,11 @@ if(!user){
       <div className="text-center mb-6">
         <button
           onClick={() => setShowForm(!showForm)}
-          className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-purple-500 hover:shadow-xl"
+          className="bg-white px-8 py-10 rounded-2xl shadow-md text-center border hover:border-purple-500 hover:shadow-xl"
         ><Calendar className="mx-auto mb-3 w-10 h-10 text-purple-600" />
-          <Plus className="w-5 h-5" /> Add a Resource as Student
+         Add a Resource as Student
         </button>
-      </div>
+      </div> 
 
       {/* Add Resource Form */}
       {showForm && (
