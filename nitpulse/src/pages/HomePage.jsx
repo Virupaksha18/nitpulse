@@ -344,7 +344,7 @@ if(!user){
       </div>
 
       {/* More Features */}
-      <div className="max-w-2xl mx-auto mb-1">
+      <div className="max-w-6xl mx-auto mb-8">
         <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">More Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
@@ -566,10 +566,6 @@ if(!user){
         </div>
         
       )}
-       <Link to="/quiz-section" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-yellow-500 hover:shadow-xl">
-            <ClipboardList className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
-            Quiz Section
-      </Link>
       </div>
       </div>
 
