@@ -372,14 +372,14 @@ if(!user){
             <Paperclip className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
             Latest Updates
           </Link>
-          <Link to="/timetable" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-indigo-500 hover:shadow-xl flex flex-col justify-between h-full">
+          <Link to="/timetable" className="bg-white p-5 mb-8 rounded-2xl shadow-md text-center border hover:border-indigo-500 hover:shadow-xl flex flex-col justify-between h-full">
             <Clock className="mx-auto mb-3 w-10 h-10 text-indigo-600" />
             College Time Table
           </Link>
         
       
        {/* Add Resource Button */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-6">
         <button
           onClick={() => setShowForm(!showForm)}
           className="bg-white px-24 py-4 rounded-2xl shadow-md text-center border hover:border-green-500 hover:shadow-xl"
