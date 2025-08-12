@@ -379,7 +379,7 @@ if(!user){
         
       
        {/* Add Resource Button */}
-      <div className="text-center mb-4">
+      <div className="text-center mb-2">
         <button
           onClick={() => setShowForm(!showForm)}
           className="bg-white px-24 py-4 rounded-2xl shadow-md text-center border hover:border-green-500 hover:shadow-xl"
