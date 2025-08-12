@@ -25,7 +25,10 @@ router.post('/generate-text', async (req, res) => {
 
     res.json({ output: response.data });
   } catch (error) {
-    console.error("Hugging Face full error:",JSON.stringify(error.response?.data || error,null,2));
+    console.error("Hugging Face full error:",
+      { status : error.response?.status,
+      data: error.response?.data,
+    headers: error.response?.headers});
     res.status(500).json({ error: error.response?.data || error.message });
   }
 });
