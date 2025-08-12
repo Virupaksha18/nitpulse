@@ -3,7 +3,7 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
-console.log("Hugging Face Key:", process.env.HUGGINGFACE_API_KEY);
+console.log("Hugging Face Key:", process.env.HUGGINGFACE_API_KEY ? "Loaded" : "Missing");
 const HUGGINGFACE_API_KEY = process.env.HUGGINGFACE_API_KEY;
 
 // Example route to use Hugging Face API
