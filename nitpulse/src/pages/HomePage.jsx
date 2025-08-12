@@ -566,12 +566,11 @@ if(!user){
         </div>
         
       )}
-      </div>
-      
-           <Link to="/quiz-section" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-yellow-500 hover:shadow-xl">
+       <Link to="/quiz-section" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-yellow-500 hover:shadow-xl">
             <ClipboardList className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
             Quiz Section
-          </Link>
+      </Link>
+      </div>
       </div>
 
 
