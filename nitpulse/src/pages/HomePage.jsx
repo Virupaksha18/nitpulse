@@ -373,11 +373,12 @@ if(!user){
             <Link2 className="mx-auto mb-3 w-10 h-10 text-red-600" />
             VTU Links
           </Link>
-          <Link to="/updates" className="bg-white p-5 mb-0 rounded-2xl shadow-md text-center border hover:border-yellow-500 hover:shadow-xl">
-            <Paperclip className="mx-auto mb-0 w-10 h-10 text-yellow-600" />
+          <Link to="/updates" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-yellow-500 hover:shadow-xl">
+            <Paperclip className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
             Latest Updates
           </Link>
           
+        
         
       
        {/* Add Resource Button */}
