@@ -348,6 +348,11 @@ if(!user){
         <h2 className="text-3xl font-bold text-center mb-10 text-gray-800">More Features</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
 
+          <Link to="/timetable" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-indigo-500 hover:shadow-xl">
+            <Clock className="mx-auto mb-3 w-10 h-10 text-indigo-600" />
+            College Time Table
+          </Link>
+
            <Link to="/quiz-section" className="bg-white p-5 rounded-2xl shadow-md text-center border hover:border-yellow-500 hover:shadow-xl">
             <ClipboardList className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
             Quiz Section
@@ -372,10 +377,7 @@ if(!user){
             <Paperclip className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
             Latest Updates
           </Link>
-          <Link to="/timetable" className="bg-white p-5 mb-1 rounded-2xl shadow-md text-center border hover:border-indigo-500 hover:shadow-xl flex flex-col justify-between h-full">
-            <Clock className="mx-auto mb-1 w-10 h-10 text-indigo-600" />
-            College Time Table
-          </Link>
+          
         
       
        {/* Add Resource Button */}
