@@ -372,8 +372,8 @@ if(!user){
             <Paperclip className="mx-auto mb-3 w-10 h-10 text-yellow-600" />
             Latest Updates
           </Link>
-          <Link to="/timetable" className="bg-white p-5 mb-4 rounded-2xl shadow-md text-center border hover:border-indigo-500 hover:shadow-xl flex flex-col justify-between h-full">
-            <Clock className="mx-auto mb-3 w-10 h-10 text-indigo-600" />
+          <Link to="/timetable" className="bg-white p-5 mb-3 rounded-2xl shadow-md text-center border hover:border-indigo-500 hover:shadow-xl flex flex-col justify-between h-full">
+            <Clock className="mx-auto mb-1 w-10 h-10 text-indigo-600" />
             College Time Table
           </Link>
         
