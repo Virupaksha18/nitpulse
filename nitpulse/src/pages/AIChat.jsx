@@ -16,7 +16,7 @@ const AIChat = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('https://nitpulse-backend.onrender.com/api/deepak/chat', {
+      const res = await fetch('https://nitpulse-backend.onrender.com/api/deepseek/chat', {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text: question }),
