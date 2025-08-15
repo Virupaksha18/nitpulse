@@ -14,7 +14,7 @@ const studentRoutes = require('./routes/studentRoutes');
 const teacherRoutes = require('./routes/teacherRoutes');
 const teacherresourceRoutes = require('./routes/teacherresourceRoutes');
 const commentRoutes = require('./routes/commentRoutes');
-//const deepseekRoutes = require('./routes/deepseekRoutes'); // ✅ New DeepSeek route
+const chatRoutes = require('./routes/chatRoutes'); // ✅ New DeepSeek route
 
 const app = express();
 
@@ -52,7 +52,7 @@ app.use('/api/teacher-resources', teacherresourceRoutes);
 //app.use('/api', huggingFaceRoutes);
 app.use('/app/students', studentRoutes);
 app.use('/app/teachers', teacherRoutes);
-//app.use('/api/deepseek', deepseekRoutes); // ✅ New DeepSeek API
+app.use('/api/chat', chatRoutes); // ✅ New DeepSeek API
 
 // Start server
 const PORT = process.env.PORT || 5000;

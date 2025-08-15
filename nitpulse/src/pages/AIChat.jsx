@@ -7,7 +7,7 @@ const AIChat = () => {
   const [recording, setRecording] = useState(false);
   const [imageUrl, setImageUrl] = useState(null);
 
-  // 🔹 Free AI Chat via Puter.js (no backend)
+  // Ask Gemini via backend
   const handleAsk = async () => {
     if (!question.trim()) return;
 
@@ -17,32 +17,34 @@ const AIChat = () => {
     setLoading(true);
 
     try {
-      const response = await window.puter.ai.chat(question, {
-        model: "deepseek-chat", // or "deepseek-reasoner"
+      const res = await fetch("https://nitpulse-backend.onrender.com/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question })
       });
+      const data = await res.json();
+
       setMessages([
         ...newMessages,
-        { sender: "ai", text: response.message.content },
+        { sender: "ai", text: data.reply }
       ]);
     } catch (err) {
       console.error(err);
       setMessages([
         ...newMessages,
-        { sender: "ai", text: "Error: Could not get an answer." },
+        { sender: "ai", text: "Error: Could not get an answer." }
       ]);
     }
 
     setLoading(false);
   };
 
-  // 🔹 Voice Input placeholder
-  const handleVoiceInput = async () => {
-    alert("Voice input still requires backend setup for speech-to-text.");
+  const handleVoiceInput = () => {
+    alert("Voice input requires speech-to-text setup.");
   };
 
-  // 🔹 Image Generation placeholder
-  const handleGenerateImage = async () => {
-    alert("Image generation still requires backend or free API integration.");
+  const handleGenerateImage = () => {
+    alert("Image generation requires backend integration.");
   };
 
   return (
