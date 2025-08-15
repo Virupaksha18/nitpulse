@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 
 // Route imports
 const resourceRoutes = require('./routes/resourceRoutes');
-const huggingFaceRoutes = require('./routes/huggingface');
+//const huggingFaceRoutes = require('./routes/huggingface');
 const studentRoutes = require('./routes/studentRoutes');
 const teacherRoutes = require('./routes/teacherRoutes');
 const teacherresourceRoutes = require('./routes/teacherresourceRoutes');
@@ -49,7 +49,7 @@ app.use('/api/mqp', require('./routes/mqp'));
 app.use('/api/passing-package', require('./routes/passingPackage'));
 app.use('/api/resources', resourceRoutes);
 app.use('/api/teacher-resources', teacherresourceRoutes);
-app.use('/api', huggingFaceRoutes);
+//app.use('/api', huggingFaceRoutes);
 app.use('/app/students', studentRoutes);
 app.use('/app/teachers', teacherRoutes);
 app.use('/api/deepseek', deepseekRoutes); // ✅ New DeepSeek API
