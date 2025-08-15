@@ -20,7 +20,7 @@ const AIChat = () => {
       const res = await fetch("https://nitpulse-backend.onrender.com/api/chat/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question })
+        body: JSON.stringify({ prompt: question })
       });
       const data = await res.json();
 

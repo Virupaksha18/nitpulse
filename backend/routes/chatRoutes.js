@@ -25,7 +25,7 @@ router.post("/ask", async (req, res) => {
             }
         );
 
-        res.json(response.data);
+        res.json({reply : response.data.choices[0].message.content});
     } catch (error) {
         console.error(error.response?.data || error.message);
         res.status(500).json({ error: "Something went wrong" });
