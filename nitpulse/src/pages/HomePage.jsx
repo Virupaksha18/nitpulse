@@ -404,7 +404,7 @@ if(!user){
 
             <div>
               <label className="block font-semibold text-gray-700">USN</label>
-              <input type="text" name="usn" value={formData.usn} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: 3NA22CS092" pattern = "/^(3na|3NA)(22|23|24)(cs|CS|ec|EC|ai|AI|ee|EE|cv|CV)\d{3}$/" />
+              <input type="text" name="usn" value={formData.usn} onChange={handleChange} className="w-full p-3 border rounded-xl" placeholder="Eg: 3NA22CS092" pattern = "/^(3na|3NA)(22|23|24)(cs|CS|ec|EC|ai|AI|ee|EE|cv|CV)\d{3}$" />
             </div>
 
             <div>
