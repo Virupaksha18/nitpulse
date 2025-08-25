@@ -16,8 +16,8 @@ const timeTableData = {
       'LH-02':`${baseUrl}/pdfs/CSE/5th/LH-02.pdf`,
     },
     '7th Semester':{
-      'LH-01':`${baseUrl}/pdfs/CSE/7th/LH-01.pdf`,
-      'LH-02':`${baseUrl}/pdfs/CSE/7th/LH-02.pdf`,
+      'LH-01':`${baseUrl}/pdfs/CSE/7th/7th sem cse LH1_Timetable.pdf`,
+      'LH-02':`${baseUrl}/pdfs/CSE/7th/7th sem cse LH1_Timetable.pdf`,
     },
   },
   ECE: {

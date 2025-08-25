@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 const subjects = [
  { name: "Big Data Analytics", code: "BCS701",slug:"data-analytics" },
     { name: "Cryptography and Networking Security", code: "BCS702",slug:"cryptography" },
-    { name: "Blockchain Technology", code: "BCS703",slug:"blockchain-technology" },
-    { name: "NOSQL Database", code: "BCS704",slug:"nosql-database" },
+    { name: "Parallel Computing", code: "BCS703",slug:"PC" },
+    { name: "Internet of Things", code: "BCS704",slug:"IoT" },
+    { name: "Conservation of Natural Resources", code: "BCS704",slug:"CNR" },
 ];
 
 const Notes = () => {
