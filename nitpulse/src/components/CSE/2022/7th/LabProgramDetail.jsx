@@ -3,23 +3,25 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const labProgramsData = {
-  "data-analytics": {
-    title: "Data Analytics Lab",
+  "IoT-lab": {
+    title: "IoT-Lab",
     programs: [
-      "Implement and visualize Linear Regression",
-      "Logistic Regression for binary classification",
-      "Decision Tree algorithm for classification",
-      "KNN for handwritten digit recognition",
-      "Naive Bayes classifier",
-      "K-means clustering with visualization",
-      "Principal Component Analysis (PCA)",
-      "SVM classifier using scikit-learn",
-      "Random Forest for classification",
-      "Project: ML model deployment"
+      "01 Develop a program to blink 5 LEDs back and forth",
+      "02 Develop a program to interface a relay with Arduino board",
+      "03 Develop a program to deploy an intrusion detection system using Ultrasonic and sound sensors",
+      "04 Develop a program to control a DC motor with Arduino board",
+      "05 Develop a program to deploy smart street light system using LDR sensor.",
+      "06 Develop a program to classify dry and wet waste with the Moisture sensor (DHT22).",
+      "07 Develop a program to read the pH value of a various substances like milk, lime and water",
+      "08 Develop a program to detect the gas leakage in the surrounding environment",
+      "09 Develop a program to demonstrate weather station readings using Arduino.",
+      "10 Develop a program to setup a UART protocol and pass a string through the protocol.",
+      "11 Develop a water level depth detection system using Ultrasonic sensor.",
+      "12 Develop a program to simulate interfacing with the keypad module to record the keystrokes."
     ]
   },
-  "nosql-lab": {
-    title: "NOSQL-Database Lab",
+  "pc-lab": {
+    title: "Parallel-Computing",
     programs: [
       "Create a VM instance using AWS",
       "Deploy a web app to AWS EC2",
