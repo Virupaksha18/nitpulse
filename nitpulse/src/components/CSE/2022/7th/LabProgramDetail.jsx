@@ -23,33 +23,19 @@ const labProgramsData = {
   "pc-lab": {
     title: "Parallel-Computing",
     programs: [
-      "Create a VM instance using AWS",
-      "Deploy a web app to AWS EC2",
-      "Implement cloud storage using S3",
-      "Dockerize a sample application",
-      "Kubernetes basics and deployment",
-      "Use AWS Lambda for serverless functions",
-      "Create and test a REST API with AWS API Gateway",
-      "Monitor cloud resources with CloudWatch",
+      "write an openMP program to sort an array of n elements using both sequential and parallel mergesort. Record the difference in execution time",
+      "Write an openMP program that divides the iterations into chunks containing 2 iterations, respectively",
+      "Write an openMP program to calculate n Fibonacci numbers using tasks. This demonstrates task-based parallelism and recursive task creation",
+      "Write an openMP program to find the prime numbers from 1 to n employing parallel for directive. Record both serial and parallel execution times",
+      "Write an MPI program to demonstrate of MPI_Send and MPI_Recv.This program shows basics basics point-to-point communication between processes",
+      "Write an MPI program to demonstrate deadlock using point-to-point communication and avoidance of deadlock by altering the call sequence",
+      "Write an MPI program to demonstrate broadcast operation. Shows how data is distributed from one process to all other processes",
+      "",
       "Use AWS CLI for basic operations",
       "Mini Project on cloud deployment"
     ]
   },
-  "blockchain-technology": {
-    title: "Blockchain-Technology",
-    programs: [
-      "Create a portfolio website using React",
-      "React Router navigation demo",
-      "Create a Todo List app with Hooks",
-      "State management using Context API",
-      "Build a weather app using API",
-      "Form validation with React Hook Form",
-      "Authentication with Firebase",
-      "Build a blog UI layout with Tailwind CSS",
-      "CRUD operations with fake REST API",
-      "Deploy the app using Netlify"
-   ]
-  }
+  
 };
 
 const LabProgramDetail = () => {
