@@ -40,8 +40,8 @@ const mqpData = {
       }
     ]
   },
-   "blockchain-technology": {
-    title: "Blockchain-Technology",
+   "IoT": {
+    title: "Internet of Things",
     mqps: [
       {
         title: "MQP 1",
@@ -59,8 +59,8 @@ const mqpData = {
       }
     ]
   },
-   "nosql-database": {
-    title: "NOSQL-Database",
+   "CNR": {
+    title: "Conservation of Natural Resources",
     mqps: [
       {
         title: "MQP 1",
@@ -78,8 +78,8 @@ const mqpData = {
       }
     ]
   },
-   "water-conservation": {
-    title: "Water Conservation MQPs",
+   "PC": {
+    title: "Parallel Computing",
     mqps: [
       {
         title: "MQP 1",

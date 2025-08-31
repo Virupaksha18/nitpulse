@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subjects = [
- { name: "Big Data Analytics", code: "BCS701",slug:"data-analytics" },
-    { name: "Cryptography and Networking Security", code: "BCS702",slug:"cryptography" },
-    { name: "Parallel Computing", code: "BCS703",slug:"PC" },
-    { name: "Internet of Things", code: "BCS704",slug:"IoT" },
-    { name: "Conservation of Natural Resources", code: "BCS704",slug:"CNR" },
+{ name: "Internet of Things", code: "BCS701",slug:"IoT" },
+  { name: "Parallel Computing", code: "BCS702",slug:"PC" },
+  { name: "Cryptography and Networking Security", code: "BCS703",slug:"cryptography" },
+  { name: "Big Data Analytics", code: "BCS714D",slug:"data-analytics" },
+  { name: "Conservation of Natural Resources", code: "BCS755B",slug:"CNR" },
 ];
 
 const Notes = () => {
