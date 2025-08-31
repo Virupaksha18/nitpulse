@@ -50,7 +50,7 @@ const AssignmentsDetails = () => {
   const subject = assignmentData[subjectSlug];
 
   if (!subject) {
-    return <div className="text-center mt-10 text-red-500 text-xl">Assignments not found for this subject.</div>;
+    return <div className="text-center mt-24 text-red-500 text-xl">Assignments not found for this subject.</div>;
   }
 
   return (

@@ -43,7 +43,7 @@ const LabProgramDetail = () => {
   const subject = labProgramsData[subjectSlug];
 
   if (!subject) {
-    return <div className="pt-20 text-center mt-10 text-red-500 text-xl">Programs not found for this subject.</div>;
+    return <div className="pt-20 text-center mt-24 text-red-500 text-xl">Programs not found for this subject.</div>;
   }
 
   return (
