@@ -1,33 +1,9 @@
  // AssignmentDetails.js
- import React from "react";
- import { useParams } from "react-router-dom";
- 
- const assignmentData = {
-   "IoT": {
-     title: "Internet  of Things",
-     assignments: [
-       "Design a lexical analyzer for simple expressions.",
-       "Explain different parsing techniques with examples.",
-       "Write short notes on syntax-directed translation."
-      ]
-    },
-    "PC": {
-      title: "Parallel Computing",
-      assignments: [
-        "Write a research proposal on any emerging technology.",
-        "Explain quantitative vs qualitative research.",
-        "Discuss ethical issues in research."
-      ]
-    },
-    "cryptography": {
-      title: "Cryptography and Networking Security",
-      assignments: [
-        "Implement Linear Regression using Python and submit report.",
-        "Explain overfitting and underfitting with diagrams.",
-        "Compare supervised and unsupervised learning."
-      ]
-    },
-    "data-analytics": {
+import React from "react";
+import { useParams } from "react-router-dom";
+
+const assignmentData = {
+  "data-analytics": {
     title: "Big Data Analytics",
     assignments: [
       "Explain IaaS, PaaS, and SaaS with real-world examples.",
@@ -35,8 +11,32 @@
       "Discuss security issues in cloud computing and solutions."
     ]
   },
+  "cryptography": {
+    title: "Cryptography and Networking Security",
+    assignments: [
+      "Implement Linear Regression using Python and submit report.",
+      "Explain overfitting and underfitting with diagrams.",
+      "Compare supervised and unsupervised learning."
+    ]
+  },
+  "IoT": {
+    title: "Internet  of Things",
+    assignments: [
+      "Design a lexical analyzer for simple expressions.",
+      "Explain different parsing techniques with examples.",
+      "Write short notes on syntax-directed translation."
+    ]
+  },
   "CNR": {
     title: "Conservation of Natural Resources",
+    assignments: [
+      "Write a research proposal on any emerging technology.",
+      "Explain quantitative vs qualitative research.",
+      "Discuss ethical issues in research."
+    ]
+  },
+  "PC": {
+    title: "Parallel Computing",
     assignments: [
       "Write a research proposal on any emerging technology.",
       "Explain quantitative vs qualitative research.",
