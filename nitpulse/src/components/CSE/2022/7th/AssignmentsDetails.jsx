@@ -45,7 +45,7 @@ const assignmentData = {
   },
 };
 
-const AssignmentsDetails7 = () => {
+const AssignmentsDetails = () => {
   const { subjectSlug } = useParams();
   const subject = assignmentData[subjectSlug];
 
@@ -72,4 +72,4 @@ const AssignmentsDetails7 = () => {
   );
 };
 
-export default AssignmentsDetails7;
+export default AssignmentsDetails;
