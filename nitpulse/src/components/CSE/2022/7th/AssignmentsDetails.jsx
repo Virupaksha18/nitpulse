@@ -1,14 +1,22 @@
- // AssignmentDetails.js
+// AssignmentDetails.js
 import React from "react";
 import { useParams } from "react-router-dom";
 
 const assignmentData = {
-  "data-analytics": {
-    title: "Big Data Analytics",
+  "iot": {
+    title: "Internet  of Things",
     assignments: [
-      "Explain IaaS, PaaS, and SaaS with real-world examples.",
-      "Write a report on virtualization techniques used in data centers.",
-      "Discuss security issues in cloud computing and solutions."
+      "Design a lexical analyzer for simple expressions.",
+      "Explain different parsing techniques with examples.",
+      "Write short notes on syntax-directed translation."
+    ]
+  },
+  "pc": {
+    title: "Parallel Computing",
+    assignments: [
+      "Write a research proposal on any emerging technology.",
+      "Explain quantitative vs qualitative research.",
+      "Discuss ethical issues in research."
     ]
   },
   "cryptography": {
@@ -19,24 +27,16 @@ const assignmentData = {
       "Compare supervised and unsupervised learning."
     ]
   },
-  "IoT": {
-    title: "Internet  of Things",
+  "data-analytics": {
+    title: "Big Data Analytics",
     assignments: [
-      "Design a lexical analyzer for simple expressions.",
-      "Explain different parsing techniques with examples.",
-      "Write short notes on syntax-directed translation."
+      "Explain IaaS, PaaS, and SaaS with real-world examples.",
+      "Write a report on virtualization techniques used in data centers.",
+      "Discuss security issues in cloud computing and solutions."
     ]
   },
-  "CNR": {
+  "cnr": {
     title: "Conservation of Natural Resources",
-    assignments: [
-      "Write a research proposal on any emerging technology.",
-      "Explain quantitative vs qualitative research.",
-      "Discuss ethical issues in research."
-    ]
-  },
-  "PC": {
-    title: "Parallel Computing",
     assignments: [
       "Write a research proposal on any emerging technology.",
       "Explain quantitative vs qualitative research.",
