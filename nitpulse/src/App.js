@@ -225,7 +225,7 @@ import NotesAPI from './components/CSE/2022/6th/NotesAPI';
 //cse 7th sem notes
 import NoteDetail from './components/CSE/2022/7th/NoteDetail';
 import LabProgramDetail from './components/CSE/2022/7th/LabProgramDetail';
-import AssignmentsDetails from './components/CSE/2022/7th/AssignmentsDetails';
+import AssignmentsDetails7 from './components/CSE/2022/7th/AssignmentsDetails7';
 import MQPDetail from './components/CSE/2022/7th/MQPDetail';
 import PassingPackageDetail from './components/CSE/2022/7th/PassingPackageDetail';
 //cse 4th sem notes
@@ -587,7 +587,7 @@ function App() {
         {/*cse 7th sem notes*/}
         <Route path="/CSE/2022/7th/notes/:subjectSlug" element={<NoteDetail/>}/>
       <Route path="/lab-programs/:subjectSlug" element={<LabProgramDetail/>}/>
-      <Route path="/assignments/:subjectSlug" element={<AssignmentsDetails/>}/>
+      <Route path="/assignments/:subjectSlug" element={<AssignmentsDetails7/>}/>
       <Route path="/mqp/:subjectSlug" element={<MQPDetail/>}/>
       <Route path="/passing-package/:subjectSlug" element={<PassingPackageDetail/>}/>
       {/*cse 4th sem notes */}
