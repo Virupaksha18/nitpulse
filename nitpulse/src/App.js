@@ -34,7 +34,7 @@ import PassingPackageCSE20226th from "./components/CSE/2022/6th/PassingPackage";
 import LabProgramsCSE20226th from "./components/CSE/2022/6th/LabPrograms";
 // 2022 7th semester
 import NotesCSE20227th from "./components/CSE/2022/7th/Notes";
-import AssignmentsCSE20227th from "./components/CSE/2022/7th/Assignments";
+import Assignmentscse7CSE20227th from "./components/CSE/2022/7th/Assignmentscse7";
 import MQPCSE20227th from "./components/CSE/2022/7th/MQP";
 import PassingPackageCSE20227th from "./components/CSE/2022/7th/PassingPackage";
 import LabProgramsCSE20227th from "./components/CSE/2022/7th/LabPrograms";
@@ -396,7 +396,7 @@ function App() {
         <Route path="/cse/2022/6th/labs" element={<LabProgramsCSE20226th />} />
         {/* CSE 2022 - 7th Semester */}
         <Route path="/CSE/2022/7th/notes" element={<NotesCSE20227th />} />
-        <Route path="/CSE/2022/7th/assignments" element={<AssignmentsCSE20227th />} />
+        <Route path="/CSE/2022/7th/assignments" element={<Assignmentscse7CSE20227th />} />
         <Route path="/cse/2022/7th/mqps" element={<MQPCSE20227th />} />
         <Route path="/cse/2022/7th/package" element={<PassingPackageCSE20227th />} />
         <Route path="/cse/2022/7th/labs" element={<LabProgramsCSE20227th />} />

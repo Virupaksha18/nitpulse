@@ -10,7 +10,7 @@ const assignmentSubjects = [
   { name: "Conservation of Natural Resources", code: "BCS755B",slug:"cnr" },
 ];
 
-const Assignments = () => {
+const Assignmentscse7 = () => {
   return (
     <div className="pt-20 px-4">
       <h2 className="text-3xl font-bold text-center mb-10">Assignments - 7th Sem (2022 CSE)</h2>
@@ -32,4 +32,4 @@ const Assignments = () => {
   );
 };
 
-export default Assignments;
+export default Assignmentscse7;
