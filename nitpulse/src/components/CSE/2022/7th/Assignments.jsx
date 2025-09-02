@@ -3,14 +3,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const assignmentSubjects = [
-{ name: "Internet of Things", code: "BCS701",slug:"iot" },
-  { name: "Parallel Computing", code: "BCS702",slug:"pc" },
+{ name: "Internet of Things", code: "BCS701",slug:"IoT" },
+  { name: "Parallel Computing", code: "BCS702",slug:"PC" },
   { name: "Cryptography and Networking Security", code: "BCS703",slug:"cryptography" },
   { name: "Big Data Analytics", code: "BCS714D",slug:"data-analytics" },
-  { name: "Conservation of Natural Resources", code: "BCS755B",slug:"cnr" },
+  { name: "Conservation of Natural Resources", code: "BCS755B",slug:"CNR" },
 ];
 
-const Assignmentscse7 = () => {
+const Assignments = () => {
   return (
     <div className="pt-20 px-4">
       <h2 className="text-3xl font-bold text-center mb-10">Assignments - 7th Sem (2022 CSE)</h2>
@@ -32,4 +32,4 @@ const Assignmentscse7 = () => {
   );
 };
 
-export default Assignmentscse7;
+export default Assignments;
