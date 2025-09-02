@@ -2,44 +2,44 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const assignmentData = {
-  "IoT": {
-    title: "Internet of Things",
-    assignments: [
-      "Design a lexical analyzer for simple expressions.",
-      "Explain different parsing techniques with examples.",
-      "Write short notes on syntax-directed translation."
-    ]
-  },
-  "PC": {
-    title: "Parallel Computing",
-    assignments: [
-      "Write a research proposal on any emerging technology.",
-      "Explain quantitative vs qualitative research.",
-      "Discuss ethical issues in research."
-    ]
-  },
-  "cryptography": {
-    title: "Cryptography and Networking Security",
-    assignments: [
-      "Implement Linear Regression using Python and submit report.",
-      "Explain overfitting and underfitting with diagrams.",
-      "Compare supervised and unsupervised learning."
-    ]
-  },
-  "data-analytics": {
-    title: "Big Data Analytics",
+  "cloud-computing": {
+    title: "Cloud Computing",
     assignments: [
       "Explain IaaS, PaaS, and SaaS with real-world examples.",
       "Write a report on virtualization techniques used in data centers.",
       "Discuss security issues in cloud computing and solutions."
     ]
   },
-  "CNR": {
-    title: "Conservation of Natural Resources",
+  "machine-learning": {
+    title: "Machine Learning",
+    assignments: [
+      "Implement Linear Regression using Python and submit report.",
+      "Explain overfitting and underfitting with diagrams.",
+      "Compare supervised and unsupervised learning."
+    ]
+  },
+  "compiler-design": {
+    title: "Compiler Design",
+    assignments: [
+      "Design a lexical analyzer for simple expressions.",
+      "Explain different parsing techniques with examples.",
+      "Write short notes on syntax-directed translation."
+    ]
+  },
+  "research-methodology": {
+    title: "Research Methodology",
     assignments: [
       "Write a research proposal on any emerging technology.",
       "Explain quantitative vs qualitative research.",
       "Discuss ethical issues in research."
+    ]
+  },
+  "water-conservation": {
+    title: "Water Conservation",
+    assignments: [
+      "List techniques for rainwater harvesting.",
+      "Create awareness poster on water conservation.",
+      "Explain the impact of urbanization on groundwater."
     ]
   }
 };

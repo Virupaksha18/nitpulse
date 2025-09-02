@@ -3,11 +3,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const assignmentSubjects = [
-{ name: "Internet of Things", code: "BCS701",slug:"IoT" },
-  { name: "Parallel Computing", code: "BCS702",slug:"PC" },
-  { name: "Cryptography and Networking Security", code: "BCS703",slug:"cryptography" },
-  { name: "Big Data Analytics", code: "BCS714D",slug:"data-analytics" },
-  { name: "Conservation of Natural Resources", code: "BCS755B",slug:"CNR" },
+  { name: "Cloud Computing", slug: "cloud-computing", code: "BCS601" },
+  { name: "Machine Learning", slug: "machine-learning", code: "BCS602" },
+  { name: "Compiler Design", slug: "compiler-design", code: "BCS613C" },
+  { name: "Research Methodology", slug: "research-methodology", code: "BCS604" },
+  { name: "Water Conservation and Rain Water Harvesting", slug: "water-conservation", code: "BCV654A" },
 ];
 
 const Assignments = () => {
