@@ -1,4 +1,3 @@
-// AssignmentDetails.js
 import React from "react";
 import { useParams } from "react-router-dom";
 
@@ -42,7 +41,7 @@ const assignmentData = {
       "Explain quantitative vs qualitative research.",
       "Discuss ethical issues in research."
     ]
-  },
+  }
 };
 
 const AssignmentsDetails = () => {
@@ -50,7 +49,7 @@ const AssignmentsDetails = () => {
   const subject = assignmentData[subjectSlug];
 
   if (!subject) {
-    return <div className="text-center mt-20 text-red-500 text-xl">Assignments not found for this subject.</div>;
+    return <div className="text-center mt-10 text-red-500 text-xl">Assignments not found for this subject.</div>;
   }
 
   return (
@@ -59,25 +58,26 @@ const AssignmentsDetails = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {subject.assignments.map((item, index) => {
-          const pdfUrl = `${Process.env.REACT_APP_BASE_URL}/files/assignments/CSE/2022/7th/${subjectSlug}/assignment${index + 1}.pdf`;
-          return(
-          <div
-            key={index}
-            className="bg-black text-white p-6 rounded-xl shadow-md hover:bg-gray-900 transition duration-300"
-          >
-            <h3 className="text-lg font-semibold mb-2">Assignment {index + 1}</h3>
-            <p className="text-sm text-gray-300">{item}</p>
-            <a
-            href={pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-          >
-            Download PDF
-            </a>
+          const pdfUrl = ` ${process.env.REACT_APP_BASE_URL}/files/assignments/CSE/2022/7th/${subjectSlug}/assignment${index + 1}.pdf`;
+
+          return (
+            <div
+              key={index}
+              className="bg-black text-white p-6 rounded-xl shadow-md hover:bg-gray-900 transition duration-300"
+            >
+              <h3 className="text-lg font-semibold mb-2">Assignment {index + 1}</h3>
+              <p className="text-sm text-gray-300 mb-4">{item}</p>
+              <a
+                href={pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+              >
+                Download PDF
+              </a>
             </div>
-        );
-      })}
+          );
+        })}
       </div>
     </div>
   );
