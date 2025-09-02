@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 const assignmentData = {
   "iot": {
-    title: "Internet  of Things",
+    title: "Internet of Things",
     assignments: [
       "Design a lexical analyzer for simple expressions.",
       "Explain different parsing techniques with examples.",
@@ -58,7 +58,7 @@ const AssignmentsDetails7 = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {subject.assignments.map((item, index) => {
-          const pdfUrl = ` ${process.env.REACT_APP_BASE_URL}/files/assignments/CSE/2022/7th/${subjectSlug}/assignment${index + 1}.pdf`;
+          const pdfUrl = `${process.env.REACT_APP_BASE_URL}/files/assignments/CSE/2022/7th/${subjectSlug}/assignment${index + 1}.pdf`;
 
           return (
             <div
