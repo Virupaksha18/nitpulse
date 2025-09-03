@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 const assignmentData = {
   "cloud-computing": {
-    title: "Cloud Computing",
+    title: "Internet of Things",
     assignments: [
       "Explain IaaS, PaaS, and SaaS with real-world examples.",
       "Write a report on virtualization techniques used in data centers.",
@@ -11,7 +11,7 @@ const assignmentData = {
     ]
   },
   "machine-learning": {
-    title: "Machine Learning",
+    title: "Parallel Computing",
     assignments: [
       "Implement Linear Regression using Python and submit report.",
       "Explain overfitting and underfitting with diagrams.",
@@ -19,7 +19,7 @@ const assignmentData = {
     ]
   },
   "compiler-design": {
-    title: "Compiler Design",
+    title: "Cryptography and Networking Security",
     assignments: [
       "Design a lexical analyzer for simple expressions.",
       "Explain different parsing techniques with examples.",
@@ -27,7 +27,7 @@ const assignmentData = {
     ]
   },
   "research-methodology": {
-    title: "Research Methodology",
+    title: "Big Data Analytics",
     assignments: [
       "Write a research proposal on any emerging technology.",
       "Explain quantitative vs qualitative research.",
@@ -35,7 +35,7 @@ const assignmentData = {
     ]
   },
   "water-conservation": {
-    title: "Water Conservation",
+    title: "Conservation of Natural Resouces",
     assignments: [
       "List techniques for rainwater harvesting.",
       "Create awareness poster on water conservation.",
