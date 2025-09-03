@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const assignmentData = {
-  "internet": {
+  "IoT": {
     title: "Internet of Things",
     assignments: [
       "Explain IaaS, PaaS, and SaaS with real-world examples.",
@@ -10,7 +10,7 @@ const assignmentData = {
       "Discuss security issues in cloud computing and solutions."
     ]
   },
-  "parallel": {
+  "PC": {
     title: "Parallel Computing",
     assignments: [
       "Implement Linear Regression using Python and submit report.",
@@ -26,7 +26,7 @@ const assignmentData = {
       "Write short notes on syntax-directed translation."
     ]
   },
-  "analytics": {
+  "BDA": {
     title: "Big Data Analytics",
     assignments: [
       "Write a research proposal on any emerging technology.",
@@ -34,7 +34,7 @@ const assignmentData = {
       "Discuss ethical issues in research."
     ]
   },
-  "conservation": {
+  "CNR": {
     title: "Conservation of Natural Resouces",
     assignments: [
       "List techniques for rainwater harvesting.",
