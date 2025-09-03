@@ -34,7 +34,7 @@ const assignmentData = {
       "Discuss ethical issues in research."
     ]
   },
-  "CNR": {
+  "conservation": {
     title: "Conservation of Natural Resouces",
     assignments: [
       "List techniques for rainwater harvesting.",
