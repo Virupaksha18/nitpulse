@@ -6,18 +6,18 @@ const labProgramsData = {
   "IoT-lab": {
     title: "IoT-Lab",
     programs: [
-      "01 Develop a program to blink 5 LEDs back and forth",
-      "02 Develop a program to interface a relay with Arduino board",
-      "03 Develop a program to deploy an intrusion detection system using Ultrasonic and sound sensors",
-      "04 Develop a program to control a DC motor with Arduino board",
-      "05 Develop a program to deploy smart street light system using LDR sensor.",
-      "06 Develop a program to classify dry and wet waste with the Moisture sensor (DHT22).",
-      "07 Develop a program to read the pH value of a various substances like milk, lime and water",
-      "08 Develop a program to detect the gas leakage in the surrounding environment",
-      "09 Develop a program to demonstrate weather station readings using Arduino.",
-      "10 Develop a program to setup a UART protocol and pass a string through the protocol.",
-      "11 Develop a water level depth detection system using Ultrasonic sensor.",
-      "12 Develop a program to simulate interfacing with the keypad module to record the keystrokes."
+      "Develop a program to blink 5 LEDs back and forth",
+      "Develop a program to interface a relay with Arduino board",
+      "Develop a program to deploy an intrusion detection system using Ultrasonic and sound sensors",
+      "Develop a program to control a DC motor with Arduino board",
+      "Develop a program to deploy smart street light system using LDR sensor.",
+      "Develop a program to classify dry and wet waste with the Moisture sensor (DHT22).",
+      "Develop a program to read the pH value of a various substances like milk, lime and water",
+      "Develop a program to detect the gas leakage in the surrounding environment",
+      "Develop a program to demonstrate weather station readings using Arduino.",
+      "Develop a program to setup a UART protocol and pass a string through the protocol.",
+      "Develop a water level depth detection system using Ultrasonic sensor.",
+      "Develop a program to simulate interfacing with the keypad module to record the keystrokes."
     ]
   },
   "pc-lab": {
@@ -30,9 +30,9 @@ const labProgramsData = {
       "Write an MPI program to demonstrate of MPI_Send and MPI_Recv.This program shows basics basics point-to-point communication between processes",
       "Write an MPI program to demonstrate deadlock using point-to-point communication and avoidance of deadlock by altering the call sequence",
       "Write an MPI program to demonstrate broadcast operation. Shows how data is distributed from one process to all other processes",
-      "",
-      "Use AWS CLI for basic operations",
-      "Mini Project on cloud deployment"
+      "Write an MPI Program to demonstrate MPI_Scatter and MPI_Gather operations. Shows how data is distributed among processes and collected back",
+      "Write an MPI Program to demonstrate MPI_Reduce and MPI_Allreduce operations. Shows collective computation operations "
+      
     ]
   },
   
