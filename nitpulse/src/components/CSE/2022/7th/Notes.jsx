@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const subjects = [
   { name: "Internet of Things", code: "BCS701", slug: "IoT", syllabus: "/syllabus/IoT-syllabus.pdf" },
   { name: "Parallel Computing", code: "BCS702", slug: "PC", syllabus: "/syllabus/PC-syllabus.pdf" },
-  { name: "Cryptography and Networking Security", code: "BCS703", slug: "cryptography", syllabus: "/syllabus/cryptography-syllabus.pdf" },
-  { name: "Big Data Analytics", code: "BCS714D", slug: "data-analytics", syllabus: "/syllabus/data-analytics-syllabus.pdf" },
+  { name: "Cryptography and Networking Security", code: "BCS703", slug: "cryptography", syllabus: "/syllabus/CNS-syllabus.pdf" },
+  { name: "Big Data Analytics", code: "BCS714D", slug: "data-analytics", syllabus: "/syllabus/BDA-syllabus.pdf" },
   { name: "Conservation of Natural Resources", code: "BCS755B", slug: "CNR", syllabus: "/syllabus/CNR-syllabus.pdf" },
 ];
 
