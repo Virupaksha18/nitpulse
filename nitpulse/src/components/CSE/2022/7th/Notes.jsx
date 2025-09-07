@@ -29,13 +29,13 @@ const Notes = () => {
               download
               className="mt-3 inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
             >
-              📄 Download Syllabus
+              📄 Download Syllabus copy
             </a>
 
             {/* Navigate to Notes */}
             <Link
               to={`/CSE/2022/7th/notes/${subject.slug}`}
-              className="block mt-4 text-purple-400 hover:text-purple-300"
+               className="mt-3 inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
             >
               View Notes →
             </Link>
