@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subjects = [
-  { name: "Internet of Things", code: "BCS701", slug: "IoT", syllabus: "/syllabus/IoT.pdf" },
-  { name: "Parallel Computing", code: "BCS702", slug: "PC", syllabus: "/syllabus/PC.pdf" },
-  { name: "Cryptography and Networking Security", code: "BCS703", slug: "cryptography", syllabus: "/syllabus/cryptography.pdf" },
-  { name: "Big Data Analytics", code: "BCS714D", slug: "data-analytics", syllabus: "/syllabus/data-analytics.pdf" },
-  { name: "Conservation of Natural Resources", code: "BCS755B", slug: "CNR", syllabus: "/syllabus/CNR.pdf" },
+  { name: "Internet of Things", code: "BCS701", slug: "IoT", syllabus: "/syllabus/IoT-syllabus.pdf" },
+  { name: "Parallel Computing", code: "BCS702", slug: "PC", syllabus: "/syllabus/PC-syllabus.pdf" },
+  { name: "Cryptography and Networking Security", code: "BCS703", slug: "cryptography", syllabus: "/syllabus/cryptography-syllabus.pdf" },
+  { name: "Big Data Analytics", code: "BCS714D", slug: "data-analytics", syllabus: "/syllabus/data-analytics-syllabus.pdf" },
+  { name: "Conservation of Natural Resources", code: "BCS755B", slug: "CNR", syllabus: "/syllabus/CNR-syllabus.pdf" },
 ];
 
 const Notes = () => {
@@ -37,7 +37,7 @@ const Notes = () => {
               to={`/CSE/2022/7th/notes/${subject.slug}`}
                className="mt-3 inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
             >
-              View Notes →
+              📄 View Notes →
             </Link>
 
             <p className="mt-2 text-purple-500">NITpluse.com</p>
