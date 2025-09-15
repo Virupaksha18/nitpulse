@@ -18,6 +18,21 @@ const labProgramsData = {
       "Project: ML model deployment"
     ]
   },
+  "cn": {
+    title: "Computer networking Lab",
+    programs: [
+      "Implement and visualize Linear Regression",
+      "Logistic Regression for binary classification",
+      "Decision Tree algorithm for classification",
+      "KNN for handwritten digit recognition",
+      "Naive Bayes classifier",
+      "K-means clustering with visualization",
+      "Principal Component Analysis (PCA)",
+      "SVM classifier using scikit-learn",
+      "Random Forest for classification",
+      "Project: ML model deployment"
+    ]
+  },
   
   
 };

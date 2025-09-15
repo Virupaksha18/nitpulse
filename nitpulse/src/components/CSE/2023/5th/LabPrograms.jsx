@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 const labSubjects = [
  { name: "Web Technology Lab", code: "BCSL504",slug:"web" },
+  { name: "Computer Networking Lab", code: "BCSL501",slug:"cn" },
+
 ];
 
 const LabPrograms = () => {
