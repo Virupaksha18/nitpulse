@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subjects = [
-  { name: "Cloud Computing", slug: "cloud-computing", code: "BCS601" },
-  { name: "Machine Learning", slug: "machine-learning", code: "BCS602" },
-  { name: "Compiler Design", slug: "compiler-design", code: "BCS613C" },
-  { name: "Research Methodology", slug: "research-methodology", code: "BCS604" },
-  { name: "Water Conservation and Rain Water Harvesting", slug: "water-conservation", code: "BCV654A" },
+  { name: "Switchgear and Protection", slug: "SP", code: "BEE701" },
+  { name: "Industrial Drives and Applications", slug: "IDA", code: "BEE702" },
+  { name: "Power System Analysis-II", slug: "PSA", code: "BEE703" },
+  { name: "Power System Operation and Control", slug: "PSOC", code: "BEE714A" },
+  { name: "E-Waste Management", slug: "EWM", code: "BEC755A" },
+
 ];
 
 const Notes = () => {

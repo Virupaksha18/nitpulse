@@ -2,40 +2,40 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const assignmentData = {
-  "cloud-computing": {
-    title: "Cloud Computing",
+  "SP": {
+    title: "Switchgear and Protection",
     assignments: [
       "Explain IaaS, PaaS, and SaaS with real-world examples.",
       "Write a report on virtualization techniques used in data centers.",
       "Discuss security issues in cloud computing and solutions."
     ]
   },
-  "machine-learning": {
-    title: "Machine Learning",
+  "IDA": {
+    title: "Industrial Drives and Applications",
     assignments: [
       "Implement Linear Regression using Python and submit report.",
       "Explain overfitting and underfitting with diagrams.",
       "Compare supervised and unsupervised learning."
     ]
   },
-  "compiler-design": {
-    title: "Compiler Design",
+  "PSA": {
+    title: "Power System Analysis-II",
     assignments: [
       "Design a lexical analyzer for simple expressions.",
       "Explain different parsing techniques with examples.",
       "Write short notes on syntax-directed translation."
     ]
   },
-  "research-methodology": {
-    title: "Research Methodology",
+  "PSOC": {
+    title: "Power System Operation and Control",
     assignments: [
       "Write a research proposal on any emerging technology.",
       "Explain quantitative vs qualitative research.",
       "Discuss ethical issues in research."
     ]
   },
-  "water-conservation": {
-    title: "Water Conservation",
+  "EWM": {
+    title: "E-Waste Management",
     assignments: [
       "List techniques for rainwater harvesting.",
       "Create awareness poster on water conservation.",
