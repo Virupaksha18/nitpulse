@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subjects = [
-  { name: "Cloud Computing", slug: "cloud-computing", code: "BCS601" },
-  { name: "Machine Learning", slug: "machine-learning", code: "BCS602" },
-  { name: "Compiler Design", slug: "compiler-design", code: "BCS613C" },
-  { name: "Research Methodology", slug: "research-methodology", code: "BCS604" },
-  { name: "Water Conservation", slug: "water-conservation", code: "BCV654A" },
+    { name: "Design of Steel Structure", slug: "DSS", code: "BCV701" },
+  { name: "Estimation and Contract Management", slug: "ECM", code: "BCV702" },
+  { name: "Prestressed Concrete", slug: "PC", code: "BCV703" },
+  { name: "Intelligent Transport Systems", slug: "ITS", code: "BCV714A" },
+  { name: "E-Waste Management", slug: "EWM", code: "BCV755A" },
 ];
 
 const MQP = () => {
