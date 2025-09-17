@@ -38,11 +38,17 @@ const labProgramsData = {
 };
 
 const LabProgramsdetails = () => {
-  const { subjectSlug } = useParams();
+const { subjectSlug } = useParams();
   const subject = labProgramsData[subjectSlug];
 
+  const pdfLinks = subject?.programs.map((_, index) => {
+    return `${process.env.REACT_APP_BASE_URL}/files/labs/CSE/2023/5th/${subjectSlug}/program${index + 1}.pdf`;
+  });
+
   if (!subject) {
-    return <div className="text-center mt-10 text-red-500 text-xl">Programs not found for this subject.</div>;
+    return (
+       <div className="pt-20 text-center mt-24 text-red-500 text-xl">Programs not found for this subject.</div>
+    );
   }
 
   return (
@@ -55,9 +61,19 @@ const LabProgramsdetails = () => {
             key={index}
             className="bg-black text-white p-6 rounded-xl shadow-md hover:bg-gray-900 transition duration-300"
           >
+            <div>
             <h3 className="text-lg font-semibold mb-2">Program {index + 1}</h3>
             <p className="text-sm text-gray-300">{program}</p>
           </div>
+          <a
+          href={pdfLinks[index]}
+           target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded text-sm mt-auto"
+            >
+              Download PDF 📥
+            </a>
+            </div>
         ))}
       </div>
     </div>
