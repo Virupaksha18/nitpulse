@@ -599,7 +599,7 @@ function App() {
       {/*cse 5th sem notes */}
       
       <Route path="/CSE/2023/5th/notes/:subjectSlug" element={<Notesdetails/>}/>
-      <Route path="/lab-programs/:subjectSlug" element={<LabProgramsdetails/>}/>
+      <Route path="/lab-programs5/:subjectSlug" element={<LabProgramsdetails/>}/>
       <Route path="/assignments/:subjectSlug" element={<Assignmentdetails/>}/>
       <Route path="/mqp/:subjectSlug" element={<MQPdetails/>}/>
       <Route path="/passing-package/:subjectSlug" element={<PassingPackagedetails/>}/>
