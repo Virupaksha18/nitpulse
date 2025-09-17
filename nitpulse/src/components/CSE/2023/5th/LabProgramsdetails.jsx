@@ -6,16 +6,16 @@ const labProgramsData = {
   "web": {
     title: "WEB Technology Lab",
     programs: [
-      "Implement and visualize Linear Regression",
-      "Logistic Regression for binary classification",
-      "Decision Tree algorithm for classification",
-      "KNN for handwritten digit recognition",
-      "Naive Bayes classifier",
-      "K-means clustering with visualization",
-      "Principal Component Analysis (PCA)",
-      "SVM classifier using scikit-learn",
-      "Random Forest for classification",
-      "Project: ML model deployment"
+      "Develop the HTML page named as “Myfirstwebpage.html”. Add the following tags with relevant content. Set the title of the page as “My First Web Page” Within the body use the following tags: a) Moving text = “Basic HTML Tags” ",
+      ". Develop the HTML page named as “Table.html” to display your class time table",
+      "Develop an external style sheet named as “style.css” and provide different styles for h2, h3, hr, p, div, span, time, img & a tags. Apply different CSS selectors for tags and demonstrate the significance of each. ",
+      "Develop HTML page named as “registration.html” having variety of HTML input elements with background colors, table for alignment & provide font colors & size using CSS styles. ",
+      "Develop HTML page named as “newpaper.html” having variety of HTML semantic elements with background colors, text-colors & size for figure, table, aside, section, article, header, footer… etc.",
+      " Apply HTML, CSS and JavaScript to design a simple calculator to perform the following operations: sum, product, difference, remainder, quotient, power, square-root and square.",
+      "7. Develop JavaScript program (with HTML/CSS)",
+      "8A. Develop a PHP program (with HTML/CSS) to keep track of the number of visitors visiting the web page and to display this count of visitors, with relevant headings. 8B.Develop a PHP program (with HTML/CSS) to sort the student records which are stored in the database using selection sort.click here",
+      "Develop jQuery script (with HTML/CSS)",
+      "Develop a JavaScript program with Ajax (with HTML/CSS) for:"
     ]
   },
   "cn": {
