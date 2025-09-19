@@ -24,7 +24,8 @@ const assignmentData = {
       "Design a lexical analyzer for simple expressions.",
       "Explain different parsing techniques with examples.",
       "Write short notes on syntax-directed translation."
-    ]
+    ],
+    provider: "Chandrakala (3NA22CS092)."
   },
   "BDA": {
     title: "Big Data Analytics",
@@ -82,7 +83,7 @@ const AssignmentsDetails7 = () => {
                   href={questionPdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition text-sm"
+                  className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition text-sm text-center"
                 >
                   Questions
                 </a>
@@ -90,10 +91,11 @@ const AssignmentsDetails7 = () => {
                   href={solutionPdf}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm"
+                  className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm text-center block"
                 >
                   Solutions
                 </a>
+                <p className="mt-1 text-xs text-gray-400 italic text-center">Provided by : {item.provider}</p>
               </div>
             </div>
           );
