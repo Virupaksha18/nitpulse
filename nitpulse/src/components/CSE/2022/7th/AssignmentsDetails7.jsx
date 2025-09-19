@@ -5,31 +5,41 @@ const assignmentData = {
   "IoT": {
     title: "Internet of Things",
     assignments: [
-      
+      "Explain IaaS, PaaS, and SaaS with real-world examples.",
+      "Write a report on virtualization techniques used in data centers.",
+      "Discuss security issues in cloud computing and solutions."
     ]
   },
   "PC": {
     title: "Parallel Computing",
     assignments: [
-      
+      "Implement Linear Regression using Python and submit report.",
+      "Explain overfitting and underfitting with diagrams.",
+      "Compare supervised and unsupervised learning."
     ]
   },
   "cryptography": {
     title: "Cryptography and Networking Security",
     assignments: [
-     
+      "Design a lexical analyzer for simple expressions.",
+      "Explain different parsing techniques with examples.",
+      "Write short notes on syntax-directed translation."
     ]
   },
   "BDA": {
     title: "Big Data Analytics",
     assignments: [
-      
+      "Write a research proposal on any emerging technology.",
+      "Explain quantitative vs qualitative research.",
+      "Discuss ethical issues in research."
     ]
   },
   "conservation": {
     title: "Conservation of Natural Resouces",
     assignments: [
-      
+      "List techniques for rainwater harvesting.",
+      "Create awareness poster on water conservation.",
+      "Explain the impact of urbanization on groundwater."
     ]
   }
 };
