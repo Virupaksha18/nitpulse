@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 const assignmentData = {
   "sepm": {
-    title: "Internet of Things",
+    title: "Software Engineering and Project Management",
     assignments: [
       "Explain IaaS, PaaS, and SaaS with real-world examples.",
       "Write a report on virtualization techniques used in data centers.",
@@ -11,7 +11,7 @@ const assignmentData = {
     ]
   },
   "cn": {
-    title: "Parallel Computing",
+    title: "Computer Networks",
     assignments: [
       "Implement Linear Regression using Python and submit report.",
       "Explain overfitting and underfitting with diagrams.",
@@ -19,7 +19,7 @@ const assignmentData = {
     ]
   },
   "tc": {
-    title: "Cryptography and Networking Security",
+    title: "Theory of Computation",
     assignments: [
       "Design a lexical analyzer for simple expressions.",
       "Explain different parsing techniques with examples.",
@@ -27,7 +27,7 @@ const assignmentData = {
     ]
   },
   "usp": {
-    title: "Big Data Analytics",
+    title: "Unix System Programming",
     assignments: [
       "Write a research proposal on any emerging technology.",
       "Explain quantitative vs qualitative research.",
@@ -35,7 +35,7 @@ const assignmentData = {
     ]
   },
   "rm": {
-    title: "Conservation of Natural Resouces",
+    title: "Research Methodology and IPR",
     assignments: [
       "List techniques for rainwater harvesting.",
       "Create awareness poster on water conservation.",
@@ -43,7 +43,7 @@ const assignmentData = {
     ]
   },
     "evs": {
-    title: "Conservation of Natural Resouces",
+    title: "Environmental Studies",
     assignments: [
       "List techniques for rainwater harvesting.",
       "Create awareness poster on water conservation.",
@@ -56,33 +56,53 @@ const Assignmentdetails = () => {
   const { subjectSlug } = useParams();
   const subject = assignmentData[subjectSlug];
 
-  if (!subject) {
-    return <div className="text-center mt-10 text-red-500 text-xl">Assignments not found for this subject.</div>;
+   if (!subject) {
+    return (
+      <div className="text-center mt-10 text-red-500 text-xl">
+        Assignments not found for this subject.
+      </div>
+    );
   }
 
   return (
     <div className="pt-20 px-4 max-w-4xl mx-auto">
-      <h2 className="text-3xl font-bold text-center mb-10">{subject.title} - Assignments</h2>
+      <h2 className="text-3xl font-bold text-center mb-10">
+        {subject.title} - Assignments
+      </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {subject.assignments.map((item, index) => {
-          const pdfUrl = `${process.env.REACT_APP_BASE_URL}/files/assignments/CSE/2023/5th/${subjectSlug}/assignment${index + 1}.pdf`;
+          const questionPdf = `${process.env.REACT_APP_BASE_URL}/files/assignments/CSE/2023/5th/${subjectSlug}/assignment${index + 1}_questions.pdf`;
+          const solutionPdf = `${process.env.REACT_APP_BASE_URL}/files/assignments/CSE/2023/5th/${subjectSlug}/assignment${index + 1}_solutions.pdf`;
 
           return (
             <div
               key={index}
               className="bg-black text-white p-6 rounded-xl shadow-md hover:bg-gray-900 transition duration-300"
             >
-              <h3 className="text-lg font-semibold mb-2">Assignment {index + 1}</h3>
+              <h3 className="text-lg font-semibold mb-2">
+                Assignment {index + 1}
+              </h3>
               <p className="text-sm text-gray-300 mb-4">{item}</p>
-              <a
-                href={pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-              >
-                Download PDF
-              </a>
+
+              <div className="flex gap-3">
+                <a
+                  href={questionPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition text-sm"
+                >
+                  Questions
+                </a>
+                <a
+                  href={solutionPdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition text-sm"
+                >
+                  Solutions
+                </a>
+              </div>
             </div>
           );
         })}
@@ -90,5 +110,6 @@ const Assignmentdetails = () => {
     </div>
   );
 };
+
 
 export default Assignmentdetails;
