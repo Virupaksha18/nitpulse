@@ -14,6 +14,9 @@ const HomePage = () => {
   const { user } = useAuth();
   const [search, setSearch] = useState('');
   const [showForm, setShowForm] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [showInstallButton, setShowInstallButton] = useState(false);
+
   const [formData, setFormData] = useState({
     name:'',
     usn:'',
@@ -49,6 +52,58 @@ const HomePage = () => {
   const [comments, setComments] = useState([]);
   const [replyText,setReplyText] = useState({});
   const [errorMessage,setErrorMessage] = useState('');
+
+useEffect(() => {
+    const beforeInstallHandler = (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+      setShowInstallButton(true);
+    };
+
+    const appInstalledHandler = () => {
+      setDeferredPrompt(null);
+      setShowInstallButton(false);
+      localStorage.setItem("nitpulse_installed", "true");
+    };
+
+    window.addEventListener("beforeinstallprompt", beforeInstallHandler);
+    window.addEventListener("appinstalled", appInstalledHandler);
+
+    // Check if already installed
+    const isStandalone =
+      window.matchMedia &&
+      window.matchMedia("(display-mode: standalone)").matches;
+    const alreadyFlag = localStorage.getItem("nitpulse_installed") === "true";
+    if (isStandalone || alreadyFlag) {
+      setShowInstallButton(false);
+    }
+
+    return () => {
+      window.removeEventListener("beforeinstallprompt", beforeInstallHandler);
+      window.removeEventListener("appinstalled", appInstalledHandler);
+    };
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (!deferredPrompt) return;
+    deferredPrompt.prompt();
+ try {
+      const choice = await deferredPrompt.userChoice;
+      if (choice.outcome === "accepted") {
+        console.log("✅ User accepted the install prompt");
+        localStorage.setItem("nitpulse_installed", "true");
+      } else {
+        console.log("❌ User dismissed the install prompt");
+      }
+    } catch (err) {
+      console.error("Install failed:", err);
+    } finally {
+      setDeferredPrompt(null);
+      setShowInstallButton(false);
+    }
+  };
+
+
   useEffect(() => {
     const savedUsn =localStorage.getItem('userUsn') || '';
     setUserUsn(savedUsn);
@@ -648,7 +703,39 @@ if(!user){
             </div>
           ))}
         </div>
-      </div>
+      </div>
+ <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-center py-10 px-6 rounded-3xl shadow-2xl max-w-4xl mx-auto mb-12">
+        <h2 className="text-2xl font-extrabold mb-4">📲 Install NIT Pulse</h2>
+        <p className="text-lg mb-6">
+          Add NIT Pulse directly to your home screen for a faster, app-like
+          experience.
+        </p>
+
+        {showInstallButton ? (
+          <button
+            onClick={handleInstallClick}
+            className="bg-white text-purple-700 font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-gray-200 transition install-glow"
+          >
+            ➕ Install App
+          </button>
+        ) : (
+          <p className="text-sm opacity-80">
+            If you don't see the Install button, open this page in Chrome on
+            Android and you’ll get the Add-to-Home prompt.
+          </p>
+        )}
+      </div>
+
+      {/* Floating Install Button */}
+      {showInstallButton && (
+        <button
+          onClick={handleInstallClick}
+          className="fixed bottom-6 right-6 bg-purple-600 text-white p-4 rounded-full hover:bg-purple-700 transition z-50 shadow-lg install-glow"
+          title="Install App"
+        >
+          ➕
+        </button>
+      )}
 
      
       {/* Footer */}
