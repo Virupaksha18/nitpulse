@@ -55,6 +55,7 @@ const HomePage = () => {
 
 useEffect(() => {
     const beforeInstallHandler = (e) => {
+      console.log("beforeinstallprompt fired");
       e.preventDefault();
       setDeferredPrompt(e);
       setShowInstallButton(true);
