@@ -6,7 +6,7 @@
   "theme_color": "#1e40af",
   "background_color": "#ffffff",
   "orientation":"portrait",
-
+  "description":"NIT Pulse -student resources and notes portal",
   "icons": [
     {
       "src": "favicon.png",
