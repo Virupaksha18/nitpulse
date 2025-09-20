@@ -11,11 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-@keyframes nitpulse-glow {
+/* @keyframes nitpulse-glow {
   0%, 100% { box-shadow: 0 0 15px rgba(139, 92, 246, 0.7); }
   50%      { box-shadow: 0 0 30px rgba(139, 92, 246, 1); }
 }
 
 .install-glow {
   animation: nitpulse-glow 1.5s infinite ease-in-out;
-}
+} */
