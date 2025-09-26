@@ -68,7 +68,7 @@ const ForgotPassword = () => {
           onChange={handleChange}
           required
           className="border p-2 rounded w-full mb-3"
-          pattern="/^(3na|3NA)(22|23|24)(cs|CS|ec|EC|ai|AI|ee|EE|cv|CV)\d{3}$/"
+          //pattern="/^(3na|3NA)(22|23|24)(cs|CS|ec|EC|ai|AI|ee|EE|cv|CV)\d{3}$/"
         />
         <input
           type="email"
@@ -78,7 +78,7 @@ const ForgotPassword = () => {
           onChange={handleChange}
           required
           className="border p-2 rounded w-full mb-3"
-          pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
+          //pattern="/^[^\s@]+@[^\s@]+\.[^\s@]+$/"
         />
         <input
           type="password"
