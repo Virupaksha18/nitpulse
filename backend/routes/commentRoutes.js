@@ -69,7 +69,7 @@ router.post('/:commentId/replies/:replyId/dislike', async (req, res) => {
 // ✅ Get all comments
 router.get('/', async (req, res) => {
   try {
-    const comments = await Comment.find().sort({ createdAt: -1 }).limit(5);
+    const comments = await Comment.find().sort({ createdAt: -1 }).limit(20);
     res.json(comments);
   } catch (err) {
     res.status(500).json({ error: 'Server error while fetching comments' });
