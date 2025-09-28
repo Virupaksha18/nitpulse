@@ -19,7 +19,7 @@ const Assignments = () => {
         {assignmentSubjects.map((subject, index) => (
           <Link
             key={index}
-            to={`/ec7assignments/${subject.slug}`}
+            to={`/assignments/${subject.slug}`}
             className="bg-black text-white rounded-xl shadow-md p-6 text-center hover:bg-gray-900 transition duration-300"
           >
             <h3 className="text-xl font-bold mb-2">{subject.name}</h3>
