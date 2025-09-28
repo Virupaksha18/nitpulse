@@ -2,44 +2,44 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const assignmentData = {
-  "cloud-computing": {
-    title: "Cloud Computing",
+  "microwave": {
+    title: "Microwave Engineering and Antenna Theory",
     assignments: [
-      "Explain IaaS, PaaS, and SaaS with real-world examples.",
-      "Write a report on virtualization techniques used in data centers.",
-      "Discuss security issues in cloud computing and solutions."
+      "Microwave Engineering and Antenna Theory Assignment-1 Question and Answers.",
+      "Microwave Engineering and Antenna Theory Assignment-2 Question and Answers.",
+      "Microwave Engineering and Antenna Theory Assignment-3 Question and Answers."
     ]
   },
-  "machine-learning": {
-    title: "Machine Learning",
+  "computer-networks": {
+    title: "Computer Networks and Protocols",
     assignments: [
-      "Implement Linear Regression using Python and submit report.",
-      "Explain overfitting and underfitting with diagrams.",
-      "Compare supervised and unsupervised learning."
+      "Computer Networks and Protocols Assignment-1 Question and Answers.",
+      "Computer Networks and Protocols Assignment-2 Question and Answers.",
+      "Computer Networks and Protocols Assignment-3 Question and Answers."
     ]
   },
-  "compiler-design": {
-    title: "Compiler Design",
+  "wireless-communication": {
+    title: "Wireless Communication Systems",
     assignments: [
-      "Design a lexical analyzer for simple expressions.",
-      "Explain different parsing techniques with examples.",
-      "Write short notes on syntax-directed translation."
+      "Wireless Communication System Assignment-1 Question and Answers.",
+      "Wireless Communication System Assignment-2 Question and Answers.",
+      "Wireless Communication System Assignment-3 Question and Answers."
     ]
   },
-  "research-methodology": {
-    title: "Research Methodology",
+  "network-security": {
+    title: "Computer and Network Security",
     assignments: [
-      "Write a research proposal on any emerging technology.",
-      "Explain quantitative vs qualitative research.",
-      "Discuss ethical issues in research."
+      "Computer and Network security ssignment-1 Question and Answers.",
+      "Computer and Network security ssignment-2 Question and Answers",
+      "Computer and Network security ssignment-3 Question and Answers."
     ]
   },
-  "water-conservation": {
-    title: "Water Conservation",
+  "conservation": {
+    title: "Conservation of Natural Resources",
     assignments: [
-      "List techniques for rainwater harvesting.",
-      "Create awareness poster on water conservation.",
-      "Explain the impact of urbanization on groundwater."
+      "Conservation of Natural Resources Assignment-1 Question and Answers. ",
+      "Conservation of Natural Resources Assignment-2 Question and Answers.",
+      "Conservation of Natural Resources Assignment-3 Question and Answers."
     ]
   }
 };

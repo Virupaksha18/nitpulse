@@ -9,7 +9,7 @@ const modules = [
   "MODULE 5",
 ];
 
-const PassingPackageDetails = () => {
+const PassingPackageDetailsEC7 = () => {
   const { subjectSlug } = useParams();
 
   return (
@@ -45,4 +45,4 @@ const PassingPackageDetails = () => {
   );
 };
 
-export default PassingPackageDetails;
+export default PassingPackageDetailsEC7;

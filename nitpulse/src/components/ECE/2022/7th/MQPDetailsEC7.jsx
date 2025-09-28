@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-const MQPDetails = () => {
+const MQPDetailsEC7= () => {
   const { subjectSlug } = useParams();
 
   const basePath =` ${process.env.REACT_APP_BASE_URL}/files/mqp/ECE/2022/7th/${subjectSlug}`;
@@ -66,4 +66,4 @@ const MQPDetails = () => {
   );
 };
 
-export default MQPDetails;
+export default MQPDetailsEC7;

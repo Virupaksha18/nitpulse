@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subjects = [
-  { name: "Cloud Computing", slug: "cloud-computing", code: "BCS601" },
-  { name: "Machine Learning", slug: "machine-learning", code: "BCS602" },
-  { name: "Compiler Design", slug: "compiler-design", code: "BCS613C" },
-  { name: "Research Methodology", slug: "research-methodology", code: "BCS604" },
-  { name: "Water Conservation and Rain Water Harvesting", slug: "water-conservation", code: "BCV654A" },
+  { name: "Microwave Engineering and Antenna Theory ", slug: "microwave", code: "BEC701" },
+  { name: "Computer Networks and Protocols", slug: "computer-networks", code: "BEC702" },
+  { name: "Wireless Communication Systems ", slug: "wireless-communication", code: "BEC703" },
+  { name: "Computer and Network Security", slug: "network-security", code: "BEC714B" },
+  { name: "Conservation of Natural Resources ", slug: "conservation", code: "BCV755B" },
 ];
 
 const PassingPackage = () => {
@@ -18,7 +18,7 @@ const PassingPackage = () => {
         {subjects.map((subject, index) => (
           <Link
             key={index}
-            to={`/passing-package/${subject.slug}`}
+            to={`/ec7passing-package/${subject.slug}`}
             className="bg-black text-white rounded-xl shadow-md p-6 text-center hover:bg-gray-900 transition duration-300"
           >
             <h3 className="text-xl font-bold mb-2">{subject.name}</h3>

@@ -9,7 +9,7 @@ const modules = [
   "MODULE 5",
 ];
 
-const NoteModules = () => {
+const NoteModulesEC7 = () => {
   const { subjectSlug } = useParams();
 
   return (
@@ -48,4 +48,4 @@ const NoteModules = () => {
   );
 };
 
-export default NoteModules;
+export default NoteModulesEC7;
