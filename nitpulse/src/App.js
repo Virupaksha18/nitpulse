@@ -442,10 +442,10 @@ function App() {
         {/* ECE 2022 - 7th Semester */}
 
         <Route path="/ECE/2022/7th/notes" element={<NotesECE20227th />} />
-        <Route path="/ECE/2022/7th/ec7assignments" element={<AssignmentsECE20227th />} />
-        <Route path="/ECE/2022/7th/ec7mqp" element={<MQPECE20227th />} />
-        <Route path="/ECE/2022/7th/ec7passing-package" element={<PassingPackageECE20227th />} />
-        <Route path="/ECE/2022/7th/ec7lab-programs" element={<LabProgramsECE20227th />} />
+        <Route path="/ECE/2022/7th/assignments" element={<AssignmentsECE20227th />} />
+        <Route path="/ECE/2022/7th/mqp" element={<MQPECE20227th />} />
+        <Route path="/ECE/2022/7th/passing-package" element={<PassingPackageECE20227th />} />
+        <Route path="/ECE/2022/7th/lab-programs" element={<LabProgramsECE20227th />} />
         {/* ECE 2023 - 4th Semester */}
 
         <Route path="/ECE/2023/4th/notes" element={<NotesECE20234th />} />
@@ -625,15 +625,15 @@ function App() {
       {/*ece 6th sem notes*/}
       <Route path="/notes/:subjectSlug"element={<NoteModulesEC6/>}/>
       <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC6/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC6/>}/>
+      <Route path="/ec7assignments/:subjectSlug"element={<AssignmentDetailsEC6/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC6/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC6/>}/>
        {/*ece 7th sem notes */} 
         <Route path="/notes/:subjectSlug"element={<NoteModulesEC7/>}/>
-      <Route path="/ec7lab-programs/:subjectSlug"element={<LabProgramDetailsEC7/>}/>
-      <Route path="/ec7assignments/:subjectSlug"element={<AssignmentDetailsEC7/>}/>
-      <Route path="/ec7mqp/:subjectSlug"element={<MQPDetailsEC7/>}/>
-      <Route path="/ec7passing-package/:subjectSlug"element={<PassingPackageDetailsEC7/>}/>
+      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC7/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC7/>}/>
+      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC7/>}/>
+      <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC7/>}/>
           {/*ece 5th sem notes */} 
         <Route path="/notes/:subjectSlug"element={<NoteModulesEC5/>}/>
       <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC5/>}/>
