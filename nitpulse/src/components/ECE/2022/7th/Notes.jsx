@@ -34,7 +34,7 @@ const Notes = () => {
 
             {/* Navigate to Notes */}
             <Link
-              to={`/ECE/2022/7th/notes/${subject.slug}`}
+              to={`/ECE/2022/7th/ec7notes/${subject.slug}`}
                className="mt-3 inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition"
             >
               📄 View Notes →

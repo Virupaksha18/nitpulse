@@ -442,10 +442,10 @@ function App() {
         {/* ECE 2022 - 7th Semester */}
 
         <Route path="/ECE/2022/7th/notes" element={<NotesECE20227th />} />
-        <Route path="/ECE/2022/7th/assignments" element={<AssignmentsECE20227th />} />
-        <Route path="/ECE/2022/7th/mqp" element={<MQPECE20227th />} />
-        <Route path="/ECE/2022/7th/passing-package" element={<PassingPackageECE20227th />} />
-        <Route path="/ECE/2022/7th/lab-programs" element={<LabProgramsECE20227th />} />
+        <Route path="/ECE/2022/7th/ec7assignments" element={<AssignmentsECE20227th />} />
+        <Route path="/ECE/2022/7th/ec7mqp" element={<MQPECE20227th />} />
+        <Route path="/ECE/2022/7th/ec7passing-package" element={<PassingPackageECE20227th />} />
+        <Route path="/ECE/2022/7th/ec7lab-programs" element={<LabProgramsECE20227th />} />
         {/* ECE 2023 - 4th Semester */}
 
         <Route path="/ECE/2023/4th/notes" element={<NotesECE20234th />} />
