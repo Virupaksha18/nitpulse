@@ -443,7 +443,7 @@ function App() {
 
         <Route path="/ECE/2022/7th/notes" element={<NotesECE20227th />} />
         <Route path="/ECE/2022/7th/assignments" element={<AssignmentsECE20227th />} />
-        <Route path="/ECE/2022/7th/mqp" element={<MQPECE20227th />} />
+        <Route path="/ECE/2022/7th/mqps" element={<MQPECE20227th />} />
         <Route path="/ECE/2022/7th/passing-package" element={<PassingPackageECE20227th />} />
         <Route path="/ECE/2022/7th/labs" element={<LabProgramsECE20227th />} />
         {/* ECE 2023 - 4th Semester */}
@@ -632,7 +632,7 @@ function App() {
         <Route path="/ECE/2022/7th/notes/:subjectSlug"element={<NoteModulesEC7/>}/>
       <Route path="/lab-programsec7/:subjectSlug"element={<LabProgramDetailsEC7/>}/>
       <Route path="/ec7assignments/:subjectSlug"element={<AssignmentDetailsEC7/>}/>
-      <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC7/>}/>
+      <Route path="/mqpec7/:subjectSlug"element={<MQPDetailsEC7/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC7/>}/>
           {/*ece 5th sem notes */} 
         <Route path="/notes/:subjectSlug"element={<NoteModulesEC5/>}/>
