@@ -654,8 +654,8 @@ function App() {
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC1/>}/>  
       {/*aiml 1st sem notes */} 
         <Route path="/AIML/2025/1st/notes/:subjectSlug"element={<NoteModulesAI1/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsAI1/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsAI1/>}/>
+      <Route path="/lab-programsai/:subjectSlug"element={<LabProgramDetailsAI1/>}/>
+      <Route path="/assignmentsai/:subjectSlug"element={<AssignmentDetailsAI1/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsAI1/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsAI1/>}/> 
 

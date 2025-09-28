@@ -17,7 +17,7 @@ const LabPrograms = () => {
         {labSubjects.map((subject, index) => (
           <Link
             key={index}
-            to={`/lab-programs/${subject.slug}`}
+            to={`/lab-programsee3/${subject.slug}`}
             className="bg-black text-white rounded-xl shadow-md p-6 text-center hover:bg-gray-900 transition duration-300"
           >
             <h3 className="text-xl font-bold mb-2">{subject.name}</h3>
