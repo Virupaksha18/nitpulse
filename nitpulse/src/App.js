@@ -444,7 +444,7 @@ function App() {
         <Route path="/ECE/2022/7th/notes" element={<NotesECE20227th />} />
         <Route path="/ECE/2022/7th/assignments" element={<AssignmentsECE20227th />} />
         <Route path="/ECE/2022/7th/mqps" element={<MQPECE20227th />} />
-        <Route path="/ECE/2022/7th/passing-package" element={<PassingPackageECE20227th />} />
+        <Route path="/ECE/2022/7th/package" element={<PassingPackageECE20227th />} />
         <Route path="/ECE/2022/7th/labs" element={<LabProgramsECE20227th />} />
         {/* ECE 2023 - 4th Semester */}
 
@@ -457,9 +457,9 @@ function App() {
 
         <Route path="/ECE/2023/5th/notes" element={<NotesECE20235th />} />
         <Route path="/ECE/2023/5th/assignments" element={<AssignmentsECE20235th />} />
-        <Route path="/ECE/2023/5th/mqp" element={<MQPECE20235th />} />
-        <Route path="/ECE/2023/5th/passing-package" element={<PassingPackageECE20235th />} />
-        <Route path="/ECE/2023/5th/lab-programs" element={<LabProgramsECE20235th />} />
+        <Route path="/ECE/2023/5th/mqps" element={<MQPECE20235th />} />
+        <Route path="/ECE/2023/5th/package" element={<PassingPackageECE20235th />} />
+        <Route path="/ECE/2023/5th/labs" element={<LabProgramsECE20235th />} />
         
         {/* ECE 2024 - 2nd Semester */}
         <Route path="/ECE/2024/2nd/notes" element={<NotesECE20242nd />} />
@@ -471,17 +471,17 @@ function App() {
         {/* ECE 2025 - 1st Semester */}
         <Route path="/ECE/2025/1st/notes" element={<NotesECE20251st />} />
         <Route path="/ECE/2025/1st/assignments" element={<AssignmentsECE20251st />} />
-        <Route path="/ECE/2025/1st/mqp" element={<MQPECE20251st />} />
-        <Route path="/ECE/2025/1st/passing-package" element={<PassingPackageECE20251st />} />
-        <Route path="/ECE/2025/1st/lab-programs" element={<LabProgramsECE20251st />} />
+        <Route path="/ECE/2025/1st/mqps" element={<MQPECE20251st />} />
+        <Route path="/ECE/2025/1st/package" element={<PassingPackageECE20251st />} />
+        <Route path="/ECE/2025/1st/labs" element={<LabProgramsECE20251st />} />
 
 
         {/* ECE 2023 - 3rd Semester */}
         <Route path="/ECE/2024/3rd/notes" element={<NotesECE20243rd />} />
         <Route path="/ECE/2024/3rd/assignments" element={<AssignmentsECE20243rd />} />
-        <Route path="/ECE/2024/3rd/mqp" element={<MQPECE20243rd />} />
-        <Route path="/ECE/2024/3rd/passing-package" element={<PassingPackageECE20243rd />} />
-        <Route path="/ECE/2024/3rd/lab-programs" element={<LabProgramsECE20243rd />} />
+        <Route path="/ECE/2024/3rd/mqps" element={<MQPECE20243rd />} />
+        <Route path="/ECE/2024/3rd/package" element={<PassingPackageECE20243rd />} />
+        <Route path="/ECE/2024/3rd/labs" element={<LabProgramsECE20243rd />} />
 
 
          {/* CIVIL 2022 - 6th Semester */}
@@ -493,9 +493,9 @@ function App() {
         {/* CIVIL 2022 - 7th Semester */}
         <Route path="/CIVIL/2022/7th/notes" element={<NotesCIVIL20227th />} />
         <Route path="/CIVIL/2022/7th/assignments" element={<AssignmentsCIVIL20227th />} />
-        <Route path="/CIVIL/2022/7th/mqp" element={<MQPCIVIL20227th />} />
-        <Route path="/CIVIL/2022/7th/passing-package" element={<PassingPackageCIVIL20227th />} />
-        <Route path="/CIVIL/2022/7th/lab-programs" element={<LabProgramsCIVIL20227th />} />
+        <Route path="/CIVIL/2022/7th/mqps" element={<MQPCIVIL20227th />} />
+        <Route path="/CIVIL/2022/7th/package" element={<PassingPackageCIVIL20227th />} />
+        <Route path="/CIVIL/2022/7th/labs" element={<LabProgramsCIVIL20227th />} />
         {/* CIVIL 2023 - 4th Semester */}
         <Route path="/CIVIL/2023/4th/notes" element={<NotesCIVIL20234th />} />
         <Route path="/CIVIL/2023/4th/assignments" element={<AssignmentsCIVIL20234th />} />
@@ -505,27 +505,27 @@ function App() {
         {/* CIVIL 2023 - 5th Semester */}
         <Route path="/CIVIL/2023/5th/notes" element={<NotesCIVIL20235th />} />
         <Route path="/CIVIL/2023/5th/assignments" element={<AssignmentsCIVIL20235th />} />
-        <Route path="/CIVIL/2023/5th/mqp" element={<MQPCIVIL20235th />} />
-        <Route path="/CIVIL/2023/5th/passing-package" element={<PassingPackageCIVIL20235th />} />
-        <Route path="/CIVIL/2023/5th/lab-programs" element={<LabProgramsCIVIL20235th />} />
+        <Route path="/CIVIL/2023/5th/mqps" element={<MQPCIVIL20235th />} />
+        <Route path="/CIVIL/2023/5th/package" element={<PassingPackageCIVIL20235th />} />
+        <Route path="/CIVIL/2023/5th/labs" element={<LabProgramsCIVIL20235th />} />
         {/* CIVIL 2024 - 3rd Semester */}
         <Route path="/CIVIL/2024/3rd/notes" element={<NotesCIVIL20243rd />} />
         <Route path="/CIVIL/2024/3rd/assignments" element={<AssignmentsCIVIL20243rd />} />
-        <Route path="/CIVIL/2024/3rd/mqp" element={<MQPCIVIL20243rd />} />
-        <Route path="/CIVIL/2024/3rd/passing-package" element={<PassingPackageCIVIL20243rd />} />
-        <Route path="/CIVIL/2024/3rd/lab-programs" element={<LabProgramsCIVIL20243rd />} />
+        <Route path="/CIVIL/2024/3rd/mqps" element={<MQPCIVIL20243rd />} />
+        <Route path="/CIVIL/2024/3rd/package" element={<PassingPackageCIVIL20243rd />} />
+        <Route path="/CIVIL/2024/3rd/labs" element={<LabProgramsCIVIL20243rd />} />
         {/* CIVIL 2024 - 2nd Semester */}
         <Route path="/CIVIL/2024/2nd/notes" element={<NotesCIVIL20242nd />} />
         <Route path="/CIVIL/2024/2nd/assignments" element={<AssignmentsCIVIL20242nd />} />
-        <Route path="/CIVIL/2024/2nd/mqp" element={<MQPCIVIL20242nd />} />
-        <Route path="/CIVIL/2024/2nd/passing-package" element={<PassingPackageCIVIL20242nd />} />
-        <Route path="/CIVIL/2024/2nd/lab-programs" element={<LabProgramsCIVIL20242nd />} />
+        <Route path="/CIVIL/2024/2nd/mqps" element={<MQPCIVIL20242nd />} />
+        <Route path="/CIVIL/2024/2nd/package" element={<PassingPackageCIVIL20242nd />} />
+        <Route path="/CIVIL/2024/2nd/labs" element={<LabProgramsCIVIL20242nd />} />
         {/* CIVIL 2025 - 1st Semester */}
         <Route path="/CIVIL/2025/1st/notes" element={<NotesCIVIL20251st />} />
         <Route path="/CIVIL/2025/1st/assignments" element={<AssignmentsCIVIL20251st />} />
-        <Route path="/CIVIL/2025/1st/mqp" element={<MQPCIVIL20251st />} />
-        <Route path="/CIVIL/2025/1st/passing-package" element={<PassingPackageCIVIL20251st />} />
-        <Route path="/CIVIL/2025/1st/lab-programs" element={<LabProgramsCIVIL20251st />} />
+        <Route path="/CIVIL/2025/1st/mqps" element={<MQPCIVIL20251st />} />
+        <Route path="/CIVIL/2025/1st/package" element={<PassingPackageCIVIL20251st />} />
+        <Route path="/CIVIL/2025/1st/labs" element={<LabProgramsCIVIL20251st />} />
 
          {/* EEE 2022 - 6th Semester */}
         <Route path="/EEE/2022/6th/notes" element={<NotesEEE20226th />} />
@@ -536,27 +536,27 @@ function App() {
         {/* EEE 2022 - 7th Semester */}
         <Route path="/EEE/2022/7th/notes" element={<NotesEEE20227th />} />
         <Route path="/EEE/2022/7th/assignments" element={<AssignmentsEEE20227th />} />
-        <Route path="/EEE/2022/7th/mqp" element={<MQPEEE20227th />} />
-        <Route path="/EEE/2022/7th/passing-package" element={<PassingPackageEEE20227th />} />
-        <Route path="/EEE/2022/7th/lab-programs" element={<LabProgramsEEE20227th />} />
+        <Route path="/EEE/2022/7th/mqps" element={<MQPEEE20227th />} />
+        <Route path="/EEE/2022/7th/package" element={<PassingPackageEEE20227th />} />
+        <Route path="/EEE/2022/7th/labs" element={<LabProgramsEEE20227th />} />
         {/* EEE 2023 - 4th Semester */}
         <Route path="/EEE/2023/4th/notes" element={<NotesEEE20234th />} />
         <Route path="/EEE/2023/4th/assignments" element={<AssignmentsEEE20234th />} />
-        <Route path="/EEE/2023/4th/mqp" element={<MQPEEE20234th />} />
-        <Route path="/EEE/2023/4th/passing-package" element={<PassingPackageEEE20234th />} />
-        <Route path="/EEE/2023/4th/lab-programs" element={<LabProgramsEEE20234th />} />
+        <Route path="/EEE/2023/4th/mqps" element={<MQPEEE20234th />} />
+        <Route path="/EEE/2023/4th/package" element={<PassingPackageEEE20234th />} />
+        <Route path="/EEE/2023/4th/labs" element={<LabProgramsEEE20234th />} />
         {/* EEE 2023 - 5th Semester */}
         <Route path="/EEE/2023/5th/notes" element={<NotesEEE20235th />} />
         <Route path="/EEE/2023/5th/assignments" element={<AssignmentsEEE20235th />} />
-        <Route path="/EEE/2023/5th/mqp" element={<MQPEEE20235th />} />
-        <Route path="/EEE/2023/5th/passing-package" element={<PassingPackageEEE20235th />} />
-        <Route path="/EEE/2023/5th/lab-programs" element={<LabProgramsEEE20235th />} />
+        <Route path="/EEE/2023/5th/mqps" element={<MQPEEE20235th />} />
+        <Route path="/EEE/2023/5th/package" element={<PassingPackageEEE20235th />} />
+        <Route path="/EEE/2023/5th/labs" element={<LabProgramsEEE20235th />} />
         {/* EEE 2024 - 3rd Semester */}
         <Route path="/EEE/2024/3rd/notes" element={<NotesEEE20243rd />} />
         <Route path="/EEE/2024/3rd/assignments" element={<AssignmentsEEE20243rd />} />
-        <Route path="/EEE/2024/3rd/mqp" element={<MQPEEE20243rd />} />
-        <Route path="/EEE/2024/3rd/passing-package" element={<PassingPackageEEE20243rd />} />
-        <Route path="/EEE/2024/3rd/lab-programs" element={<LabProgramsEEE20243rd />} />
+        <Route path="/EEE/2024/3rd/mqps" element={<MQPEEE20243rd />} />
+        <Route path="/EEE/2024/3rd/package" element={<PassingPackageEEE20243rd />} />
+        <Route path="/EEE/2024/3rd/labs" element={<LabProgramsEEE20243rd />} />
         {/* EEE 2024 - 2nd Semester */}
         <Route path="/EEE/2024/2nd/notes" element={<NotesEEE20242nd />} />
         <Route path="/EEE/2024/2nd/assignments" element={<AssignmentsEEE20242nd />} />
@@ -566,17 +566,17 @@ function App() {
         {/* EEE 2025 - 1st Semester */}
         <Route path="/EEE/2025/1st/notes" element={<NotesEEE20251st />} />
         <Route path="/EEE/2025/1st/assignments" element={<AssignmentsEEE20251st />} />
-        <Route path="/EEE/2025/1st/mqp" element={<MQPEEE20251st />} />
-        <Route path="/EEE/2025/1st/passing-package" element={<PassingPackageEEE20251st />} />
-        <Route path="/EEE/2025/1st/lab-programs" element={<LabProgramsEEE20251st />} />
+        <Route path="/EEE/2025/1st/mqps" element={<MQPEEE20251st />} />
+        <Route path="/EEE/2025/1st/package" element={<PassingPackageEEE20251st />} />
+        <Route path="/EEE/2025/1st/labs" element={<LabProgramsEEE20251st />} />
        
 
         {/* AIML 2025 - 1st Semester */}
         <Route path="/AIML/2025/1st/notes" element={<NotesAIML20251st/>} />
         <Route path="/AIML/2025/1st/assignments" element={<AssignmentsAIML20251st />} />
-        <Route path="/AIML/2025/1st/mqp" element={<MQPAIML20251st />} />
-        <Route path="/AIML/2025/1st/passing-package" element={<PassingPackageAIML20251st />} />
-        <Route path="/AIML/2025/1st/lab-programs" element={<LabProgramsAIML20251st />} />
+        <Route path="/AIML/2025/1st/mqps" element={<MQPAIML20251st />} />
+        <Route path="/AIML/2025/1st/package" element={<PassingPackageAIML20251st />} />
+        <Route path="/AIML/2025/1st/labs" element={<LabProgramsAIML20251st />} />
        {/* cse 6th sem notes*/}
       <Route path="/notes/:subjectSlug"element={<NoteModules/>}/>
       <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetails/>}/>
@@ -605,8 +605,8 @@ function App() {
       <Route path="/passing-package/:subjectSlug" element={<PassingPackagedetails/>}/>
       {/*cse 3rd sem notes */}
        <Route path="/CSE/2024/3rd/notes/:subjectSlug" element={<NotesResource/>}/>
-      <Route path="/lab-programs/:subjectSlug" element={<LabProgramsResource/>}/>
-      <Route path="/assignments/:subjectSlug" element={<AssignmentsResource/>}/>
+      <Route path="/lab-programscs3/:subjectSlug" element={<LabProgramsResource/>}/>
+      <Route path="/assignmentscs3/:subjectSlug" element={<AssignmentsResource/>}/>
       <Route path="/mqp/:subjectSlug" element={<MQPQsResource/>}/>
       <Route path="/passing-package/:subjectSlug" element={<PassingPackagesResource/>}/>
       {/*cse 2nd sem notes */}
@@ -617,8 +617,8 @@ function App() {
       <Route path="/passing-package/:subjectSlug" element={<PassingPackageResource/>}/>
       {/*cse 1st sem notes */}
       <Route path="/CSE/2025/1st/notes/:subjectSlug" element={<NotesResources/>}/>
-      <Route path="/lab-programs/:subjectSlug" element={<LabProgramsResources/>}/>
-      <Route path="/assignments/:subjectSlug" element={<AssignmentsResources/>}/>
+      <Route path="/lab-programscs1/:subjectSlug" element={<LabProgramsResources/>}/>
+      <Route path="/assignmentscs1/:subjectSlug" element={<AssignmentsResources/>}/>
       <Route path="/mqp/:subjectSlug" element={<MQPQsResources/>}/>
       <Route path="/passing-package/:subjectSlug" element={<PassingPackagesResources/>}/>
       
@@ -635,77 +635,77 @@ function App() {
       <Route path="/mqpec7/:subjectSlug"element={<MQPDetailsEC7/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC7/>}/>
           {/*ece 5th sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesEC5/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC5/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC5/>}/>
+        <Route path="ECE/2023/5th/notes/:subjectSlug"element={<NoteModulesEC5/>}/>
+      <Route path="/lab-programsec5/:subjectSlug"element={<LabProgramDetailsEC5/>}/>
+      <Route path="/assignmentsec5/:subjectSlug"element={<AssignmentDetailsEC5/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC5/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC5/>}/> 
       {/*ece 3rd sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesEC3/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC3/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC3/>}/>
+        <Route path="/ECE/2024/3rd/notes/:subjectSlug"element={<NoteModulesEC3/>}/>
+      <Route path="/lab-programsec3/:subjectSlug"element={<LabProgramDetailsEC3/>}/>
+      <Route path="/assignmentsec3/:subjectSlug"element={<AssignmentDetailsEC3/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC3/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC3/>}/>  
        {/*ece 1st sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesEC1/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC1/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC1/>}/>
+        <Route path="/ECE/2025/1st/notes/:subjectSlug"element={<NoteModulesEC1/>}/>
+      <Route path="/lab-programsec1/:subjectSlug"element={<LabProgramDetailsEC1/>}/>
+      <Route path="/assignmentsec1/:subjectSlug"element={<AssignmentDetailsEC1/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC1/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC1/>}/>  
       {/*aiml 1st sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesAI1/>}/>
+        <Route path="/AIML/2025/1st/notes/:subjectSlug"element={<NoteModulesAI1/>}/>
       <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsAI1/>}/>
       <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsAI1/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsAI1/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsAI1/>}/> 
 
       {/*eee 1st sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesEEE1/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEEE1/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEEE1/>}/>
+        <Route path="/EEE/2025/1st/notes/:subjectSlug"element={<NoteModulesEEE1/>}/>
+      <Route path="/lab-programsee1/:subjectSlug"element={<LabProgramDetailsEEE1/>}/>
+      <Route path="/assignmentsee1/:subjectSlug"element={<AssignmentDetailsEEE1/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEEE1/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE1/>}/> 
       {/*eee 3rd sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesEEE3/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEEE3/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEEE3/>}/>
+        <Route path="/EEE/2024/3rd/notes/:subjectSlug"element={<NoteModulesEEE3/>}/>
+      <Route path="/lab-programsee3/:subjectSlug"element={<LabProgramDetailsEEE3/>}/>
+      <Route path="/assignmentsee3/:subjectSlug"element={<AssignmentDetailsEEE3/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEEE3/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE3/>}/> 
       {/*eee 5th sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesEEE5/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEEE5/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEEE5/>}/>
+        <Route path="/EEE/2023/5th/notes/:subjectSlug"element={<NoteModulesEEE5/>}/>
+      <Route path="/lab-programsee5/:subjectSlug"element={<LabProgramDetailsEEE5/>}/>
+      <Route path="/assignmentsee5/:subjectSlug"element={<AssignmentDetailsEEE5/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEEE5/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE5/>}/> 
       {/*eee 7th sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesEEE7/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEEE7/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEEE7/>}/>
+        <Route path="/EEE/2022/7th/notes/:subjectSlug"element={<NoteModulesEEE7/>}/>
+      <Route path="/lab-programsee7/:subjectSlug"element={<LabProgramDetailsEEE7/>}/>
+      <Route path="/assignmentsee7/:subjectSlug"element={<AssignmentDetailsEEE7/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEEE7/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEEE7/>}/>
 
       {/*civil 7th sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesCIVIL7/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsCIVIL7/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsCIVIL7/>}/>
+        <Route path="/CIVIL/2022/7th/notes/:subjectSlug"element={<NoteModulesCIVIL7/>}/>
+      <Route path="/lab-programscv7/:subjectSlug"element={<LabProgramDetailsCIVIL7/>}/>
+      <Route path="/assignmentscv7/:subjectSlug"element={<AssignmentDetailsCIVIL7/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsCIVIL7/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsCIVIL7/>}/>
       {/*civil 5th sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesCIVIL5/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsCIVIL5/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsCIVIL5/>}/>
+        <Route path="/CIVIL/2023/5th/notes/:subjectSlug"element={<NoteModulesCIVIL5/>}/>
+      <Route path="/lab-programscv5/:subjectSlug"element={<LabProgramDetailsCIVIL5/>}/>
+      <Route path="/assignmentscv5/:subjectSlug"element={<AssignmentDetailsCIVIL5/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsCIVIL5/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsCIVIL5/>}/>
       {/*civil 3rd sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesCIVIL3/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsCIVIL3/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsCIVIL3/>}/>
+        <Route path="/CIVIL/2024/3rd/notes/:subjectSlug"element={<NoteModulesCIVIL3/>}/>
+      <Route path="/lab-programscv3/:subjectSlug"element={<LabProgramDetailsCIVIL3/>}/>
+      <Route path="/assignmentscv3/:subjectSlug"element={<AssignmentDetailsCIVIL3/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsCIVIL3/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsCIVIL3/>}/>
       {/*civil 1st sem notes */} 
-        <Route path="/notes/:subjectSlug"element={<NoteModulesCIVIL1/>}/>
-      <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsCIVIL1/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsCIVIL1/>}/>
+        <Route path="/CIVIL/2025/1st/notes/:subjectSlug"element={<NoteModulesCIVIL1/>}/>
+      <Route path="/lab-programscv1/:subjectSlug"element={<LabProgramDetailsCIVIL1/>}/>
+      <Route path="/assignmentscv1/:subjectSlug"element={<AssignmentDetailsCIVIL1/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsCIVIL1/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsCIVIL1/>}/>        
              </Routes>
