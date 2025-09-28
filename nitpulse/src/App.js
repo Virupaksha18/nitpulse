@@ -625,13 +625,13 @@ function App() {
       {/*ece 6th sem notes*/}
       <Route path="/notes/:subjectSlug"element={<NoteModulesEC6/>}/>
       <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC6/>}/>
-      <Route path="/ec7assignments/:subjectSlug"element={<AssignmentDetailsEC6/>}/>
+      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC6/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC6/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC6/>}/>
        {/*ece 7th sem notes */} 
         <Route path="/notes/:subjectSlug"element={<NoteModulesEC7/>}/>
       <Route path="/lab-programs/:subjectSlug"element={<LabProgramDetailsEC7/>}/>
-      <Route path="/assignments/:subjectSlug"element={<AssignmentDetailsEC7/>}/>
+      <Route path="/ec7assignments/:subjectSlug"element={<AssignmentDetailsEC7/>}/>
       <Route path="/mqp/:subjectSlug"element={<MQPDetailsEC7/>}/>
       <Route path="/passing-package/:subjectSlug"element={<PassingPackageDetailsEC7/>}/>
           {/*ece 5th sem notes */} 
