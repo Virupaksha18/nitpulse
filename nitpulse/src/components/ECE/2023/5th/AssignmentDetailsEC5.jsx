@@ -2,44 +2,52 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const assignmentData = {
-  "cloud-computing": {
-    title: "Cloud Computing",
+  "TIE": {
+    title: "Technological Innovation and Entrepreneurship",
     assignments: [
-      "Explain IaaS, PaaS, and SaaS with real-world examples.",
-      "Write a report on virtualization techniques used in data centers.",
-      "Discuss security issues in cloud computing and solutions."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-2 Questions with Solutions.",
+      "Assignment-3 Questions with Solutions."
     ]
   },
-  "machine-learning": {
-    title: "Machine Learning",
+  "DSP": {
+    title: "Digital Signal Processing",
     assignments: [
-      "Implement Linear Regression using Python and submit report.",
-      "Explain overfitting and underfitting with diagrams.",
-      "Compare supervised and unsupervised learning."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
     ]
   },
-  "compiler-design": {
-    title: "Compiler Design",
+  "DC": {
+    title: "Digital Communication",
     assignments: [
-      "Design a lexical analyzer for simple expressions.",
-      "Explain different parsing techniques with examples.",
-      "Write short notes on syntax-directed translation."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
     ]
   },
-  "research-methodology": {
-    title: "Research Methodology",
+  "RM": {
+    title: "Research Methodology and IPR",
     assignments: [
-      "Write a research proposal on any emerging technology.",
-      "Explain quantitative vs qualitative research.",
-      "Discuss ethical issues in research."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
     ]
   },
-  "water-conservation": {
-    title: "Water Conservation",
+  "EVS": {
+    title: "Environmental Studies",
     assignments: [
-      "List techniques for rainwater harvesting.",
-      "Create awareness poster on water conservation.",
-      "Explain the impact of urbanization on groundwater."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
+    ]
+  },
+    "SOC": {
+    title: "Satllite and Optical Communication",
+    assignments: [
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
     ]
   }
 };
