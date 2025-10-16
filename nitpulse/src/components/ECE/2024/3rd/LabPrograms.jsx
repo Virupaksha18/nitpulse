@@ -3,9 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const labSubjects = [
-  { name: "Machine Learning Lab", slug: "ml-lab" , code: "BCSL606" },
-  { name: "Cloud Computing Lab", slug: "cc-lab",code:"BCSL601" },
-  { name: "React Lab", slug: "react-lab",code:"BCSL657B" },
+  { name: "MatLab Programming", slug: "Mat-lab" , code: "BEC307" },
+  { name: "Analog and Digital System Design Lab", slug: "ADSD-lab",code:"BEC308" },
 ];
 
 const LabPrograms = () => {

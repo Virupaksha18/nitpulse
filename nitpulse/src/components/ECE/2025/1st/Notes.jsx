@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const subjects = [
-  { name: "Cloud Computing", slug: "cloud-computing", code: "BCS601" },
-  { name: "Machine Learning", slug: "machine-learning", code: "BCS602" },
-  { name: "Compiler Design", slug: "compiler-design", code: "BCS613C" },
-  { name: "Research Methodology", slug: "research-methodology", code: "BCS604" },
-  { name: "Water Conservation and Rain Water Harvesting", slug: "water-conservation", code: "BCV654A" },
-];
-
+  { name: "Mathematics-I", slug: "M1", code: "BCS601" },
+  { name: "Applied Chemistry for ECE", slug: "machine-learning", code: "BCS602" },
+  { name: "Computer Aided Engineering Drawing", slug: "compiler-design", code: "BCS613C" },
+  { name: "Samskrutika Kannada or Balake Kannada", slug: "research-methodology", code: "BCS604" },
+  { name: "Scientific Foundation of Health", slug: "water-conservation", code: "BCV654A" },
+  { name: "Introduction to Python Programming", slug: "water-conservation", code: "BCV654A" },
+  { name: "Introduction to Mechanical Engineering", slug: "water-conservation", code: "BCV654A" },
+]
 const Notes = () => {
   return (
     <div className="pt-20 px-4">

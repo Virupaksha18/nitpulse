@@ -3,12 +3,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const assignmentSubjects = [
-  { name: "Cloud Computing", slug: "cloud-computing", code: "BCS601" },
-  { name: "Machine Learning", slug: "machine-learning", code: "BCS602" },
-  { name: "Compiler Design", slug: "compiler-design", code: "BCS613C" },
-  { name: "Research Methodology", slug: "research-methodology", code: "BCS604" },
-  { name: "Water Conservation and Rain Water Harvesting", slug: "water-conservation", code: "BCV654A" },
+  { name: "Mathematics-I", slug: "M1", code: "BCS601" },
+  { name: "Applied Chemistry for ECE", slug: "Chemistry", code: "BCS602" },
+  { name: "Computer Aided Engineering Drawing", slug: "CAED", code: "BCS613C" },
+  { name: "Samskrutika Kannada or Balake Kannada", slug: "kannada", code: "BCS604" },
+  { name: "Scientific Foundation of Health", slug: "SFH", code: "BCV654A" },
+  { name: "Introduction to Python Programming", slug: "Python", code: "BCV654A" },
+  { name: "Introduction to Mechanical Engineering", slug: "IME", code: "BCV654A" },
+
+
 ];
+
 
 const Assignments = () => {
   return (

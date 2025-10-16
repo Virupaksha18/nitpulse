@@ -2,8 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const labProgramsData = {
-  "ml-lab": {
-    title: "Machine Learning Lab",
+  "Matlab-lab": {
+    title: "Matlab progarmming",
     programs: [
       "Implement and visualize Linear Regression",
       "Logistic Regression for binary classification",

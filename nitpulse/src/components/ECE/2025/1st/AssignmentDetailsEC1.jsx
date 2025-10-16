@@ -2,44 +2,60 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const assignmentData = {
-  "cloud-computing": {
-    title: "Cloud Computing",
+  "M1": {
+    title: "Mathematics-I",
     assignments: [
-      "Explain IaaS, PaaS, and SaaS with real-world examples.",
-      "Write a report on virtualization techniques used in data centers.",
-      "Discuss security issues in cloud computing and solutions."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
     ]
   },
-  "machine-learning": {
-    title: "Machine Learning",
+  "Chemistry": {
+    title: "Applied Chemistry for ECE ",
     assignments: [
-      "Implement Linear Regression using Python and submit report.",
-      "Explain overfitting and underfitting with diagrams.",
-      "Compare supervised and unsupervised learning."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
     ]
   },
-  "compiler-design": {
-    title: "Compiler Design",
+  "CAED": {
+    title: "Computer Aided Engineering Drawing",
     assignments: [
-      "Design a lexical analyzer for simple expressions.",
-      "Explain different parsing techniques with examples.",
-      "Write short notes on syntax-directed translation."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
     ]
   },
-  "research-methodology": {
-    title: "Research Methodology",
+  "kannada": {
+    title: "Samskrutika Kannada or balke Kannada",
     assignments: [
-      "Write a research proposal on any emerging technology.",
-      "Explain quantitative vs qualitative research.",
-      "Discuss ethical issues in research."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
     ]
   },
-  "water-conservation": {
-    title: "Water Conservation",
+  "SFH": {
+    title: "Scientific Foundation of Health",
     assignments: [
-      "List techniques for rainwater harvesting.",
-      "Create awareness poster on water conservation.",
-      "Explain the impact of urbanization on groundwater."
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
+    ]
+  },
+  "Python": {
+    title: "Introduction to Python Programming",
+    assignments: [
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
+    ]
+  },
+  "IME": {
+    title: "Introduction to Mechanical Engineering",
+    assignments: [
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions.",
+      "Assignment-1 Questions with Solutions."
     ]
   }
 };

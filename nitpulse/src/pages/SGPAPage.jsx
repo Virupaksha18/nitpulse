@@ -86,7 +86,7 @@ const branches = {
   ECE: {
        semester1:[
       {subject: "Mathematics-1", credits: 4 },
-      { subject: "Applied Chemistry for EEE Stream", credits: 4 },
+      { subject: "Applied Chemistry for ECE Stream", credits: 4 },
       { subject: "Computer-Aided Engineering Drawing", credits: 3},
       { subject: "Communicative English", credits: 1 },
       { subject: "Samskrutika Kannada or Balake Kannada", credits: 1 },

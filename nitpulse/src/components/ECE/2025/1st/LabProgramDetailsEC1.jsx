@@ -2,8 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const labProgramsData = {
-  "ml-lab": {
-    title: "Machine Learning Lab",
+  "chemistry-lab": {
+    title: "Chemistry Lab",
     programs: [
       "Implement and visualize Linear Regression",
       "Logistic Regression for binary classification",
@@ -17,8 +17,8 @@ const labProgramsData = {
       "Project: ML model deployment"
     ]
   },
-  "cc-lab": {
-    title: "Cloud Computing Lab",
+  "caed-lab": {
+    title: "CAED Lab",
     programs: [
       "Create a VM instance using AWS",
       "Deploy a web app to AWS EC2",
@@ -32,8 +32,8 @@ const labProgramsData = {
       "Mini Project on cloud deployment"
     ]
   },
-  "react-lab": {
-    title: "React Lab",
+  "python-lab": {
+    title: "Python Lab",
     programs: [
       "Create a portfolio website using React",
       "React Router navigation demo",
