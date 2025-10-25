@@ -15,6 +15,7 @@ import AIChat from './pages/AIChat';
 import QuizSection from './pages/QuizSection';
 import StudentQuizBrowser from './components/StudentQuizBrowser';
 import TeacherUploadForm from './components/TeacherUploadForm';
+import AdminEvents from './pages/AdminEvents';
 
 //login pages
 import RegisterStudent from './pages/Auth/RegisterStudent';
@@ -348,6 +349,7 @@ import AssignmentDetailsCIVIL1 from './components/CIVIL/2025/1st/AssignmentDetai
 import MQPDetailsCIVIL1 from './components/CIVIL/2025/1st/MQPDetailsCIVIL1';
 import PassingPackageDetailsCIVIL1 from './components/CIVIL/2025/1st/PassingPackageDetailsCIVIL1';
 import TimeTable from './pages/TimeTable';
+import AdminEvents from './pages/AdminEvents';
 
 
 
@@ -375,6 +377,7 @@ function App() {
         <Route path="/quiz-section" element={<QuizSection/>}/>
         <Route path="/teacher/upload-form" element={<TeacherUploadForm/>}/>
         <Route path="/student/quiz-browser" element={<StudentQuizBrowser/>}/>
+        <Route path="/admin-events" element={<AdminEvents />}/>
         {/*login pages */}
         <Route path="/register-student"element={<RegisterStudent/>}/>
         <Route path="/student-login"element={<StudentLogin/>}/>
