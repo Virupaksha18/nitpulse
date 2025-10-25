@@ -349,9 +349,6 @@ import AssignmentDetailsCIVIL1 from './components/CIVIL/2025/1st/AssignmentDetai
 import MQPDetailsCIVIL1 from './components/CIVIL/2025/1st/MQPDetailsCIVIL1';
 import PassingPackageDetailsCIVIL1 from './components/CIVIL/2025/1st/PassingPackageDetailsCIVIL1';
 import TimeTable from './pages/TimeTable';
-import AdminEvents from './pages/AdminEvents';
-
-
 
 
 function App() {
