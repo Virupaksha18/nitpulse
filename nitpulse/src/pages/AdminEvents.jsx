@@ -10,7 +10,7 @@ const AdminEvents = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://your-backend-url.com/api/events", {
+      await axios.post("https://nitpulse-backend.onrender.com/api/events", {
         title,
         description,
         date,

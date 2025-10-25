@@ -15,6 +15,7 @@ const teacherRoutes = require('./routes/teacherRoutes');
 const teacherresourceRoutes = require('./routes/teacherresourceRoutes');
 const commentRoutes = require('./routes/commentRoutes');
 const chatRoutes = require('./routes/chatRoutes'); // ✅ New DeepSeek route
+const eventRoutes = require('./routes/eventRoutes');
 
 const app = express();
 
@@ -53,6 +54,7 @@ app.use('/api/teacher-resources', teacherresourceRoutes);
 app.use('/app/students', studentRoutes);
 app.use('/app/teachers', teacherRoutes);
 app.use('/api/chat', chatRoutes); // ✅ New DeepSeek API
+app.use("/api/events",eventRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
